@@ -240,7 +240,7 @@ FlexRequest message is sent.</xs:documentation>
                 </xs:attribute>
                 <xs:attribute name="FlexRequestMessageID" type="UUIDType" use="optional">
                     <xs:annotation>
-                        <xs:documentation>MessageID of the FlexRequest message this request is based on.</xs:documentation>
+                        <xs:documentation>MessageID of the FlexRequest message this request is based on. Mandatory if and only if solicited.</xs:documentation>
                     </xs:annotation>
                 </xs:attribute>
                 <xs:attribute name="ContractID" type="xs:string" use="optional">
@@ -250,7 +250,7 @@ FlexRequest message is sent.</xs:documentation>
                 </xs:attribute>
                 <xs:attribute name="D-PrognosisMessageID" type="UUIDType" use="optional">
                     <xs:annotation>
-                        <xs:documentation>MessageID of the D-Prognosis this request is based on, if it has been agreed that the baseline is based on D-prognoses. </xs:documentation>
+                        <xs:documentation>MessageID of the D-Prognosis this request is based on. Mandatory if and only if unsolicited.</xs:documentation>
                     </xs:annotation>
                 </xs:attribute>
                 <xs:attribute name="BaselineReference" type="xs:string" use="optional">
