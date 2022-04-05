@@ -250,7 +250,7 @@
                 </xs:attribute>
                 <xs:attribute name="FlexRequestMessageID" type="UUIDType" use="optional">
                     <xs:annotation>
-                        <xs:documentation>MessageID of the FlexRequest message this request is based on.</xs:documentation>
+                        <xs:documentation>MessageID of the FlexRequest message this request is based on. Mandatory if and only if solicited.</xs:documentation>
                     </xs:annotation>
                 </xs:attribute>
                 <xs:attribute name="ContractID" type="xs:string" use="optional">
@@ -260,7 +260,7 @@
                 </xs:attribute>
                 <xs:attribute name="D-PrognosisMessageID" type="UUIDType" use="optional">
                     <xs:annotation>
-                        <xs:documentation>MessageID of the D-Prognosis this request is based on, if it has been agreed that the baseline is based on D-prognoses. </xs:documentation>
+                        <xs:documentation>MessageID of the D-Prognosis this request is based on. Mandatory if and only if unsolicited.</xs:documentation>
                     </xs:annotation>
                 </xs:attribute>
                 <xs:attribute name="BaselineReference" type="xs:string" use="optional">
@@ -472,11 +472,6 @@
                         <xs:documentation>Last Period of the settlement period this message applies to.</xs:documentation>
                     </xs:annotation>
                 </xs:attribute>
-                <xs:attribute name="Reference" type="xs:string" use="optional">
-                    <xs:annotation>
-                        <xs:documentation>Settlement reference, assigned by the DSO originating the FlexSettlement.</xs:documentation>
-                    </xs:annotation>
-                </xs:attribute>
                 <xs:attribute name="Currency" type="ISO4217CurrencyType" use="required">
                     <xs:annotation>
                         <xs:documentation>ISO 4217 code indicating the currency that applies to all amounts (flex price, penalty and net settlement) in this message.</xs:documentation>
@@ -582,12 +577,7 @@
                 </xs:sequence>
                 <xs:attribute name="FlexSettlementMessageID" type="UUIDType" use="required">
                     <xs:annotation>
-                        <xs:documentation>MessageID of the FlexSettlemnet message that has just been accepted or rejected</xs:documentation>
-                    </xs:annotation>
-                </xs:attribute>
-                <xs:attribute name="Reference" type="xs:string" use="required">
-                    <xs:annotation>
-                        <xs:documentation>Reference included in the FlexSettlement that has just been received.</xs:documentation>
+                        <xs:documentation>MessageID of the FlexSettlement message that has just been accepted or rejected</xs:documentation>
                     </xs:annotation>
                 </xs:attribute>
             </xs:extension>
