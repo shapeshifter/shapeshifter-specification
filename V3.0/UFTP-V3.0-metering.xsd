@@ -16,7 +16,7 @@
     <!-- -->
     <!--  Metering Unit Type -->
     <!-- -->
-    <xs:simpleType name="MeteringUnitType">
+    <xs:simpleType name="MeteringUnit">
         <xs:restriction base="xs:string">
             <xs:enumeration value="kW">
                 <xs:annotation>
@@ -37,7 +37,7 @@
         <xs:restriction base="xs:string">
             <xs:enumeration value="Power">
                 <xs:annotation>
-                    <xs:documentation>The average active power during ISP, considering both import and export energy. Power=(ImportEnergy-ExportEnergy)*2
+                    <xs:documentation>The average active power during ISP, considering both import and export energy. Power=(ImportEnergy-ExportEnergy)*(60/ISPDurationMinutes)
                         Including the power profile is recommended. It is expected that in the following major version the power will become a mandatory value.
                     </xs:documentation>
                 </xs:annotation>
@@ -83,7 +83,7 @@
                 </xs:attribute>
                 <xs:attribute name="ISP-Duration" type="xs:duration" use="required">
                     <xs:annotation>
-                        <xs:documentation>ISO 8601 time interval (minutes only, for example PT15M) indicating the duration of the ISPs referenced in this message. Although the ISP length is a market-wide fixed value, making this assumption explicit in each message is important for validation purposes, allowing implementations to reject messages with an errant ISP duration.</xs:documentation>
+                        <xs:documentation>ISO 8601 duration(minutes only, for example PT15M) indicating the time-interval of the ISPs referenced in this message. Although the ISP length is a market-wide fixed value, making this assumption explicit in each message is important for validation purposes, allowing implementations to reject messages with an errant ISP duration.</xs:documentation>
                     </xs:annotation>
                 </xs:attribute>
                 <xs:attribute name="TimeZone" type="TimeZoneNameType" use="required">
@@ -98,7 +98,7 @@
                 </xs:attribute>
                 <xs:attribute name="Period" type="PeriodType" use="required">
                     <xs:annotation>
-                        <xs:documentation>Day (in yyyy-mm-dd format) the ISPs referenced in this Metering message belong to.</xs:documentation>
+                        <xs:documentation>Day (in YYYY-MM-DD format) the ISPs referenced in this Metering message belong to.</xs:documentation>
                     </xs:annotation>
                 </xs:attribute>
                 <xs:attribute name="EAN" type="EANType" use="required">
@@ -120,7 +120,7 @@
             <xs:element name="ISP" type="MeteringISPType" maxOccurs="unbounded"/>
         </xs:sequence>
         <xs:attribute name="ProfileType" type="MeteringProfileEnum" use="required" />
-        <xs:attribute name="Unit" type="MeteringUnitType" use="required" />
+        <xs:attribute name="Unit" type="MeteringUnit" use="required" />
     </xs:complexType>
     <!-- -->
     <!-- Metering ISP Type -->
