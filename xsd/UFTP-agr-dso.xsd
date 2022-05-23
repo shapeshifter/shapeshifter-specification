@@ -260,7 +260,7 @@
                 </xs:attribute>
                 <xs:attribute name="D-PrognosisMessageID" type="UUIDType" use="optional">
                     <xs:annotation>
-                        <xs:documentation>MessageID of the D-Prognosis this request is based on. Mandatory if and only if unsolicited.</xs:documentation>
+                        <xs:documentation>MessageID of the D-Prognosis this request is based on, if it has been agreed that the baseline is based on D-prognoses. </xs:documentation>
                     </xs:annotation>
                 </xs:attribute>
                 <xs:attribute name="BaselineReference" type="xs:string" use="optional">
@@ -485,6 +485,11 @@
         <xs:sequence>
             <xs:element name="ISP" type="FlexOrderSettlementISPType" maxOccurs="unbounded"/>
         </xs:sequence>
+        <xs:attribute name="OrderReference" type="xs:string">
+            <xs:annotation>
+                <xs:documentation>Order reference assigned by the DSO when originating the FlexOrder.</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
         <xs:attribute name="Period" type="PeriodType" use="required">
             <xs:annotation>
                 <xs:documentation/>
