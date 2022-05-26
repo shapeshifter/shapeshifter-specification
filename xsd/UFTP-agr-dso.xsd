@@ -2,6 +2,7 @@
 <!-- edited with XMLSpy v2020 sp1 (x64) (http://www.altova.com) by Erik Brouwer (ICT netherlands B.V.) -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
     <xs:include schemaLocation="UFTP-common.xsd"/>
+    <xs:include schemaLocation="UFTP-metering.xsd"/>
     <!-- -->
     <!--  Flex Message Type -->
     <!-- -->
