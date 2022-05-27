@@ -37,7 +37,7 @@
             <xs:enumeration value="Power">
                 <xs:annotation>
                     <xs:documentation>The average active power during ISP, considering both import and export energy. Power=(ImportEnergy-ExportEnergy)*(60/ISP-Length-Minutes).
-                        For example with a 15 minute ISP length we have a denominator of 4, with a 30 minute ISP length we have a denominator of 2.
+                        For example with a 15 minute ISP length we have a multiplier of 4, with a 30 minute ISP length we have a multiplier of 2.
                         Including the power profile is recommended. It is expected that in the following major version the power will become a mandatory value.
                     </xs:documentation>
                 </xs:annotation>
