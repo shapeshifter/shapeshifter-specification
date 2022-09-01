@@ -23,5 +23,7 @@ Service type in FlexRequest message - so that the aggregate knows which service 
 Order Reference in FlexOrderSettlement - so that the aggregate knows which order the settlement is for
 
 ### Changed
+Improve the description of FlexRequestMessageID and D-PrognosisMessageID fields
 
 ### Removed
+Reference from FlexSettlement and FlexSettlementResponse - These fields supplied the same functionality as the FlexSettlementMessageID field. Now please use the FlexSettlementMessageID field in the FlexSettlementResponse
