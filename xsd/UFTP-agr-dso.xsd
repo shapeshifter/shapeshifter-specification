@@ -565,7 +565,7 @@
                 <xs:documentation>Actual amount of flex power delivered for this ISP in Watts, as determined by the DSO.</xs:documentation>
             </xs:annotation>
         </xs:attribute>
-        <xs:attribute name="PoweDeficiency" type="xs:integer" use="optional" default="0">
+        <xs:attribute name="PowerDeficiency" type="xs:integer" use="optional" default="0">
             <xs:annotation>
                 <xs:documentation>Amount of flex power sold but not delivered for this ISP in Watts, as determined by the DSO.</xs:documentation>
             </xs:annotation>
