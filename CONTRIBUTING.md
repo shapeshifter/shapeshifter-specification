@@ -42,3 +42,11 @@ Or build it once so you end up with the generated HTML in the `site/` folder:
 ```
 $ poetry run mkdocs build
 ```
+
+An environment variable is necessary to enable local generation of pdf files because this take a while.
+You need to set the environmental variable `ENABLE_PDF_EXPORT` to `1`:
+
+```
+$ export ENABLE_PDF_EXPORT=1
+$ poetry run mkdocs serve
+```
