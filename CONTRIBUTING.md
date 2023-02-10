@@ -21,6 +21,7 @@ Besides the technical features, here are some brief recommendations on using Mar
   - comments within the Markdown source code
   - complicated layout not achievable otherwise
   - lists in tables
+- Check the more [advanced features of Material for MkDocs](https://squidfunk.github.io/mkdocs-material/reference/) to see what is available and what the syntax is.
 
 ## Local preview
 
