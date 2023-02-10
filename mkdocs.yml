@@ -46,14 +46,14 @@ nav:
       - Validate phase: general-description/validate-phase.md
       - Operate phase: general-description/operate-phase.md
       - Settle phase: general-description/settle-phase.md
-  - Use case description:
-      - Scope: missing.md
-      - Privacy and security by design: missing.md
-      - Common concepts: missing.md
-      - Reading guidelines: missing.md
-      - Message validation: missing.md
+  - Use case descriptions:
+      - Scope: use-case-descriptions/scope.md
+      - Privacy and security by design: use-case-descriptions/privacy-and-security-by-design.md
+      - Common concepts: use-case-descriptions/common-concepts.md
+      - Reading guidelines: use-case-descriptions/reading-guidelines.md
+      - Message validation: use-case-descriptions/message-validation.md
       - Use Cases:
-          - Contract phase: missing.md
+          - Contract phase: use-case-descriptions/use-cases/contract-phase.md
           - Plan phase: missing.md
           - Validate phase: missing.md
           - Operate phase: missing.md
