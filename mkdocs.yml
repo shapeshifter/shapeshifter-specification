@@ -44,8 +44,8 @@ nav:
       - Contract phase: general-description/contract-phase.md
       - Plan phase: general-description/plan-phase.md
       - Validate phase: general-description/validate-phase.md
-      - Operate phase: missing.md
-      - Settle phase: missing.md
+      - Operate phase: general-description/operate-phase.md
+      - Settle phase: general-description/settle-phase.md
   - Use case description:
       - Scope: missing.md
       - Privacy and security by design: missing.md
