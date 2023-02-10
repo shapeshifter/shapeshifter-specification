@@ -32,7 +32,6 @@ markdown_extensions:
   - admonition
 
 nav:
-  - Intellectual Property Disclaimer: disclaimer.md
   - USEF Flex Trading Protocol: usef-flex-trading-protocol.md
   - About UFTP:
       - Purpose: about/purpose.md
