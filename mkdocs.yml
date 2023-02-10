@@ -56,7 +56,7 @@ nav:
           - Contract phase: use-case-descriptions/use-cases/contract-phase.md
           - Plan phase: use-case-descriptions/use-cases/plan-phase.md
           - Validate phase: use-case-descriptions/use-cases/validate-phase.md
-          - Operate phase: missing.md
+          - Operate phase: use-case-descriptions/use-cases/operate-phase.md
           - Settle phase: missing.md
   - Message description:
       - Scope: missing.md
