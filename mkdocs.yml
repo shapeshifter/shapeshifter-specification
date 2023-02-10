@@ -57,7 +57,7 @@ nav:
           - Plan phase: use-case-descriptions/use-cases/plan-phase.md
           - Validate phase: use-case-descriptions/use-cases/validate-phase.md
           - Operate phase: use-case-descriptions/use-cases/operate-phase.md
-          - Settle phase: missing.md
+          - Settle phase: use-case-descriptions/use-cases/settle-phase.md
   - Message description:
       - Scope: missing.md
       - Message catalog: missing.md
