@@ -54,7 +54,7 @@ nav:
       - Message validation: use-case-descriptions/message-validation.md
       - Use Cases:
           - Contract phase: use-case-descriptions/use-cases/contract-phase.md
-          - Plan phase: missing.md
+          - Plan phase: use-case-descriptions/use-cases/plan-phase.md
           - Validate phase: missing.md
           - Operate phase: missing.md
           - Settle phase: missing.md
