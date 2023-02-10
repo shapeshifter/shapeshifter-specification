@@ -29,7 +29,7 @@ The Python MkDocs tools in this project are managed using [Poetry](https://pytho
 Using Poetry you can setup a local development environment environment:
 
 ```
-$ poetry install
+$ poetry install --no-root
 ```
 
 Then you can run a process that continously monitors the source and serves it online:
