@@ -8,7 +8,7 @@ The USEF MCM is designed for all energy commodities and enables the market to op
 The MCM provides access, under equal conditions, for all stakeholders to a single integrated market.
 This unique approach aims to deliver a future-proof market design. The USEF MCM operations scheme distinguishes five phases:
 
-![](../../assets/images/image5.png)
+![](../assets/images/image5.png)
 
 In UFTP, the general MCM phases are followed. However, processes in each phase are limited to the interactions between the
 AGR and DSO for flexibility trading. This includes interaction with the ‘Common Reference’:
@@ -38,7 +38,7 @@ The green regime is the classical grid without any limitations (copper plate) an
 USEF introduces two additional regimes. In the green and yellow regimes, the MCM assures optimal use of the flexibility available for BRPs (green and yellow) and DSOs (yellow).
 The orange regime is introduced as a fallback for situations where there is insufficient flexibility available for the DSO to avoid an outage—the DSO can limit connections to temporarily overrule the market.
 
-![USEF Operating regimes](../../assets/images/image6.png)
+![USEF Operating regimes](../assets/images/image6.png)
 
 UFTP flexibility trading takes place solely in the yellow regime. Full descriptions of all other regimes can be found in [3].
 
