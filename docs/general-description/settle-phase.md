@@ -8,7 +8,7 @@ A penalty may be applied when there is a mismatch between the baseline and the a
 Except for metering data, USEF assumes that both AGR and DSO have all the information to make these calculations.
 The DSO sends its calculation to the AGR for verification.
 
-![General information flow flex settlement between DSO and AGR](../../assets/images/image17.emf.odg.svg)
+![General information flow flex settlement between DSO and AGR](../assets/images/image17.emf.odg.svg)
 
 In order to perform the settlement, it is necessary for the DSO to compare the metering for each ISP against the baseline, as contained in the demand-prognosis message.
 In some regions the metering for the ISP periods for the fiscal meter may already be available to the DSO, through its own systems.

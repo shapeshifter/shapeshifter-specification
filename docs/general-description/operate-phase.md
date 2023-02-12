@@ -8,7 +8,7 @@ The processes for invoking this flexibility are depicted in Figure 2-11.
 
 <!-- TODO: check why this image has been shortened in the .pdf file -->
 
-![General information flows in the Operate phase.](../../assets/images/image16.emf.odg.svg)
+![General information flows in the Operate phase.](../assets/images/image16.emf.odg.svg)
 
 During the operate phase, the AGR’s main goal is to adhere to its plan and respect the D-prognoses.12
 In order to achieve this, FlexOfferRevocation the AGR must first plan to ensure assets operate in accordance with its forecast portfolio performance and that any flexibility sold is actually delivered.
