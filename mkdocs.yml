@@ -58,9 +58,25 @@ nav:
           - Validate phase: use-case-descriptions/use-cases/validate-phase.md
           - Operate phase: use-case-descriptions/use-cases/operate-phase.md
           - Settle phase: use-case-descriptions/use-cases/settle-phase.md
-  - Message description:
-      - Scope: missing.md
-      - Message catalog: missing.md
+  - Message descriptions:
+      - Scope: message-descriptions/scope.md
+      - Message catalog:
+          - message-descriptions/message-catalog.md
+          - Power: message-descriptions/message-catalog/power.md
+          - Metadata attributes: message-descriptions/message-catalog/metadata-attributes.md
+          - SignedMessage: message-descriptions/message-catalog/signed-message.md
+          - TestMessage: message-descriptions/message-catalog/test-message.md
+          - TestMessageResponse: message-descriptions/message-catalog/test-message-response.md
+          - AGRPortfolioUpdate: message-descriptions/message-catalog/agr-portfolio-update.md
+          - AGRPortfolioUpdateResponse: message-descriptions/message-catalog/agr-portfolio-update-response.md
+          - AGRPortfolioQueryResponse: message-descriptions/message-catalog/agr-portfolio-query-response.md
+          - DSOPortfolioUpdate: message-descriptions/message-catalog/dso-portfolio-update.md
+          - DSOPortfolioUpdateResponse: message-descriptions/message-catalog/dso-portfolio-update-response.md
+          - DSOPortfolioQuery: message-descriptions/message-catalog/dso-portfolio-query.md
+          - DSOPortfolioQueryResponse: message-descriptions/message-catalog/dso-portfolio-response.md
+          - FlexReservationUpdate: message-descriptions/message-catalog/flex-reservation-update.md
+          - FlexReservationUpdateReponse: message-descriptions/message-catalog/flex-reservation-update-reponse.md
+          - D-Prognosis: message-descriptions/message-catalog/d-prognosis.md
   - Appendix:
       - Glossary: missing.md
       - Rationale for information exchange in flexiblity request: missing.md
