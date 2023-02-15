@@ -28,6 +28,8 @@ plugins:
       #   type1: img/type1.png
       #   type2: https://example.com/cover.svg
       enabled_if_env: ENABLE_PDF_EXPORT
+  - glightbox:
+      width: 50vw
 markdown_extensions:
   - admonition # for Recommended Practice blocks
   - md_in_html # for figcaption at images
