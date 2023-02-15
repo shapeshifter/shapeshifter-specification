@@ -34,6 +34,7 @@ plugins:
 markdown_extensions:
   - admonition # for Recommended Practice blocks
   - md_in_html # for figcaption at images
+  - footnotes
 
 nav:
   - USEF Flex Trading Protocol: usef-flex-trading-protocol.md

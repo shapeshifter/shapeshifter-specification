@@ -21,10 +21,10 @@ Optional components in messages are always prefixed with [optional].
 | FlexSettlement                       | o         | o      | -                |
 
 | Optional UFTP components             | USEF 2015 | UFTP   | Signaled in CRO? |
-| ------------------------------------ | :-------: | :----: | :--------------: |
+|--------------------------------------|:---------:|:------:|:----------------:|
 | **UFTP Process:**                    |           |        |                  |
 | Intraday Flex Trading                | o         | o      | N                |
-| Availability contracts (FlexOptions) | ~1        | o      | N                |
+| Availability contracts (FlexOptions) | ~[^1]     | o      | N                |
 | Dynamic pooling                      | -         | future | ?                |
 | **Market messages:**                 |           |        |                  |
 | D-prognosis                          | o         | o      | Y                |
@@ -32,3 +32,5 @@ Optional components in messages are always prefixed with [optional].
 | FlexOffer: mutual exclusive offers   | -         | o      | Y                |
 | FlexOffer: unsolicited offers        | -         | o      | -                |
 | FlexOffer: partial activation        | -         | o      | -                |
+
+[^1]: Availability contracts were mentioned in USEF2015, but not all details were worked out
