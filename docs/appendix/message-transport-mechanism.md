@@ -11,8 +11,8 @@ Based on NaCl[^14], a public domain library with high-speed state-of-the-art sec
 [^13]: If this recommendation is not followed, a compatible implementation should be provided in order to achieve USEF compliance.
 
 [^14]:
-    Pronounced “salt” and available with extensive documentation from http://nacl.cr.yp.to/.
-    Sodium, https://github.com/jedisct1/libsodium, is an extended NaCl derivative with Windows, OS X and Linux platform support and many available language bindings.
+    Pronounced “salt” and available with extensive documentation from [http://nacl.cr.yp.to/](http://nacl.cr.yp.to/).
+    Sodium, [https://github.com/jedisct1/libsodium](https://github.com/jedisct1/libsodium), is an extended NaCl derivative with Windows, OS X and Linux platform support and many available language bindings.
     Sodium is highly recommended for USEF-compliant implementations.
 
 [^15]: Whereas typical cryptographic libraries require several steps to implement message encryption or signing, with each step opening the door for fatal programming mistakes, NaCl offers simple high-level functions which take care of everything, dramatically reducing the risk of inadvertent implementation errors.
@@ -50,7 +50,7 @@ Messages go through the following stages between retrieval from the client’s o
 
 ### Versioning
 
-For versioning of the specification we use semantic versioning (see https://semver.org/).
+For versioning of the specification we use semantic versioning (see [https://semver.org/](https://semver.org/)).
 In short: MAJOR.MINOR.PATCH. Each new major version is incompatible with previous versions; New minor versions are backwards compatible with previous minor versions within the same major version.
 
 ### Supporting multiple versions of the protocol
@@ -148,14 +148,14 @@ The implementation will now, for a reasonable amount of time (which is again at 
 
 Messages are sent using a HTTP POST operation with the text/xml[^21] content type, the UTF8 character set and content-length indication.
 The request URI depends on the USEF implementation level and host name listed in DNS by the recipient.
-For USEF 2019 and the host `example.com`, it will be https://example.com/USEF/2019/SignedMessage.
+For USEF 2019 and the host `example.com`, it will be [https://example.com/USEF/2019/SignedMessage](https://example.com/USEF/2019/SignedMessage).
 
 [^21]:
     The USEF specification uses XML, since this format is already widely used in the rather conservative energy market, and enjoys wide and mature tooling support (particularly in the area of schema authoring and validation).
     Unlike other XML-based initiatives (such as WS-*), lightweight implementations are considered key, and alternate serialization formats (such as JSON) should be viable as well, despite being out of scope of this specification.
     If any such alternate message formats are implemented, fallback to XML must be provided as needed, or such implementations will not be USEF-compliant.
 
-Message content consists of a simple wrapper message, specified as SignedMessage in the USEF XML XSD, available for download from the public USEF web site[^22] at https://usef.info/schema/2019and documented in section 4.2
+Message content consists of a simple wrapper message, specified as SignedMessage in the USEF XML XSD, available for download from the public USEF web site[^22] at [https://usef.info/schema/2019and](https://usef.info/schema/2019and) documented in section 4.2
 All usual protocol conventions should be followed during this stage.
 For example, when using HTTP version 1.1, redirects (responses with status code 3xx) should be honored in order to support load balancing.
 Any server errors (responses with status code 5xx), unknown response status codes,  and connection timeouts and resets should be considered temporary failures and delivery should be re-attempted later within the timeout period.
