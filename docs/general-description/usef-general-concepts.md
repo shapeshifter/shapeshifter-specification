@@ -74,10 +74,12 @@ Congestion points are registered in the common reference, see 2.2.3 Common Refer
 
 ## Flexiblity market time granularity
 
-All flexibility exchange in USEF is based on a time granularity that is in line with the imbalance settlement period (ISP)2, which is the time unit for which the imbalance of the balance responsible parties is calculated.
+All flexibility exchange in USEF is based on a time granularity that is in line with the imbalance settlement period (ISP)[^2], which is the time unit for which the imbalance of the balance responsible parties is calculated.
 For most EU countries this is a 15-minute interval, leading to 96 ISPs per day.
 Forecasts, flexibility offers, and orders and settlement are all based on ISPs.
 Flexibility is expressed in Power [Watts] which is to be interpreted as the average Power during an ISP.
+
+[^2]: Commission Regulation (EU) 2017/2195 of 23 November 2017 establishing a guideline on electricity balancing defines an imbalance settlement period (ISP) as the time unit for which the imbalance of the balance responsible parties is calculated (Article 2(10)).
 
 ## Alternative baselines
 

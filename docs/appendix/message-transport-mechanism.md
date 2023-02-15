@@ -5,8 +5,17 @@ When implementing the USEF best-practice message transfer mechanism, the procedu
 ## Cryptographic Scheme (CS)
 
 The USEF privacy and security guidelines require all participants to be able to securely transmit and authenticate messages.
-For these purposes, a transport-independent cryptographic scheme is specified, identified as Cryptographic Scheme Type 1 (CS1): implementation is a recommended practice for all implementations1.
-Based on NaCl2, a public domain library with high-speed state-of-the-art security features and a purpose-built and straightforward programming interface3, this scheme requires participants to generate two public/private key pairs:
+For these purposes, a transport-independent cryptographic scheme is specified, identified as Cryptographic Scheme Type 1 (CS1): implementation is a recommended practice for all implementations[^13].
+Based on NaCl[^14], a public domain library with high-speed state-of-the-art security features and a purpose-built and straightforward programming interface[^15], this scheme requires participants to generate two public/private key pairs:
+
+[^13]: If this recommendation is not followed, a compatible implementation should be provided in order to achieve USEF compliance.
+
+[^14]:
+    Pronounced “salt” and available with extensive documentation from http://nacl.cr.yp.to/.
+    Sodium, https://github.com/jedisct1/libsodium, is an extended NaCl derivative with Windows, OS X and Linux platform support and many available language bindings.
+    Sodium is highly recommended for USEF-compliant implementations.
+
+[^15]: Whereas typical cryptographic libraries require several steps to implement message encryption or signing, with each step opening the door for fatal programming mistakes, NaCl offers simple high-level functions which take care of everything, dramatically reducing the risk of inadvertent implementation errors.
 
 | Purpose                          | NaCl function       | Private key bits | Public key bits |
 |----------------------------------|---------------------|------------------|-----------------|
@@ -29,8 +38,6 @@ Since this all happens in the same API call, it is not possible to accidentally 
 ### Message exchange logic
 
 The entire message exchange, from the client’s outgoing message queue to the server’s incoming message queue, using HTTP-over-TLS transport and the default cryptographic scheme, is visualized in detail in the picture below.
-
-<!-- TODO: add footnotes -->
 
 <figure markdown>
   ![End-to-end USEF message exchange.](../assets/images/image23.emf.odg.svg)
@@ -73,14 +80,28 @@ A rejection reason will be added to reject a message with an invalid version
 
 ### Service discovery
 
-In the service discovery stage, DNS1 is used to discover the capabilities as well as the endpoint host name and IP address of the remote participant.
+In the service discovery stage, DNS[^16] is used to discover the capabilities as well as the endpoint host name and IP address of the remote participant.
 Assuming the Internet domain name of the remote participant is example.com, the relevant DNS records are as follows:
+
+[^16]:
+    Each USEF participant is responsible for publishing its own endpoint and public key information in a self-managed DNS zone.
+    To prevent man-in-the-middle interference with the published information, use of DNSSEC is mandatory for such zones.
 
 |                                  |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
 |----------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | _usef.example.com                | TXT record specifying the version of the USEF specification implemented by this participant, e.g. `2015`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
-| \__role_._usef.example.com       | TXT record containing up to two1 space-separated Base-64 encoded public key strings for the specified role, where role is one of the values `AGR`, `CRO` or `DSO`. This data is only queried if (part of) the outgoing message needs to be encrypted                                                                                                                                                                                                                                                                                                                                              |
-| _http.\_*role*._usef.example.com | CNAME record indicating the HTTP endpoint receiving messages for the specified role.</br>This label must not have any resource records of other types (with the exception of the mandatory DNSSEC-related records2) and the alias should resolve to an A or AAAA record3.</br>On the endpoint host, the implementation must listen on the well-known IANA-assigned TCP port for HTTP-over-TLS, i.e. 443.</br>The implementation may listen on port 80 as well, but only for purposes such as supporting the HTTP/2 connection upgrade mechanism and never for unencrypted message exchange. |
+| \__role_._usef.example.com       | TXT record containing up to two[^17] space-separated Base-64 encoded public key strings for the specified role, where role is one of the values `AGR`, `CRO` or `DSO`. This data is only queried if (part of) the outgoing message needs to be encrypted                                                                                                                                                                                                                                                                                                                                              |
+| _http.\_*role*._usef.example.com | CNAME record indicating the HTTP endpoint receiving messages for the specified role.</br>This label must not have any resource records of other types (with the exception of the mandatory DNSSEC-related records[^18]) and the alias should resolve to an A or AAAA record[^19].</br>On the endpoint host, the implementation must listen on the well-known IANA-assigned TCP port for HTTP-over-TLS, i.e. 443.</br>The implementation may listen on port 80 as well, but only for purposes such as supporting the HTTP/2 connection upgrade mechanism and never for unencrypted message exchange. |
+
+[^17]: Usually one public key string will be present, but in order to support key rotation without invalidating in-transit messages, the implementation should list both the old and the new key for a short period of time (e.g. 24 hours) after a key has been replaced
+
+[^18]:
+    USEF participants must enable DNSSEC and implementations must use a validating resolver, treating verification failures as temporary errors, eligible for retrying later.
+    Absent DNSSEC authentication, private key strings must not be relied on, and separate manual secure key exchange is required.
+
+[^19]:
+    As per IETF RFC 1034 [14], implementations must not fail when presented with CNAME chains or loops.
+    Chains should be followed (to an implementation-defined maximum depth) and any loops or errors treated as temporary.
 
 The message will remain in the service discovery stage until all required data is available, or a participant-configurable and possibly message-class specific timeout timer expires.
 A DNS reply must have the NOERROR status, as well as syntactically valid and DNSSEC-authenticated content, in order to be considered usable.
@@ -120,19 +141,30 @@ Unless network-level measures are taken to prevent this, a single endpoint also 
 
 ## Transmission
 
-Once a valid service endpoint is available, the message enters the transmission stage1.
+Once a valid service endpoint is available, the message enters the transmission stage[^20].
 The implementation will now, for a reasonable amount of time (which is again at least one hour for routine messages, employing exponential back off), attempt to deliver the message to the remote participant.
 
-Messages are sent using a HTTP POST operation with the text/xml1 content type, the UTF8 character set and content-length indication.
+[^20]: For messages containing non-public information, this stage transition may also include encryption of message sections using the public encryption key of the remote participant.
+
+Messages are sent using a HTTP POST operation with the text/xml[^21] content type, the UTF8 character set and content-length indication.
 The request URI depends on the USEF implementation level and host name listed in DNS by the recipient.
 For USEF 2019 and the host `example.com`, it will be https://example.com/USEF/2019/SignedMessage.
 
-Message content consists of a simple wrapper message, specified as SignedMessage in the USEF XML XSD, available for download from the public USEF web site2 at https://usef.info/schema/2019and documented in section 4.2
+[^21]:
+    The USEF specification uses XML, since this format is already widely used in the rather conservative energy market, and enjoys wide and mature tooling support (particularly in the area of schema authoring and validation).
+    Unlike other XML-based initiatives (such as WS-*), lightweight implementations are considered key, and alternate serialization formats (such as JSON) should be viable as well, despite being out of scope of this specification.
+    If any such alternate message formats are implemented, fallback to XML must be provided as needed, or such implementations will not be USEF-compliant.
+
+Message content consists of a simple wrapper message, specified as SignedMessage in the USEF XML XSD, available for download from the public USEF web site[^22] at https://usef.info/schema/2019and documented in section 4.2
 All usual protocol conventions should be followed during this stage.
 For example, when using HTTP version 1.1, redirects (responses with status code 3xx) should be honored in order to support load balancing.
 Any server errors (responses with status code 5xx), unknown response status codes,  and connection timeouts and resets should be considered temporary failures and delivery should be re-attempted later within the timeout period.
-Only client success or failure messages (responses with status code 200 or a non-ambiguous3 4xx status code, respectively) should be considered final.
+Only client success or failure messages (responses with status code 200 or a non-ambiguous[^23] 4xx status code, respectively) should be considered final.
 This is standard HTTP 1.1 behavior, as fully described in IETF RFC 2616 [7].
+
+[^22]: Please note that USEF makes no warranties whatsoever as to the uninterrupted availability of its web site, and that production services should not rely on the schema being hosted at this location for purposes such as validation: a local copy should be used instead.
+
+[^23]: The prime example of an ambiguous HTTP status code is 404 Not Found: since this is commonly returned by front-end servers in case of temporary back-end issues, USEF implementations are encouraged to consider this a temporary error.:
 
 ## Error handling
 
