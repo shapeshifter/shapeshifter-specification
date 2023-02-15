@@ -4,7 +4,7 @@ Upon receiving a TestMessage, the receiving implementation must reply with a Tes
 Like the TestMessage itself, the TestMessageResponse does not have any content (other than the mandatory metadata).
 
 ```
-< TestMessageResponse
+<TestMessageResponse
   Metadata...
 />
 ```

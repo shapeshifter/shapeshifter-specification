@@ -3,7 +3,7 @@
 DSOPortfolioQuery is used by DSOs to discover which AGRs represent connections on its registered congestion point(s).
 
 ```
-< DSOPortfolioQuery
+<DSOPortfolioQuery
   Metadata…
   EntityAddress = EntityAddress
   Period        = Date

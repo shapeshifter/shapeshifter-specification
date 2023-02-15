@@ -5,7 +5,7 @@ TestMessage does not have any content (other than the mandatory metadata) and ma
 XML representation summary
 
 ```
-< TestMessage
+<TestMessage
   Metadata...
 />
 ```
