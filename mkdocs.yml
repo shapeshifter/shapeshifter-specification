@@ -1,6 +1,7 @@
 site_name: Shapeshifter specification
 repo_url: https://github.com/shapeshifter/shapeshifter-specification
 site_url: http://localhost:8000/
+docs_dir: docs/
 theme:
   name: material
   features:
@@ -64,7 +65,7 @@ nav:
   - Message descriptions:
       - Scope: message-descriptions/scope.md
       - Message catalog:
-          - message-descriptions/message-catalog.md
+          - message-descriptions/message-catalog/index.md
           - Power: message-descriptions/message-catalog/power.md
           - Metadata attributes: message-descriptions/message-catalog/metadata-attributes.md
           - SignedMessage: message-descriptions/message-catalog/signed-message.md
