@@ -84,7 +84,7 @@ Flexibility is expressed in Power [Watts] which is to be interpreted as the aver
 ## Alternative baselines
 
 All flexibility trading in USEF assumes that flexibility offers take the form of deviation from baseline, i.e. the default situation that would occur if no flexibility were activated.
-Typically, the baseline is derived via an AGR nomination referred to as the D- prognosis.
+Typically, the baseline is derived via an AGR nomination referred to as the D-prognosis.
 However, UFTP allows for alternative baseline, where a D-prognosis is not required, and it is assumed that the AGR and DSO agree upon the baseline.
 An alternative baseline could be based on a measurement (MBMA-method), a mathematical formula or a reference group, etc.
 The choice of the alternative baseline and its establishment is out-of-scope for UFTP.
