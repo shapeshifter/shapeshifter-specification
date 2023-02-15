@@ -38,7 +38,11 @@ The green regime is the classical grid without any limitations (copper plate) an
 USEF introduces two additional regimes. In the green and yellow regimes, the MCM assures optimal use of the flexibility available for BRPs (green and yellow) and DSOs (yellow).
 The orange regime is introduced as a fallback for situations where there is insufficient flexibility available for the DSO to avoid an outage—the DSO can limit connections to temporarily overrule the market.
 
-![USEF Operating regimes](../assets/images/image6.png)
+<figure markdown>
+  ![USEF Operating regimes](../assets/images/image6.png)
+  <figcaption>USEF Operating regimes</figcaption>
+</figure>
+
 
 UFTP flexibility trading takes place solely in the yellow regime. Full descriptions of all other regimes can be found in [3].
 

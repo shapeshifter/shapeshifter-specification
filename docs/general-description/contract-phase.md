@@ -9,7 +9,10 @@ See [6] for more information.
 In addition, the contract phase includes the exchange of information related to congestion points and associated connections through the common reference.
 Note that any contract negotiations for bilateral contracts also takes place in the contract phase (see below).
 
-![General information flow in the Contract phase](../assets/images/image7.emf.odg.svg)
+<figure markdown>
+  ![General information flow in the Contract phase](../assets/images/image7.emf.odg.svg)
+  <figcaption>General information flow in the Contract phase</figcaption>
+</figure>
 
 As part of its internal grid planning process, a DSO determines where congestion may possibly take place.
 Congestion points are declared whenever necessary, most likely several times a year, depending on the volume of trend analyses performed by a DSO and the condition of the grid.
@@ -78,7 +81,10 @@ The common reference is shared between all involved parties, while respecting pr
 The common reference is operated by the Common Reference Operator (CRO) role.
 Conceptually, it contains the entities and relationships shown in Figure 2-3:
 
-![Logical structure of the Common Reference](../assets/images/image8.emf.odg.svg)
+<figure markdown>
+  ![Logical structure of the Common Reference](../assets/images/image8.emf.odg.svg)
+  <figcaption>Logical structure of the Common Reference</figcaption>
+</figure>
 
 The common reference is, typically, setup by the DSO and includes all of its congestion points.
 However, it could be extended to form a common reference at national or European grid level.
@@ -98,4 +104,4 @@ Implementing the common reference this way ensures that the DSO does not need to
 
 The common reference can be operated in two modes: open mode and closed mode.
 If operating in open mode, the CRO will accept updates from any USEF-compliant participants.
-    In closed mode, participants will need to be pre-configured in order for updates to be accepted.
+In closed mode, participants will need to be pre-configured in order for updates to be accepted.

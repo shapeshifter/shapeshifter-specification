@@ -29,7 +29,8 @@ plugins:
       #   type2: https://example.com/cover.svg
       enabled_if_env: ENABLE_PDF_EXPORT
 markdown_extensions:
-  - admonition
+  - admonition # for Recommended Practice blocks
+  - md_in_html # for figcaption at images
 
 nav:
   - USEF Flex Trading Protocol: usef-flex-trading-protocol.md

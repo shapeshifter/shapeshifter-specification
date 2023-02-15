@@ -2,7 +2,10 @@
 
 ## Overall description
 
-![General information flow in Validate phase.](../assets/images/image10.emf.odg.svg)
+<figure markdown>
+  ![General information flow in Validate phase.](../assets/images/image10.emf.odg.svg)
+  <figcaption>General information flow in Validate phase</figcaption>
+</figure>
 
 Assuming that D-prognoses are used as baseline4, each AGR creates a D-prognosis per declared congestion point and sends it to the DSO.
 Sending D-prognoses is not required when an alternative baseline method has been agreed.
@@ -22,13 +25,19 @@ Please note that in this situation, USEF specifies that the DSO procures all off
 This is because any flexibility offered will still help to reduce the impact of the orange regime (e.g. the number of connections impacted by the graceful degradation).
 USEF’s orange regime is outside the scope of UFTP, and, therefore, not further discussed in this document.
 
-![AGR may send multiple FlexOffers on the same request, and open FlexOffers, which are not yet ordered may be revoked by the AGR.](../assets/images/image11.emf.odg.svg)
+<figure markdown>
+  ![AGR may send multiple FlexOffers on the same request, and open FlexOffers, which are not yet ordered may be revoked by the AGR.](../assets/images/image11.emf.odg.svg)
+  <figcaption>AGR may send multiple FlexOffers on the same request, and open FlexOffers, which are not yet ordered may be revoked by the AGR.</figcaption>
+</figure>
 
 AGRs may respond with one or more FlexOffers.
 Where an AGR responds with multiple FlexOffers, the DSO can freely choose the most appropriate offer(s).
 Provided the flexibility has not been ordered via a FlexOrder, a FlexOffer may be revoked by the AGR (FlexOfferRevocation).
 
-![Flexibility trading may go on until gate closure time. This includes iterations between plan phase and validate phase. The last accepted D-prognosis before gate closure time serves as a basis for the next phase. Any open FlexOffers, which are not expired, may be ordered after gate closure.](../assets/images/image12.emf.odg.svg)
+<figure markdown>
+  ![Flexibility trading may go on until gate closure time. This includes iterations between plan phase and validate phase. The last accepted D-prognosis before gate closure time serves as a basis for the next phase. Any open FlexOffers, which are not expired, may be ordered after gate closure.](../assets/images/image12.emf.odg.svg)
+  <figcaption>Flexibility trading may go on until gate closure time. This includes iterations between plan phase and validate phase. The last accepted D-prognosis before gate closure time serves as a basis for the next phase. Any open FlexOffers, which are not expired, may be ordered after gate closure.</figcaption>
+</figure>
 
 ## Exchange of D-prognoses between AGR and DSO
 
@@ -102,7 +111,10 @@ See appendix 2 for more details about this information exchange including ration
 In the FlexRequest messages (see section 4.2.18), there is no single power value, rather a power space for each ISP, bound by two power values (“MinPower” and “MaxPower”).
 In addition, there is a distinction between ISPs with a ‘requested’ disposition – meaning that there is a request for a deviation on the power consumption/production – and ISPs with an ‘available’ disposition – meaning that there is available space to deviate on the power consumption/production.
 
-![Example forecast for a Congestion point, leading to an example FlexRequest, both displayed in graphs](../assets/images/image13.emf.odg.svg)
+<figure markdown>
+  ![Example forecast for a Congestion point, leading to an example FlexRequest, both displayed in graphs](../assets/images/image13.emf.odg.svg)
+  <figcaption>Example forecast for a Congestion point, leading to an example FlexRequest, both displayed in graphs</figcaption>
+</figure>
 
 In the example used in Figure 2-8, congestion is expected at ISP 2 at a certain congestion point.
 The FlexRequest is transmitted to all AGRs that have prosumers on the congestion point, requesting a decrease of consumption (or an increase of production) on ISP 2.
@@ -185,14 +197,20 @@ After the day-ahead closure time, the processes in the plan phase can only be re
 During the intraday period, the plan and validate phases can be iterated as often as needed, as long as the system converges before the gate closure time.
 After the intraday closure time, the processes in the plan phase cannot be restarted at all, as the MCM moves to the operate phase.
 
-![Example of USEF day-ahead gate closure time.](../assets/images/image14.emf.odg.svg)
+<figure markdown>
+  ![Example of USEF day-ahead gate closure time.](../assets/images/image14.emf.odg.svg)
+  <figcaption>Example of USEF day-ahead gate closure time.</figcaption>
+</figure>
 
 An example of the day-ahead gate closure is given in Figure 2-9 above.
 Please note that while there is a single day-ahead gate closure time per day, there will be multiple intra-day gate closures.
 This is illustrated in Figure 2-10.
 The ISP corresponding to the current time is in operate phase and ISP’s more than one hour ahead are still in plan or validate phase.
 
-![Example of USEF intra-day gate closure times.](../assets/images/image15.emf.odg.svg)
+<figure markdown>
+  ![Example of USEF intra-day gate closure times.](../assets/images/image15.emf.odg.svg)
+  <figcaption>Example of USEF intra-day gate closure times.</figcaption>
+</figure>
 
 !!! success "Recommended Practice:"
 

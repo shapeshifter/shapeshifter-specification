@@ -23,7 +23,10 @@ In closed mode, participants will need to be pre-configured in order for updates
 The common reference allows an AGR to determine whether there are any congestion points where prosumers in its portfolio
 can offer flexibility.
 
-![Retrieval of Congestion Points corresponding to AGR's connections](../../../assets/images/use-case-3-3-retrieval-of-congestion-points.svg)
+<figure markdown>
+  ![Retrieval of Congestion Points corresponding to AGR's connections](../../../assets/images/use-case-3-3-retrieval-of-congestion-points.svg)
+  <figcaption>Retrieval of Congestion Points corresponding to AGR's connections</figcaption>
+</figure>
 
 <table>
   <tr>
@@ -76,7 +79,10 @@ Registered connections that have not (yet) been allocated by a DSO are returned 
 If operating in open mode, the CRO will accept queries from any USEF-compliant participants implementing the AGR role.
 In closed mode, participants will need to be pre-configured in order for updates to be accepted.
 
-![Retrieval of registered Connections, grouped by Congestion Point, including corresponding AGR identity](../../../assets/images/use-case-3-4-retrieval-of-registered-connections.svg)
+<figure markdown>
+  ![Retrieval of registered Connections, grouped by Congestion Point, including corresponding AGR identity](../../../assets/images/use-case-3-4-retrieval-of-registered-connections.svg)
+  <figcaption>Retrieval of registered Connections, grouped by Congestion Point, including corresponding AGR identity</figcaption>
+</figure>
 
 <table>
   <tr>
@@ -126,7 +132,10 @@ DSOs may only obtain AGR identities and combined connection counts for those con
 
 Where bilateral contracts are used, the FlexReservationUpdate message can be used at this stage to set or release reserved flexibility.
 
-![Exchange of FlexReservationUpdate](../../../assets/images/use-case-3-5-exchange-of-flexreservationupdate.svg)
+<figure markdown>
+  ![Exchange of FlexReservationUpdate](../../../assets/images/use-case-3-5-exchange-of-flexreservationupdate.svg)
+  <figcaption>Exchange of FlexReservationUpdate</figcaption>
+</figure>
 
 <table>
   <tr>

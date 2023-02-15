@@ -32,7 +32,10 @@ The entire message exchange, from the client’s outgoing message queue to the s
 
 <!-- TODO: add footnotes -->
 
-![End-to-end USEF message exchange.](../assets/images/image23.emf.odg.svg)
+<figure markdown>
+  ![End-to-end USEF message exchange.](../assets/images/image23.emf.odg.svg)
+  <figcaption>End-to-end USEF message exchange.</figcaption>
+</figure>
 
 Messages go through the following stages between retrieval from the client’s outgoing message queue and delivery to the server’s inbound message queue:
 
@@ -94,7 +97,10 @@ For test situations or small-scale deployments where service discovery via DNS i
 Since activities on the energy market are most likely regulated by  national oversight bodies, and such organizations are natural candidates for running the authoritative DNS zone for accredited market participants, implementations are encouraged to support a list of DNS suffixes that correspond to the zones maintained by such regulators, and to automatically query these zones.
 For example, if an energy.authority.test is on the DNS suffix list, this zone is queried for _usef.example.com.energy.authority.test in order to determine if example.com is an authorized market participant.
 
-![Example of the DNS relationships between a single USEF endpoint and multiple zones](../assets/images/image24.emf.odg.svg)
+<figure markdown>
+  ![Example of the DNS relationships between a single USEF endpoint and multiple zones](../assets/images/image24.emf.odg.svg)
+  <figcaption>Example of the DNS relationships between a single USEF endpoint and multiple zones</figcaption>
+</figure>
 
 An example of an anticipated DNS setup is shown in Figure 4-5: Here, an incumbent DSO (using the Internet domain `DSO.example`) operates a USEF endpoint, named `SSL.DSO.example`.
 The DNS entries for the USEF DSO and CRO role processes that underpin the DSO’s core business both refer to this endpoint, ultimately leading to an IP/port combination usable for submitting USEF messages to.
