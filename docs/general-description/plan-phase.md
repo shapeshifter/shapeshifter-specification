@@ -8,7 +8,10 @@ The result, however, will lead to a D-prognosis in the validate phase.
 
 The processes that take place during the plan phase are schematically depicted in figure 2-4.
 
-![General information flow in the Plan phase](../assets/images/image9.emf.odg.svg)
+<figure markdown>
+  ![General information flow in the Plan phase](../assets/images/image9.emf.odg.svg)
+  <figcaption>General information flow in the Plan phase</figcaption>
+</figure>
 
 Since the list of connections belonging to a congestion point, and the list of customers that are served by the AGR, may switch from day to day, USEF specifies that this information is requested on a day-to-day basis.
 

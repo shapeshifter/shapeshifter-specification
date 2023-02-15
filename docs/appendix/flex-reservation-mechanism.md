@@ -7,7 +7,10 @@ If not, the flexibility can be used for other purposes.
 The DSO can send a FlexReservationUpdate message to signal the actual needs to the AGR.
 This appendix describes the purpose of this FlexReservationUpdate message and its impact on the contractual obligations and the actual FlexRequest that may follow in the validate phase.
 
-![Example flex reservation and FlexReservationUpdate, displayed in graphs](../assets/images/appendix-flex-reservation-mechanism-flex-reservation-flex-reservation-update.svg)
+<figure markdown>
+  ![Example flex reservation and FlexReservationUpdate, displayed in graphs](../assets/images/appendix-flex-reservation-mechanism-flex-reservation-flex-reservation-update.svg)
+  <figcaption>Example flex reservation and FlexReservationUpdate, displayed in graphs</figcaption>
+</figure>
 
 Figure 4-2 illustrates how ISPs 11 to 16 are part of a contract, where the AGR is required to reserve flexibility at ISPs 12 to 15 (downwards power only – for more information on direction and amount of power, see Section 4.2.1).
 The DSO was obliged to send a FlexReservationUpdate before each deadline, confirming the reserved power or partially releasing it.
@@ -17,7 +20,10 @@ After the FlexReservationUpdate, the AGR is obliged to keep the amount of flexib
 After a FlexRequest is published, the AGR is obliged to produce a FlexOffer that meets the contract within the boundaries of the FlexRequest, where only the lowest reserved and requested power is valid for the contract.
 This is illustrated in Figure 4-3:
 
-![Example FlexRequest and requirements of FlexOffer, displayed in graphs](../assets/images/appendix-flex-reservation-mechanism-flex-request-flexoffer.svg)
+<figure markdown>
+  ![Example FlexRequest and requirements of FlexOffer, displayed in graphs](../assets/images/appendix-flex-reservation-mechanism-flex-request-flexoffer.svg)
+  <figcaption>Example FlexRequest and requirements of FlexOffer, displayed in graphs</figcaption>
+</figure>
 
 For further information on the FlexRequest, see Section 2.4.4.
 Both the FlexReservationUpdate and the FlexRequest can only reduce the amount of power that the AGR is obliged to offer, as opposed to increase it.

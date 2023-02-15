@@ -21,7 +21,10 @@ In closed mode, participants will need to be pre-configured in order for updates
 
 Once populated, the common reference will allow AGRs to determine whether there are prosumers in their portfolio that can offer flexibility, via their connections, to one or more congestion points.
 
-![Exchange of congestion points including connections by DSO](../../../assets/images/use-case-3-1-exchange-of-congestions-points.odg.svg)
+<figure markdown>
+  ![Exchange of congestion points including connections by DSO](../../../assets/images/use-case-3-1-exchange-of-congestions-points.odg.svg)
+  <figcaption>Exchange of congestion points including connections by DSO</figcaption>
+</figure>
 
 <table>
   <tr>
@@ -83,7 +86,10 @@ It is not necessary to add connections to this message since they will also expi
 Once a flexibility market is functional for an area, the AGR has to publish a list of the connection identifiers of the prosumers it has contracted.
 This list is stored and, subject to access controls, made available to other market participants by the CRO.
 
-![Exchange of connections by AGR](../../../assets/images/use-case-3-2-exchange-of-connections-by-agr.svg)
+<figure markdown>
+  ![Exchange of connections by AGR](../../../assets/images/use-case-3-2-exchange-of-connections-by-agr.svg)
+  <figcaption>Exchange of connections by AGR</figcaption>
+</figure>
 
 <table>
   <tr>

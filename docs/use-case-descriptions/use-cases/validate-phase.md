@@ -18,8 +18,10 @@ The use cases are explained in the following sections.
 
 ## Exchange D-Prognoses per Congestion Point
 
-![Exchange of D-prognoses](../../../assets/images/use-case-3-6-exchange-of-d-prognoses.svg)
-
+<figure markdown>
+  ![Exchange of D-prognoses](../../../assets/images/use-case-3-6-exchange-of-d-prognoses.svg)
+  <figcaption>Exchange of D-prognoses</figcaption>
+</figure>
 
 <table>
   <tr>
@@ -73,8 +75,10 @@ It is essential to use a sequence number that is incremented each time a new rev
 
 ## Exchange Flexibility Requests
 
-![Exchange of FlexRequests](../../../assets/images/use-case-3-7-exchange-of-flexrequests.svg)
-
+<figure markdown>
+  ![Exchange of FlexRequests](../../../assets/images/use-case-3-7-exchange-of-flexrequests.svg)
+  <figcaption>Exchange of FlexRequests</figcaption>
+</figure>
 
 <table>
   <tr>
@@ -129,7 +133,10 @@ Which variations (more/less requested power per ISP, time-shift of load) are cre
 
 ## Exchange Flexibility Offers
 
-![Exchange of FlexOffers](../../../assets/images/use-case-3-8-exchange-of-flexoffers.svg)
+<figure markdown>
+  ![Exchange of FlexOffers](../../../assets/images/use-case-3-8-exchange-of-flexoffers.svg)
+  <figcaption>Exchange of FlexOffers</figcaption>
+</figure>
 
 <table>
   <tr>
@@ -190,7 +197,10 @@ Note that acceptance of the FlexOffer message does not imply ordering of the fle
 
 ## Revocation Flexibility Offer
 
-![Revocation of FlexOffer](../../../assets/images/use-case-3-9-revocation-of-flexoffer.svg)
+<figure markdown>
+  ![Revocation of FlexOffer](../../../assets/images/use-case-3-9-revocation-of-flexoffer.svg)
+  <figcaption>Revocation of FlexOffer</figcaption>
+</figure>
 
 <table>
   <tr>
@@ -241,7 +251,10 @@ Where this is the case, priority should be given to the FlexOfferRevocation.
 
 ## Exchange Flexibility Orders
 
-![Exchange of FlexOrder](../../../assets/images/use-case-3-10-exchange-of-flexoffer.svg)
+<figure markdown>
+  ![Exchange of FlexOrder](../../../assets/images/use-case-3-10-exchange-of-flexoffer.svg)
+  <figcaption>Exchange of FlexOrder</figcaption>
+</figure>
 
 <table>
   <tr>
