@@ -91,8 +91,8 @@ nav:
           - FlexSettlement: message-descriptions/message-catalog/flex-settlement.md
           - FlexSettlementResponse: message-descriptions/message-catalog/flex-settlement-response.md
   - Appendix:
-      - Glossary: missing.md
-      - Rationale for information exchange in flexiblity request: missing.md
-      - Flex reservation mechanism: missing.md
-      - Message transport mechanism: missing.md
-      - Bibliography: missing.md
+      - Glossary: appendix/glossary.md
+      - Rationale for information exchange in flexiblity request: appendix/rationale-for-information-exchange-in-flexibility-request.md
+      - Flex reservation mechanism: appendix/flex-reservation-mechanism.md
+      - Message transport mechanism: appendix/message-transport-mechanism.md
+      - Bibliography: appendix/bibliography.md
