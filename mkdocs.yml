@@ -37,7 +37,7 @@ markdown_extensions:
   - footnotes
 
 nav:
-  - USEF Flex Trading Protocol: usef-flex-trading-protocol.md
+  - USEF Flex Trading Protocol: index.md
   - About UFTP:
       - Purpose: about/purpose.md
       - Scope: about/scope.md
