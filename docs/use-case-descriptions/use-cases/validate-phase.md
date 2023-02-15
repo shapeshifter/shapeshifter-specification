@@ -19,7 +19,7 @@ The use cases are explained in the following sections.
 ## Exchange D-Prognoses per Congestion Point
 
 <figure markdown>
-  ![Exchange of D-prognoses](../../../assets/images/use-case-3-6-exchange-of-d-prognoses.svg)
+  ![Exchange of D-prognoses](../../assets/images/use-case-3-6-exchange-of-d-prognoses.svg)
   <figcaption>Exchange of D-prognoses</figcaption>
 </figure>
 
@@ -76,7 +76,7 @@ It is essential to use a sequence number that is incremented each time a new rev
 ## Exchange Flexibility Requests
 
 <figure markdown>
-  ![Exchange of FlexRequests](../../../assets/images/use-case-3-7-exchange-of-flexrequests.svg)
+  ![Exchange of FlexRequests](../../assets/images/use-case-3-7-exchange-of-flexrequests.svg)
   <figcaption>Exchange of FlexRequests</figcaption>
 </figure>
 
@@ -134,7 +134,7 @@ Which variations (more/less requested power per ISP, time-shift of load) are cre
 ## Exchange Flexibility Offers
 
 <figure markdown>
-  ![Exchange of FlexOffers](../../../assets/images/use-case-3-8-exchange-of-flexoffers.svg)
+  ![Exchange of FlexOffers](../../assets/images/use-case-3-8-exchange-of-flexoffers.svg)
   <figcaption>Exchange of FlexOffers</figcaption>
 </figure>
 
@@ -198,7 +198,7 @@ Note that acceptance of the FlexOffer message does not imply ordering of the fle
 ## Revocation Flexibility Offer
 
 <figure markdown>
-  ![Revocation of FlexOffer](../../../assets/images/use-case-3-9-revocation-of-flexoffer.svg)
+  ![Revocation of FlexOffer](../../assets/images/use-case-3-9-revocation-of-flexoffer.svg)
   <figcaption>Revocation of FlexOffer</figcaption>
 </figure>
 
@@ -252,7 +252,7 @@ Where this is the case, priority should be given to the FlexOfferRevocation.
 ## Exchange Flexibility Orders
 
 <figure markdown>
-  ![Exchange of FlexOrder](../../../assets/images/use-case-3-10-exchange-of-flexoffer.svg)
+  ![Exchange of FlexOrder](../../assets/images/use-case-3-10-exchange-of-flexoffer.svg)
   <figcaption>Exchange of FlexOrder</figcaption>
 </figure>
 
