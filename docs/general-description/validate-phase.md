@@ -112,7 +112,7 @@ In the FlexRequest messages (see section 4.2.18), there is no single power value
 In addition, there is a distinction between ISPs with a ‘requested’ disposition – meaning that there is a request for a deviation on the power consumption/production – and ISPs with an ‘available’ disposition – meaning that there is available space to deviate on the power consumption/production.
 
 <figure markdown>
-  ![Example forecast for a Congestion point, leading to an example FlexRequest, both displayed in graphs](../assets/images/image13.emf.odg.svg)
+  ![Example forecast for a Congestion point, leading to an example FlexRequest, both displayed in graphs](../assets/images/image13.svg)
   <figcaption>Example forecast for a Congestion point, leading to an example FlexRequest, both displayed in graphs</figcaption>
 </figure>
 
