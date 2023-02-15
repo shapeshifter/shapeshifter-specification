@@ -218,3 +218,27 @@ The ISP corresponding to the current time is in operate phase and ISP’s more t
 
     - A day-ahead gate closure time of 2 hours before the gate closure of the national balancing market
     - An intraday gate closure time of one hour before the start of the ISP
+
+## Balance responsibility and redispatch options
+
+The procurement of flexibility by the DSO may impact the AGRs balance position (nomination)[^11].
+Therefore, USEF’s validate phase is iterative with the plan phase, i.e. the AGR can make adjustments to its nomination via energy exchange with its associated BRP and/or energy trades on the energy markets.
+When the gate closure time is reached, all issues need to be resolved or there will be in an imbalance in the AGRs portfolio (which is the AGRs responsibility).
+
+[^11]: his is not the case when the AGR can manage the deviation itself, e.g. one prosumer uses more energy, another prosumer uses less energy, and these two level each other out.
+
+As an alternative, the procurement of flexibility is organized as an energy trade between AGR and DSO.
+In this situation, the AGR portfolio stays balanced and there is no need to iterate to the plan phase.
+Nevertheless, the AGR is free to re-optimize its portfolio at any time, for any reason, which could induce iterations.
+The DSO faces imbalance as a result of the trade and is responsible for this.
+The DSO’s imbalance can be restored via a counter trade outside the congested area (redispatch).
+
+USEF supports both ways of balance responsibility.
+The DSO determines the method of trading for a given congestion point and signals this via the CRO. See section 4.2.10 (DSOPortfolioUpdate)
+
+!!! success "Recommended practices for balance responsibility:"
+    - USEF recommends that the AGR retains balance responsibility for day-ahead flexibility trading.
+    Any imbalance risk as a result of DSO trades can be mitigated via day-ahead energy trades.
+    - USEF recommends shifting the balance responsibility to the DSO for intraday flexibility trading.
+    This is equivalent to an energy trade from AGR to DSO.
+    In order to neutralize its position, the DSO should then trigger a counter-trade (redispatch).
