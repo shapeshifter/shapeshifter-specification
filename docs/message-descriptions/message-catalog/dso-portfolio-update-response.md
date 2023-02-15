@@ -3,7 +3,7 @@
 Upon receiving and processing a DSOPortfolioUpdate message, the receiving implementation must reply with a DSOPortfolioUpdateResponse, indicating whether the update was handled successfully.
 
 ```
-< DSOPortfolioUpdateResponse
+<DSOPortfolioUpdateResponse
   Metadata…
   DSOPortfolioUpdateMessageID = UUID
   Result                      = ("Accepted" | "Rejected")

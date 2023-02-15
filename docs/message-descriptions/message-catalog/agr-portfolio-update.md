@@ -3,7 +3,6 @@
 The AGRPortfolioUpdate is used by the AGR to indicate on which Connections it represents prosumers.
 
 ```
-<
 <AGRPortfolioUpdate
   Metadata…
   <Connection       (0...n)
