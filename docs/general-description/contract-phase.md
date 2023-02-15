@@ -94,7 +94,7 @@ The history of all changes to the common reference is retained and can be retrie
 
 ### Accessibility of the data in the common reference
 
-Access to the common reference data is limited according to the legal or contractual requirements of the various parties consulting it3.
+Access to the common reference data is limited according to the legal or contractual requirements of the various parties consulting it[^3].
 This implies that a DSO can only see the data for the connections it is responsible for.
 Consequently, it can see which AGRs are serving its connections, in order to ensure that it receives D-prognoses from them.
 
@@ -105,3 +105,7 @@ Implementing the common reference this way ensures that the DSO does not need to
 The common reference can be operated in two modes: open mode and closed mode.
 If operating in open mode, the CRO will accept updates from any USEF-compliant participants.
 In closed mode, participants will need to be pre-configured in order for updates to be accepted.
+
+[^3]:
+    Another option is to treat the common reference as open data, therefore implying that everyone can access it.
+    Although the open data model can ease the implementation of the common reference, the acceptance of such a model by prosumers is highly dependent on the culture in the geographical area in which the model is used.

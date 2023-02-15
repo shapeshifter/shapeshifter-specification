@@ -7,12 +7,16 @@
   <figcaption>General information flow in Validate phase</figcaption>
 </figure>
 
-Assuming that D-prognoses are used as baseline4, each AGR creates a D-prognosis per declared congestion point and sends it to the DSO.
+Assuming that D-prognoses are used as baseline[^4], each AGR creates a D-prognosis per declared congestion point and sends it to the DSO.
 Sending D-prognoses is not required when an alternative baseline method has been agreed.
 When all D-prognoses for a congestion point are received, the DSO combines these with the forecasts of non-AGR connections to execute a final grid safety analysis.
 This analysis determines whether it is possible to distribute the planned energy, or the limits of the distribution grid are reached.
 In the latter situation, USEF moves to the yellow regime and the DSO procures flexibility in the market to resolve these congestion issues.
 The process of flexibility trading is as follows:
+
+[^4]:
+    UFTP allows for alternative baselines, see section 2.1.
+    In case of alternative baselines, D-prognosis is optional.
 
 1. The DSO requests all AGRs at the congestion point to provide flexibility.
 In this request, the DSO indicates the magnitude (amount of excess power) and timing (ISP) of the expected congestion, and how much capacity is available in the remaining ISPs. This is handled via a _FlexRequest_.
@@ -44,7 +48,7 @@ Provided the flexibility has not been ordered via a FlexOrder, a FlexOffer may b
 When using D-prognoses as the baseline methodology, an AGR sends its D-prognosis per congestion point to the DSO.
 The DSO assesses the validity of each received D-prognosis and informs the AGR whether or not it is accepted.
 As long as the gate closure time has not passed, the AGR can update its D-prognoses and resend it to the DSO.
-During these iterations, an accepted D-prognosis5 is assumed actual, provided no associated updates are received and accepted by the DSO.
+During these iterations, an accepted D-prognosis[^5] is assumed actual, provided no associated updates are received and accepted by the DSO.
 
 For the exchange of D-Prognoses, USEF specifies the following:
 
@@ -58,8 +62,11 @@ In the intraday process, all remaining ISPs for that calendar day must be includ
 
 !!! success "USEF provides the following recommended practices for the exchange of D-Prognoses:"
 
-    - The D-Prognosis is sent day-ahead to the DSO; at the latest, two hours before the gate closure of the national balancing regime (day-ahead gate closure) 6
+    - The D-Prognosis is sent day-ahead to the DSO; at the latest, two hours before the gate closure of the national balancing regime (day-ahead gate closure)[^6]
     - The DSO can perform a monthly evaluation of the accuracy and reliability of D-prognoses in order to motivate AGRs to improve the D-prognoses they supply
+
+[^5]: The accepted D-prognosis is the D-prognosis that used as a basis for the next period (Intraday) or phase (operate).
+[^6]: For the difference between day-ahead and intraday, please refer to Section 2.4.5
 
 ## Processing D-prognoses
 
@@ -67,9 +74,14 @@ When all D-prognoses relating to a particular congestion point are received, the
 When accumulating the D-prognoses, the DSO must estimate and add the distribution requirements required for those connections which are not served by an AGR, and, therefore, not included in the D-prognoses.
 Using the accumulated D-prognosis, the DSO can determine whether it is possible to distribute the planned energy, or whether the limits of the distribution grid will be reached.
 
-The timing of the FlexRequest is determined by the DSO, who must make a trade-off between waiting for all AGRs to send their D-prognoses7 before identifying grid constraints or issuing a FlexRequest based on its own grid forecasting process.
+The timing of the FlexRequest is determined by the DSO, who must make a trade-off between waiting for all AGRs to send their D-prognoses[^7] before identifying grid constraints or issuing a FlexRequest based on its own grid forecasting process.
 It is the DSO’s responsibility to combine the two sources of information.
 Where alternative baseline methods are used, the DSO will issue a FlexRequest based solely on its own information.
+
+[^7]:
+    USEF 2015 specified that the DSO should wait for all D-prognoses to be submitted.
+    This would allow for a more precise determination of possible congestion and also ensure a fair process of offering and procuring flexibility.
+    However, this constraint hinders the process in situations where there are missing or late D-prognoses.
 
 The grid safety analysis can lead to either of the following conclusions:
 
@@ -88,7 +100,7 @@ In order to solve the expected congestion, the following steps are taken:
 
 1. The DSO requests all AGRs at the congestion point to provide flexibility.
 In its request, the DSO indicates the magnitude (amount of excess power) and timing (ISP) of the expected congestion and (optionally) how much capacity is available in the remaining ISPs
-2. The AGRs receive the flexibility request for adjusting8 distribution requirements
+2. The AGRs receive the flexibility request for adjusting[^8] distribution requirements
 3. AGRs generate offers for the flexibility. Note that these offers could either be the result of a voluntary offering process or compulsory, where there are prearranged bilateral contracts between DSO and AGR (FlexOptions)
 4. The DSO receives the flexibility offers
 5. The DSO procures flexibility to resolve the congestion issues by placing flexibility orders.
@@ -97,6 +109,8 @@ If this is not the case, the system moves to the orange regime (see [4] for more
 7. The AGRs receive the flexibility orders which result in the actual procurement of flexibility by the DSO.
 8. AGRs provide an (updated) D-prognosis, incorporating the ordered flexibility.
 This step only applies when D-prognoses are used as baseline methodology.
+
+[^8]: Either by decreasing energy use, increasing local generation, or time-shifting load.
 
 When trading via a market platform AGRs typically offer their flexibility without an underlying request (unsolicited flex offers) and the DSO selects appropriate offers.
 Steps 1 and 2 are not applicable in this situation.
@@ -136,10 +150,12 @@ Revocation is not possible after the offer has been ordered.
 - A flexibility order is definite and binding once it has been placed.
 - The DSO chooses which flexibility offers it accepts to solve the congestion.
 In this regard, it is not obligatory for the DSO to start with the offer that has the lowest price.
-The DSO has the freedom to assess the balance between the price and quality9 of the flexibility offered in both long-term contracts and short-term offers.
+The DSO has the freedom to assess the balance between the price and quality[^9] of the flexibility offered in both long-term contracts and short-term offers.
 - Bidding takes place at congestion point level, making every congestion point a local flexibility market.
 - The DSO sends a flexibility request when the result of the grid safety analysis indicates possible congestion.
 - A flexibility order is linked to a flexibility offer and a baseline for settlement purposes.
+
+[^9]: For example, it is desirable for the DSO to procure flexibility that moves energy use from a moment in time of high load to a moment in time of very low load, rather than procuring flexibility that moves energy use from a moment in of high load to a moment in time at which the maximum of the distribution capacity is almost reached.
 
 UFTP has two optional structures in the trading messages:
 
@@ -193,9 +209,11 @@ In alignment with the current practices in liberalized energy markets, the two g
 During the day-ahead period, the plan and validate phases can be iterated as often as needed, as long as the system converges before the gate closure time.
 After the day-ahead closure time, the processes in the plan phase can only be restarted during the intraday period.
 
-2. Intraday closure time10: the moment at which the intraday market closes.
+2. Intraday closure time[^10]: the moment at which the intraday market closes.
 During the intraday period, the plan and validate phases can be iterated as often as needed, as long as the system converges before the gate closure time.
 After the intraday closure time, the processes in the plan phase cannot be restarted at all, as the MCM moves to the operate phase.
+
+[^10]: Note that intraday flexibility trading is optional in UFTP so intraday gate closure applies only when intraday trading is enabled by the DSO
 
 <figure markdown>
   ![Example of USEF day-ahead gate closure time.](../assets/images/image14.emf.odg.svg)
