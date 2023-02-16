@@ -10,6 +10,6 @@ XML representation summary
 />
 ```
 
-|          |                                                                |
-|----------|----------------------------------------------------------------|
-| Metadata | The metadata for this message. For details, see section 4.2.2. |
+|          |                                                                                                |
+|----------|------------------------------------------------------------------------------------------------|
+| Metadata | The metadata for this message. For details, see [metadata attributes](metadata-attributes.md). |

@@ -9,7 +9,7 @@ The AGRPortfolioQuery is used by the AGR to retrieve additional information on t
 />
 ```
 
-|          |                                                                  |
-|----------|------------------------------------------------------------------|
-| Metadata | The metadata for this message. For details, see section 4.2.2.   |
-| Period   | The Period for which the AGR requests the portfolio information. |
+|          |                                                                                                        |
+|----------|--------------------------------------------------------------------------------------------------------|
+| Metadata | The metadata for this message. For details, see section [metadata attributes](metadata-attributes.md). |
+| Period   | The Period for which the AGR requests the portfolio information.                                       |

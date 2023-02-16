@@ -30,22 +30,22 @@ Upon receiving and processing an AGRPortfolioQuery message, the receiving implem
 />
 ```
 
-|                                        |                                                                                                                                                              |
-|----------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Metadata                               | The metadata for this message. For details, see section 4.2.2.                                                                                               |
-| AGRPortfolioQueryMessageID             | MessageID of the AGRPortfolioQuery message                                                                                                                   |
-| Result                                 | Indication whether the AGRPortfolioQuery was accepted or rejected.                                                                                           |
-| RejectionReason                        | In case the AGRPortfolioQuery was rejected, this attribute must contain a human-readable description of the reason.                                          |
-| Period                                 | The Period that the portfolio is valid.                                                                                                                      |
-| DSO-View                               |                                                                                                                                                              |
-| ⇥ DSO-Portfolio                        | Portfolio of a single DSO that shares connections with the AGR                                                                                               |
-| ⇥ ⇥ DSO-Domain                         | The InternetDomain of the DSO the portfolio applied to.                                                                                                      |
-| ⇥ ⇥ CongestionPoint                    | A CongestionPoint that contains at least one Connection of a prosumer that is represented by the AGR.                                                        |
-| ⇥ ⇥ ⇥ EntityAddress                      | Entity Address of the CongestionPoint entity being updated.                                                                                                  |
-| ⇥ ⇥ ⇥ MutexOffersSupported               | Indicates whether the DSO accepts mutual exclusive FlexOffers on this CongestionPoint                                                                        |
-| ⇥ ⇥ ⇥ DayAheadRedispatchBy               | Indicates which party is responsible for day-ahead redispatch, AGR or DSO.                                                                                   |
-| ⇥ ⇥ ⇥ IntradayRedispatchBy               | Indicates which party is responsible for intraday ahead redispatch, AGR or DSO. If not specified, there will be no intraday trading on this CongestionPoint. |
-| ⇥ ⇥ ⇥ Connection                         |                                                                                                                                                              |
-| ⇥ ⇥ ⇥ ⇥ EntityAddress                    | Entity Address of a Connection that is part of this CongestionPoint.                                                                                         |
-| ⇥ ⇥ Connection | Connection not belonging to any DSO CongestionPoint                                                                                                          |
-| ⇥ ⇥ ⇥ EntityAddress            | Entity Address of the Connection                                                                                                                             |
+|                            |                                                                                                                                                              |
+|----------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Metadata                   | The metadata for this message. For details, see section [metadata attributes](metadata-attributes.md).                                                       |
+| AGRPortfolioQueryMessageID | MessageID of the AGRPortfolioQuery message                                                                                                                   |
+| Result                     | Indication whether the AGRPortfolioQuery was accepted or rejected.                                                                                           |
+| RejectionReason            | In case the AGRPortfolioQuery was rejected, this attribute must contain a human-readable description of the reason.                                          |
+| Period                     | The Period that the portfolio is valid.                                                                                                                      |
+| DSO-View                   |                                                                                                                                                              |
+| ⇥ DSO-Portfolio            | Portfolio of a single DSO that shares connections with the AGR                                                                                               |
+| ⇥ ⇥ DSO-Domain             | The InternetDomain of the DSO the portfolio applied to.                                                                                                      |
+| ⇥ ⇥ CongestionPoint        | A CongestionPoint that contains at least one Connection of a prosumer that is represented by the AGR.                                                        |
+| ⇥ ⇥ ⇥ EntityAddress        | Entity Address of the CongestionPoint entity being updated.                                                                                                  |
+| ⇥ ⇥ ⇥ MutexOffersSupported | Indicates whether the DSO accepts mutual exclusive FlexOffers on this CongestionPoint                                                                        |
+| ⇥ ⇥ ⇥ DayAheadRedispatchBy | Indicates which party is responsible for day-ahead redispatch, AGR or DSO.                                                                                   |
+| ⇥ ⇥ ⇥ IntradayRedispatchBy | Indicates which party is responsible for intraday ahead redispatch, AGR or DSO. If not specified, there will be no intraday trading on this CongestionPoint. |
+| ⇥ ⇥ ⇥ Connection           |                                                                                                                                                              |
+| ⇥ ⇥ ⇥ ⇥ EntityAddress      | Entity Address of a Connection that is part of this CongestionPoint.                                                                                         |
+| ⇥ ⇥ Connection             | Connection not belonging to any DSO CongestionPoint                                                                                                          |
+| ⇥ ⇥ ⇥ EntityAddress        | Entity Address of the Connection                                                                                                                             |

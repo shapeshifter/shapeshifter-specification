@@ -24,7 +24,7 @@ In addition to one or more ISP elements with Disposition=Requested, indicating t
 
 |                    |                                                                                                                                                                                                                                     |
 |--------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Metadata           | The metadata for this message. For details, see section 4.2.2.                                                                                                                                                                      |
+| Metadata           | The metadata for this message. For details, see [metadata attributes](metadata-attributes.md).                                                                                                                                      |
 | Period             | The Period this FlexRequest message applies to.                                                                                                                                                                                     |
 | ContractID         | Reference to the concerning contract, if applicable. The contract may be either bilateral or commoditized market contract.                                                                                                          |
 | ServiceType        | Service type for this request, the service type determines response characteristics such as latency or asset participation type. Each contract may specify multiple service-types.                                                  |
@@ -37,3 +37,5 @@ In addition to one or more ISP elements with Disposition=Requested, indicating t
 | ⇥ MaxPower         | Upper bound for available/requested space to deviate from the baseline (in Watts).</br>For further explanation, see section 2.4.4. Also see the important notes about the sign of this attribute in the ISP element, section 4.2.1. |
 | ⇥ Start            | Number of the first ISP this element refers to. The first ISP of a day has number 1.                                                                                                                                                |
 | ⇥ Duration         | The number of the ISPs this element represents. Optional, default value is 1.                                                                                                                                                       |
+
+<!-- TODO: replace other section links -->

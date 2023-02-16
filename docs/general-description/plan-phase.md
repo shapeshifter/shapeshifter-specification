@@ -20,6 +20,6 @@ See [^3] for a detailed description of this process.
 For UFTP, it is important to realize that the AGR optimizes its portfolio based on its clients’ needs, optionally taking into account its long-term contractual obligations.
 
 For bilateral contracts, the DSO might provide a FlexReservationUpdate message e.g. signaling which part of the contracted volume is still reserved and which part is not needed and may be used for other purposes.
-This will typically re-trigger the AGRs portfolio optimization process. More information about the flex reservation mechanism is added in Appendix 3.
+This will typically re-trigger the AGRs portfolio optimization process. More information about the flex reservation mechanism is added in [Rationale for information exchange in flexibility request](../appendix/rationale-for-information-exchange-in-flexibility-request.md).
 
 [^3]: USEF, "USEF - The FrameWork Specifications 2015," 2015. [Online].

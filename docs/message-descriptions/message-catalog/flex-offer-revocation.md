@@ -13,5 +13,5 @@ Revocation is not allowed for FlexOffers that already have associated accepted F
 
 |                    |                                                                                                              |
 |--------------------|--------------------------------------------------------------------------------------------------------------|
-| Metadata           | The metadata for this message. For details,  see section 4.2.2.                                              |
+| Metadata           | The metadata for this message. For details, see [metadata attributes](metadata-attributes.md).               |
 | FlexOfferMessageID | MessageID of the FlexOffer message that is being revoked: this FlexOffer must have been accepted previously. |

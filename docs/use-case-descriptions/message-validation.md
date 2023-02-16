@@ -1,7 +1,7 @@
 # Message validation
 
 Incoming messages need to be validated by the recipient for their correctness.
-Validation of the semantics is performed by the HTTP over TLS (explained in Appendix 4 Message transport mechanism), but the content still needs to be checked for possible discrepancies.
+Validation of the semantics is performed by the HTTP over TLS (explained in [Message transport mechanism](../appendix/message-transport-mechanism.md)), but the content still needs to be checked for possible discrepancies.
 If the message passes validation, a response message is sent with ‘accepted’ in the result field.
 If it fails validation, a response message is sent with ‘rejected’ in the result field, along with a description of the reason why the message is rejected in the RejectionReason field.
 Some causes to reject a message are specific for the type of message and are mentioned in the remainder of this chapter.

@@ -658,7 +658,7 @@
         </xs:attribute>
         <xs:attribute name="AvailablePower" type="xs:integer" use="optional">
             <xs:annotation>
-                <xs:documentation>Amount of flex power that is considered available based on the FlexRequest in question. In case RequestedPower=0, AvailablePower is defined so that the offered power is allowed to be between 0 and AvailablePower in terms of compliancy (see Appendix 3 for details). In case RequestedPower ≠0, AvailablePower is defined so that the offered power is allowed to exceed the amount of requested power up to AvailablePower. If this is relevant for settlement, the DSO can include this field.</xs:documentation>
+                <xs:documentation>Amount of flex power that is considered available based on the FlexRequest in question. In case RequestedPower=0, AvailablePower is defined so that the offered power is allowed to be between 0 and AvailablePower in terms of compliancy (see Appendix 'Rationale for information exchange in flexibility request' for details). In case RequestedPower ≠0, AvailablePower is defined so that the offered power is allowed to exceed the amount of requested power up to AvailablePower. If this is relevant for settlement, the DSO can include this field.</xs:documentation>
             </xs:annotation>
         </xs:attribute>
         <xs:attribute name="OfferedPower" type="xs:integer" use="optional">

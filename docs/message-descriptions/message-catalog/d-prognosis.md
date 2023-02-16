@@ -20,7 +20,7 @@ Receiving implementations should ignore the information supplied for those ISPs.
 
 |                 |                                                                                                                                                                                               |
 |-----------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Metadata        | The metadata for this message. For details, see section 4.2.2.                                                                                                                                |
+| Metadata        | The metadata for this message. For details, see [metadata attributes](metadata-attributes.md).                                                                                                |
 | Period          | The Period this D-Prognosis applies to.                                                                                                                                                       |
 | CongestionPoint | Entity Address of the Congestion Point this prognosis applies to. Required for D-prognoses, prohibited for other prognosis types.                                                             |
 | Revision        | Revision of this message. A sequence number that must be incremented each time a new revision of a prognosis is sent. The combination of SenderDomain and PrognosisSequence should be unique. |

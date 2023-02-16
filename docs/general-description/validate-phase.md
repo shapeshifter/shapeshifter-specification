@@ -122,7 +122,7 @@ Steps 1 and 2 are not applicable in this situation.
 - Expected congestion information includes the amount of reduction needed;
 - Expected congestion information includes available grid capacity for other ISPs.
 
-See appendix 2 for more details about this information exchange including rationale.
+See [Rationale for information exchange in flexibility request](../appendix/rationale-for-information-exchange-in-flexibility-request.md) for more details about this information exchange including rationale.
 
 In the FlexRequest messages (see section 4.2.18), there is no single power value, rather a power space for each ISP, bound by two power values (“MinPower” and “MaxPower”).
 In addition, there is a distinction between ISPs with a ‘requested’ disposition – meaning that there is a request for a deviation on the power consumption/production – and ISPs with an ‘available’ disposition – meaning that there is available space to deviate on the power consumption/production.

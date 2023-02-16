@@ -33,7 +33,7 @@ For example with a 15 minute ISP length we have a multiplier of 4, with a 30 min
 
 |               |                                                                                                                     |
 |---------------|---------------------------------------------------------------------------------------------------------------------|
-| Metadata      | The metadata for this message. For details, see section 4.2.2                                                       |
+| Metadata      | The metadata for this message. For details, see section [metadata attributes](metadata-attributes.md)               |
 | Period        | The day that the metering data covers                                                                               |
 | EAN           | The connection ID which this data refers to                                                                         |
 | Profile       | A profile carries a sequence of ISPs with a defined type of metering data                                           |
