@@ -52,6 +52,7 @@ markdown_extensions:
   - admonition # for Recommended Practice blocks
   - md_in_html # for figcaption at images
   - footnotes
+  - attr_list # to support width property on images
 
 nav:
   - USEF Flex Trading Protocol: index.md

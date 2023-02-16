@@ -3,7 +3,7 @@
 ## Overall description
 
 <figure markdown>
-  ![General information flow in Validate phase.](../assets/images/image10.emf.odg.svg)
+  ![General information flow in Validate phase.](../assets/images/image10.emf.odg.svg){ width=1000px }
   <figcaption>General information flow in Validate phase</figcaption>
 </figure>
 
@@ -30,7 +30,7 @@ This is because any flexibility offered will still help to reduce the impact of 
 USEF’s orange regime is outside the scope of UFTP, and, therefore, not further discussed in this document.
 
 <figure markdown>
-  ![AGR may send multiple FlexOffers on the same request, and open FlexOffers, which are not yet ordered may be revoked by the AGR.](../assets/images/image11.emf.odg.svg)
+  ![AGR may send multiple FlexOffers on the same request, and open FlexOffers, which are not yet ordered may be revoked by the AGR.](../assets/images/image11.emf.odg.svg){ width=1000px }
   <figcaption>AGR may send multiple FlexOffers on the same request, and open FlexOffers, which are not yet ordered may be revoked by the AGR.</figcaption>
 </figure>
 
@@ -39,7 +39,7 @@ Where an AGR responds with multiple FlexOffers, the DSO can freely choose the mo
 Provided the flexibility has not been ordered via a FlexOrder, a FlexOffer may be revoked by the AGR (FlexOfferRevocation).
 
 <figure markdown>
-  ![Flexibility trading may go on until gate closure time. This includes iterations between plan phase and validate phase. The last accepted D-prognosis before gate closure time serves as a basis for the next phase. Any open FlexOffers, which are not expired, may be ordered after gate closure.](../assets/images/image12.emf.odg.svg)
+  ![Flexibility trading may go on until gate closure time. This includes iterations between plan phase and validate phase. The last accepted D-prognosis before gate closure time serves as a basis for the next phase. Any open FlexOffers, which are not expired, may be ordered after gate closure.](../assets/images/image12.emf.odg.svg){ width=1000px }
   <figcaption>Flexibility trading may go on until gate closure time. This includes iterations between plan phase and validate phase. The last accepted D-prognosis before gate closure time serves as a basis for the next phase. Any open FlexOffers, which are not expired, may be ordered after gate closure.</figcaption>
 </figure>
 
@@ -128,7 +128,7 @@ In the [FlexRequest messages](../message-descriptions/message-catalog/flex-reque
 In addition, there is a distinction between ISPs with a ‘requested’ disposition – meaning that there is a request for a deviation on the power consumption/production – and ISPs with an ‘available’ disposition – meaning that there is available space to deviate on the power consumption/production.
 
 <figure markdown>
-  ![Example forecast for a Congestion point, leading to an example FlexRequest, both displayed in graphs](../assets/images/image13.svg)
+  ![Example forecast for a Congestion point, leading to an example FlexRequest, both displayed in graphs](../assets/images/image13.svg){ width=1000px }
   <figcaption>Example forecast for a Congestion point, leading to an example FlexRequest, both displayed in graphs</figcaption>
 </figure>
 
@@ -218,7 +218,7 @@ After the intraday closure time, the processes in the plan phase cannot be resta
 [^10]: Note that intraday flexibility trading is optional in UFTP so intraday gate closure applies only when intraday trading is enabled by the DSO
 
 <figure markdown>
-  ![Example of USEF day-ahead gate closure time.](../assets/images/image14.emf.odg.svg)
+  ![Example of USEF day-ahead gate closure time.](../assets/images/image14.emf.odg.svg){ width=1000px }
   <figcaption>Example of USEF day-ahead gate closure time.</figcaption>
 </figure>
 
@@ -228,7 +228,7 @@ This is illustrated in the figure below.
 The ISP corresponding to the current time is in operate phase and ISP’s more than one hour ahead are still in plan or validate phase.
 
 <figure markdown>
-  ![Example of USEF intra-day gate closure times.](../assets/images/image15.emf.odg.svg)
+  ![Example of USEF intra-day gate closure times.](../assets/images/image15.emf.odg.svg){ width=1000px }
   <figcaption>Example of USEF intra-day gate closure times.</figcaption>
 </figure>
 

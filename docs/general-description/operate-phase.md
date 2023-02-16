@@ -9,7 +9,7 @@ The processes for invoking this flexibility are depicted in the following figure
 <!-- TODO: check why this image has been shortened in the .pdf file -->
 
 <figure markdown>
-  ![General information flows in the Operate phase.](../assets/images/image16.emf.odg.svg)
+  ![General information flows in the Operate phase.](../assets/images/image16.emf.odg.svg){ width=1000px }
   <figcaption>General information flows in the Operate phase.</figcaption>
 </figure>
 
