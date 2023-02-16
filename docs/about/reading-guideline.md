@@ -7,7 +7,7 @@ It is strongly advised that the USEF document is read in advance of this UFTP sp
 
 USEF follows the principle of privacy & security by design and therefore the specifications are accompanied by a privacy & security guideline [^B5] which is applicable to the entire design, implementation and operation of USEF and derived products, services and solutions.
 
-[^B5]: USEF Foundation, "USEF: The Privacy and Security Guideline," USEF Foundation, Arnhem, 2015.
+[^B5]: USEF Foundation, "USEF: The Privacy and Security Guideline," USEF Foundation, Arnhem, 2015. Available: [https://www.usef.energy/app/uploads/2016/12/USEF_PrivacySecurityGuideline_3nov15.pdf](https://www.usef.energy/app/uploads/2016/12/USEF_PrivacySecurityGuideline_3nov15.pdf)
 
 The UFTP specifications consist of three main elements:
 
