@@ -22,7 +22,7 @@ In closed mode, participants will need to be pre-configured in order for updates
 Once populated, the common reference will allow AGRs to determine whether there are prosumers in their portfolio that can offer flexibility, via their connections, to one or more congestion points.
 
 <figure markdown>
-  ![Exchange of congestion points including connections by DSO](../../assets/images/use-case-3-1-exchange-of-congestions-points.odg.svg)
+  ![Exchange of congestion points including connections by DSO](../../assets/images/use-case-3-1-exchange-of-congestions-points.svg)
   <figcaption>Exchange of congestion points including connections by DSO</figcaption>
 </figure>
 
