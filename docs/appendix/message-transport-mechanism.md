@@ -121,7 +121,7 @@ Since activities on the energy market are most likely regulated by  national ove
 For example, if an energy.authority.test is on the DNS suffix list, this zone is queried for _usef.example.com.energy.authority.test in order to determine if example.com is an authorized market participant.
 
 <figure markdown>
-  ![Example of the DNS relationships between a single USEF endpoint and multiple zones](../assets/images/image24.emf.odg.svg){ width=1000px }
+  ![Example of the DNS relationships between a single USEF endpoint and multiple zones](../assets/images/image24.svg){ width=1000px }
   <figcaption>Example of the DNS relationships between a single USEF endpoint and multiple zones</figcaption>
 </figure>
 
