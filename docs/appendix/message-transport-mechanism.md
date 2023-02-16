@@ -125,7 +125,7 @@ For example, if an energy.authority.test is on the DNS suffix list, this zone is
   <figcaption>Example of the DNS relationships between a single USEF endpoint and multiple zones</figcaption>
 </figure>
 
-An example of an anticipated DNS setup is shown in Figure 4-5: Here, an incumbent DSO (using the Internet domain `DSO.example`) operates a USEF endpoint, named `SSL.DSO.example`.
+An example of an anticipated DNS setup is shown above. Here, an incumbent DSO (using the Internet domain `DSO.example`) operates a USEF endpoint, named `SSL.DSO.example`.
 The DNS entries for the USEF DSO and CRO role processes that underpin the DSO’s core business both refer to this endpoint, ultimately leading to an IP/port combination usable for submitting USEF messages to.
 
 In order to offer differentiated services to various customer segments, the DSO has also set up various AGRs, each operating its own web site and Internet domain.
