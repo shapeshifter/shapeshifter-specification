@@ -7,10 +7,10 @@ The USEF MCM contract phase specifies the following use cases:
 
 _Use cases for the Contract phase._
 
-| Name                                  | Direction | Message types                                   |
-|---------------------------------------|-----------|-------------------------------------------------|
-| Publish Congestion Points (Long-term) | DSO → CRO | DSOPortfolioUpdate / DSOPortfolioUpdateResponse |
-| Publish Connections                   | AGR → CRO | AGRPortfolioUpdate / AGRPortfolioUpdateResponse |
+| Name                                                                          | Direction | Message types                                   |
+|-------------------------------------------------------------------------------|-----------|-------------------------------------------------|
+| [Publish Congestion Points (Long-term)](#publish-congestion-points-long-term) | DSO → CRO | DSOPortfolioUpdate / DSOPortfolioUpdateResponse |
+| [Publish Connections](#publish-connections)                                   | AGR → CRO | AGRPortfolioUpdate / AGRPortfolioUpdateResponse |
 
 ## Publish Congestion Points (Long-term)
 

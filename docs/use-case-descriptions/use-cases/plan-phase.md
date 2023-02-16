@@ -7,11 +7,11 @@ The USEF MCM plan phase specifies the following use cases:
 
 _Use cases for the Plan phase._
 
-| Name                                    | Direction | Message types                                         |
-|-----------------------------------------|-----------|-------------------------------------------------------|
-| **Retrieve Congestion Points**          | AGR → CRO | AGRPortfolioQuery / AGRPortfolioQueryResponse         |
-| Retrieve Active Aggregators             | DSO → CRO | DSOPortfolioQuery / DSOPortfolioQueryResponse         |
-| Exchange Flexibility Reservation Update | AGR ← DSO | FlexReservationUpdate / FlexReservationUpdateResponse |
+| Name                                                                                | Direction | Message types                                         |
+|-------------------------------------------------------------------------------------|-----------|-------------------------------------------------------|
+| [Retrieve Congestion Points](#retrieve-congestion-points)                           | AGR → CRO | AGRPortfolioQuery / AGRPortfolioQueryResponse         |
+| [Retrieve Active Aggregators](#retrieve-active-aggregators)                         | DSO → CRO | DSOPortfolioQuery / DSOPortfolioQueryResponse         |
+| [Exchange Flexibility Reservation Update](#exchange-flexibility-reservation-update) | AGR ← DSO | FlexReservationUpdate / FlexReservationUpdateResponse |
 
 The use cases are explained in the following sections.
 
