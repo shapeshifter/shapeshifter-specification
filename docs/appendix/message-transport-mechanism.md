@@ -157,7 +157,7 @@ For USEF 2019 and the host `example.com`, it will be [https://example.com/USEF/2
     Unlike other XML-based initiatives (such as WS-*), lightweight implementations are considered key, and alternate serialization formats (such as JSON) should be viable as well, despite being out of scope of this specification.
     If any such alternate message formats are implemented, fallback to XML must be provided as needed, or such implementations will not be USEF-compliant.
 
-Message content consists of a simple wrapper message, specified as SignedMessage in the USEF XML XSD, available for download from the public USEF web site[^22] at [https://usef.info/schema/2019and](https://usef.info/schema/2019and) documented in section 4.2
+Message content consists of a simple wrapper message, specified as SignedMessage in the USEF XML XSD, available for download from the public USEF web site[^22] at [https://usef.info/schema/2019and](https://usef.info/schema/2019and) documented in section [Message catalog](../message-descriptions/message-catalog/index.md).
 All usual protocol conventions should be followed during this stage.
 For example, when using HTTP version 1.1, redirects (responses with status code 3xx) should be honored in order to support load balancing.
 Any server errors (responses with status code 5xx), unknown response status codes,  and connection timeouts and resets should be considered temporary failures and delivery should be re-attempted later within the timeout period.
@@ -194,7 +194,7 @@ As in the service discovery stage, messages for which transmission permanently f
 ### Common Message Metadata
 
 The USEF XML message obtained after successfully verifying the signature will have a root node corresponding to its message type, which must contain Metadata attributes common to all messages used by the implementation to process the message.
-The metadata attributes are defined in subsection 4.2.2
+The metadata attributes are defined in [metadata attributes](../message-descriptions/message-catalog/metadata-attributes.md).
 
 ## Awaiting reply
 

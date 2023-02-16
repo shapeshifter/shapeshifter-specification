@@ -9,6 +9,6 @@ Like the TestMessage itself, the TestMessageResponse does not have any content (
 />
 ```
 
-|          |                                                                |
-|----------|----------------------------------------------------------------|
-| Metadata | The metadata for this message. For details, see section 4.2.2. |
+|          |                                                                                                |
+|----------|------------------------------------------------------------------------------------------------|
+| Metadata | The metadata for this message. For details, see [metadata attributes](metadata-attributes.md). |

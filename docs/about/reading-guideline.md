@@ -11,13 +11,13 @@ USEF follows the principle of privacy & security by design and therefore the spe
 
 The UFTP specifications consist of three main elements:
 
-- Chapter 2 – General description
+- [General description](../general-description/index.md)
 Informative description about usage of the protocol and process description for USEF’s market-based coordination mechanism
 
-- Chapter 3 – Use case descriptions
+- [Use case descriptions](../use-case-descriptions/scope.md)
 Detailed descriptions of each process step of the process model, incl. scope & level, goal in context, preconditions, primary and secondary actors, the main scenario, etc.
 
-- Chapter 4 – Message transport & descriptions
+- [Message transport & descriptions](../message-descriptions/scope.md)
 Syntax descriptions of all the messages required for the interfaces described in the framework, as well as detailed requirements for exchanging those messages.
 A process description, including the specifications and rules that apply to each process, are provided.
 A motivation for the design is included, wherever it is assumed beneficial.

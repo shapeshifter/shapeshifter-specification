@@ -18,14 +18,14 @@ For each ISP, a power value is given which indicates how much power is still res
 />
 ```
 
-|                 |                                                                                                                                   |
-|-----------------|-----------------------------------------------------------------------------------------------------------------------------------|
-| Metadata        | The metadata for this message. For details, see section 4.2.24.2.2.                                                               |
-| Period          | The Period this FlexRequest message applies to.                                                                                   |
-| CongestionPoint | Entity Address of the Congestion Point this FlexRequest message applies to.                                                       |
-| ContractID      | Reference to the bilateral contract in question.                                                                                  |
-| Reference       | Message reference, assigned by the DSO originating the FlexReservationUpdate.                                                     |
-| ISP             |                                                                                                                                   |
-| ⇥ Power         | Remaining reserved power specified for this ISP in Watts. See important notes about the flex reservation mechanism in Appendix 3. |
-| ⇥ Start         | Number of the first ISP this element refers to. The first ISP of a day has number 1.                                              |
-| ⇥ Duration      | The number of the ISPs this element represents. Optional, default value is 1.                                                     |
+|                 |                                                                                                                                                                     |
+|-----------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Metadata        | The metadata for this message. For details, see section [metadata attributes](metadata-attributes.md).                                                              |
+| Period          | The Period this FlexRequest message applies to.                                                                                                                     |
+| CongestionPoint | Entity Address of the Congestion Point this FlexRequest message applies to.                                                                                         |
+| ContractID      | Reference to the bilateral contract in question.                                                                                                                    |
+| Reference       | Message reference, assigned by the DSO originating the FlexReservationUpdate.                                                                                       |
+| ISP             |                                                                                                                                                                     |
+| ⇥ Power         | Remaining reserved power specified for this ISP in Watts. See important notes about the [flex reservation mechanism](../../appendix/flex-reservation-mechanism.md). |
+| ⇥ Start         | Number of the first ISP this element refers to. The first ISP of a day has number 1.                                                                                |
+| ⇥ Duration      | The number of the ISPs this element represents. Optional, default value is 1.                                                                                       |

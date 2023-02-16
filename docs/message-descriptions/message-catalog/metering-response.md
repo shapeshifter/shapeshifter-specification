@@ -13,7 +13,7 @@ Upon receiving and processing a Metering message, the receiving implementation m
 
 |                   |                                                                                                            |
 |-------------------|------------------------------------------------------------------------------------------------------------|
-| Metadata          | The metadata for this message. For details, see section 4.2.2.                                             |
+| Metadata          | The metadata for this message. For details, see section [metadata attributes](metadata-attributes.md).     |
 | MeteringMessageID | MessageID of the Metering message that has just been accepted or rejected.                                 |
 | Result            | Indication whether the order was accepted or rejected.                                                     |
 | RejectionReason   | In case the metering was rejected, this attribute must contain a human-readable description of the reason. |

@@ -13,7 +13,7 @@ Upon receiving and processing an AGRPortfolioUpdate message, the receiving imple
 
 |                             |                                                                                                                      |
 |-----------------------------|----------------------------------------------------------------------------------------------------------------------|
-| Metadata                    | The metadata for this message. For details, see section 4.2.2.                                                       |
+| Metadata                    | The metadata for this message. For details, see [metadata attributes](metadata-attributes.md).                       |
 | AGRPortfolioUpdateMessageID | MessageID of the AGRPortfolioUpdate message                                                                          |
 | Result                      | Indication whether the AGRPortfolioUpdate was accepted or rejected.                                                  |
 | RejectionReason             | In case the AGRPortfolioUpdate was rejected, this attribute must contain a human-readable description of the reason. |

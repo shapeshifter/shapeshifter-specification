@@ -1,6 +1,6 @@
 # Common concepts
 
-The USEF specification standardizes the logical interfaces and defines the minimum functionality of the components in the form of use cases (this chapter) and message transport specifications and message descriptions (Chapter 4).
+The USEF specification standardizes the logical interfaces and defines the minimum functionality of the components in the form of use cases (this chapter) and [message transport specifications](../appendix/message-transport-mechanism.md) and [message descriptions](../message-descriptions/scope.md).
 This leaves room for innovation and possibilities to develop specific implementation architectures based on e.g. size of the market, specific local circumstances or commercial exploitation of USEF platforms.
 Stakeholders involved in a USEF market can and must develop business functions and capabilities independently, and focus on their core business and competitive advantage.
 

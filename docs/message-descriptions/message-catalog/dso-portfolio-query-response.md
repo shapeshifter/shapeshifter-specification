@@ -22,7 +22,7 @@ Most queries will return zero or more congestion points
 
 |                            |                                                                                                           |
 |----------------------------|-----------------------------------------------------------------------------------------------------------|
-| Metadata                   | The metadata for this message. For details, see section 4.2.2.                                            |
+| Metadata                   | The metadata for this message. For details, see [metadata attributes](metadata-attributes.md).            |
 | DSOPortfolioQueryMessageID | MessageID of the DSOPortfolioQuery message                                                                |
 | Result                     | Indication whether the query was executed successfully or failed.                                         |
 | RejectionReason            | In case the query failed, this attribute must contain a human-readable description of the failure reason. |

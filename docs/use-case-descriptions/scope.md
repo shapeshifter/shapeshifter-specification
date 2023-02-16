@@ -3,11 +3,11 @@
 This chapter provides details of the functions that contain interactions relevant to the DSO and AGR, in order to be active in the USEF MCM.
 To be USEF compliant, these functions must be implemented according to the use case descriptions in this chapter.
 
-The use cases have been derived from the MCM sequence diagrams detailed in Chapter 2.
+The use cases have been derived from the MCM sequence diagrams detailed in Chapter [General description](../general-description/index.md).
 Use cases are separate activities that require interaction between DSO and AGR, each containing multiple messages in both directions.
 DSO and AGR internal processes are not addressed in this chapter.
 
-The messages types that occur in these use cases are mentioned and further described in Section 4.2.
+The messages types that occur in these use cases are mentioned and further described in Section [Message catalog](../message-descriptions/message-catalog/index.md).
 
 ## Introduction
 
