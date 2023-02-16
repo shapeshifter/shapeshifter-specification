@@ -1,6 +1,6 @@
 # Plan phase
 
-In section 2.3 the informative description of the plan phase processes are provided.
+In [Plan phase](../../general-description/plan-phase.md) the informative description of the plan phase processes are provided.
 In this chapter, use cases will be described as derived from the plan phase.
 
 The USEF MCM plan phase specifies the following use cases:

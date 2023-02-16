@@ -1,6 +1,6 @@
 # Settle phase
 
-The informative description of the settle phase processes are provided in Section 2.6.
+The informative description of the settle phase processes are provided in [Settle phase](../../general-description/settle-phase.md).
 In this chapter, the use cases will be described, as derived from the settle phase.
 
 The USEF MCM settle phase specifies the following use case:

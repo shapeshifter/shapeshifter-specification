@@ -57,7 +57,7 @@ This broad time window supports trading on various energy markets (i.e. forward 
 USEF specifies that iterations between the plan and validate phases take place at least twice: initially, during the day ahead and, secondly, during intraday.
 Hence, two points in time are determined when the markets close: 1) end of day-ahead 2) end of intraday.
 This specification eases the iterative process of creating, aligning and converging plans and D-prognoses and fits well with many current national processes applied in the day ahead and intraday trading market.
-Please find more details in Section 2.4.5 (Iterations between the plan and validate phases).
+Please find more details in [Iterations between the plan and validate phases](validate-phase.md#iterations-between-the-plan-and-validate-phases).
 
 UFTP supports both day-ahead and intraday trading. Intraday trading is optional for UFTP.
 

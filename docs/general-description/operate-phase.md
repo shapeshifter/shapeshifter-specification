@@ -16,7 +16,7 @@ The processes for invoking this flexibility are depicted in Figure 2-11.
 During the operate phase, the AGR’s main goal is to adhere to its plan and respect the D-prognoses.[^12]
 In order to achieve this, FlexOfferRevocation the AGR must first plan to ensure assets operate in accordance with its forecast portfolio performance and that any flexibility sold is actually delivered.
 
-[^12]: UFTP allows for alternative baselines, see section 2.1. In case of alternative baselines, D-prognosis is optional.
+[^12]: UFTP allows for alternative baselines, see [General description](index.md). In case of alternative baselines, D-prognosis is optional.
 
 Next, the AGR measures the net demand or supply of its portfolio, in order to detect deviations from its plan and D-prognoses.
 Where deviations occur, the AGR re-optimizes its portfolio.

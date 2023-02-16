@@ -15,7 +15,7 @@ In the latter situation, USEF moves to the yellow regime and the DSO procures fl
 The process of flexibility trading is as follows:
 
 [^4]:
-    UFTP allows for alternative baselines, see section 2.1.
+    UFTP allows for alternative baselines, see [General description](index.md).
     In case of alternative baselines, D-prognosis is optional.
 
 1. The DSO requests all AGRs at the congestion point to provide flexibility.
@@ -66,7 +66,7 @@ In the intraday process, all remaining ISPs for that calendar day must be includ
     - The DSO can perform a monthly evaluation of the accuracy and reliability of D-prognoses in order to motivate AGRs to improve the D-prognoses they supply
 
 [^5]: The accepted D-prognosis is the D-prognosis that used as a basis for the next period (Intraday) or phase (operate).
-[^6]: For the difference between day-ahead and intraday, please refer to Section 2.4.5
+[^6]: For the difference between day-ahead and intraday, please refer to [Iterations between the plan and validate phases](validate-phase.md#iterations-between-the-plan-and-validate-phases)
 
 ## Processing D-prognoses
 
@@ -124,7 +124,7 @@ Steps 1 and 2 are not applicable in this situation.
 
 See [Rationale for information exchange in flexibility request](../appendix/rationale-for-information-exchange-in-flexibility-request.md) for more details about this information exchange including rationale.
 
-In the FlexRequest messages (see section 4.2.18), there is no single power value, rather a power space for each ISP, bound by two power values (“MinPower” and “MaxPower”).
+In the [FlexRequest messages](../message-descriptions/message-catalog/flex-request.md), there is no single power value, rather a power space for each ISP, bound by two power values (“MinPower” and “MaxPower”).
 In addition, there is a distinction between ISPs with a ‘requested’ disposition – meaning that there is a request for a deviation on the power consumption/production – and ISPs with an ‘available’ disposition – meaning that there is available space to deviate on the power consumption/production.
 
 <figure markdown>
@@ -141,8 +141,8 @@ Note that a request is always relative to the agreed baseline.
 The essence of broadcasting the same request to all AGRs is that the requested deviation is the same for each AGR, relative to its own baseline.
 Decreasing power consumption is thereby equivalent to increasing power production and vice versa.
 
-The distribution of the FlexRequest message is limited to AGRs which are registered via the CRO (see Section 2.3).
-The information on direction, amount and available capacity is provided in specific data structures that are part of the FlexRequest message (see Section 4.2.1).
+The distribution of the FlexRequest message is limited to AGRs which are registered via the CRO (see [Plan phase](plan-phase.md)).
+The information on direction, amount and available capacity is provided in specific data structures that are part of the FlexRequest message (see [Power](../message-descriptions/message-catalog/power.md)).
 
 For the procurement of flexibility by the DSOs, USEF specifies the following rules:
 
@@ -178,7 +178,7 @@ USEF specifies that when ISPs are altered as a result of a flexibility deal, the
 This means that deviation on ISPs with ‘requested’ disposition that have been traded, might lead to penalties for the associated AGR.
 Updates on other ISPs are always possible for the AGR but will require a new D-prognosis.
 Other AGRs can still change their D-prognoses for all ISPs without incurring a penalty.
-More details about the penalty calculation can be found in the settlement Section 2.6.
+More details about the penalty calculation can be found in the [settlement](settle-phase.md).
 
 The load profile resulting from a flexibility deal will be stored independently from any subsequent updates of the D-prognosis, because it allows the DSO to verify the actual delivery of the flexibility for settlement purposes.
 
@@ -193,7 +193,7 @@ The load profile resulting from a flexibility deal will be stored independently 
 ## Iterations between the plan and validate phases
 
 As a result of flexibility exchange with the DSO, the AGRs portfolio is not balanced and so it may wish to re-optimize it.
-By doing so, the MCM returns to the plan phase (see Section 2.3), the only difference being that the AGR now takes the flexibility it has already sold into account.
+By doing so, the MCM returns to the [plan phase](plan-phase.md), the only difference being that the AGR now takes the flexibility it has already sold into account.
 In addition, during the plan phase, the AGR has the freedom to continuously re-optimize its portfolio whenever deemed necessary (e.g. when new and improved forecasts are available).
 The rationale behind this high degree of freedom for the AGRs is to ensure that the flexibility they offer is applied in the most optimal and cost-effective way (i.e. flexibility is used there where it creates most value).
 
@@ -254,7 +254,7 @@ The DSO faces imbalance as a result of the trade and is responsible for this.
 The DSO’s imbalance can be restored via a counter trade outside the congested area (redispatch).
 
 USEF supports both ways of balance responsibility.
-The DSO determines the method of trading for a given congestion point and signals this via the CRO. See section 4.2.10 (DSOPortfolioUpdate)
+The DSO determines the method of trading for a given congestion point and signals this via the CRO. See [DSOPortfolioUpdate](../message-descriptions/message-catalog/dso-portfolio-update.md).
 
 !!! success "Recommended practices for balance responsibility:"
     - USEF recommends that the AGR retains balance responsibility for day-ahead flexibility trading.

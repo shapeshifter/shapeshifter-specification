@@ -1,6 +1,6 @@
 # Validate phase
 
-In Section 2.4, informative description of the validate phase processes has been given. In this chapter the use cases will be described as derived from the validate phase.
+In [Validate phase](../../general-description/validate-phase.md), informative description of the validate phase processes has been given. In this chapter the use cases will be described as derived from the validate phase.
 
 The USEF MCM validate phase specifies the following use cases:
 
@@ -245,7 +245,7 @@ If the acknowledgement is still pending, the AGR should delay sending its FlexOf
 When the DSO receives a revocation of a flexibility offer it wants to order, this is not a valid base to reject the revocation.
 After revocation, the offer can no longer be ordered.
 
-FlexOffers may be revoked at any time in the plan and validate phases (and also in operate phase as described in Section 3.9.2), unless there is already a FlexOrder based on the offer.
+FlexOffers may be revoked at any time in the plan and validate phases (and also in operate phase as described in [Revocation Flexibility Offer](operate-phase.md#revocation-flexibility-offer)), unless there is already a FlexOrder based on the offer.
 Notice that FlexOrders and FlexOfferRevocations can cross each other.
 Where this is the case, priority should be given to the FlexOfferRevocation.
 
@@ -304,5 +304,5 @@ Where this is the case, priority should be given to the FlexOfferRevocation.
 
 The DSO needs to make its own decisions about which FlexOffers to accept.
 FlexOffers can only be ordered once and have to be ordered as specified in the corresponding offer for the specified price.
-Only in situations where partial activation is supported and offered in the FlexOffer can the ISP power and price be altered to conform to the specifications from Section 2.4.4.
+Only in situations where partial activation is supported and offered in the FlexOffer can the ISP power and price be altered to conform to the specifications from Section [Flexibility trading between the AGR and DSO](../../general-description/validate-phase.md#flexibility-trading-between-the-agr-and-dso).
 After a successful FlexOrder transmission, the AGR is responsible for providing the ordered flexibility via an updated D-prognosis which reflects the traded flexibility.
