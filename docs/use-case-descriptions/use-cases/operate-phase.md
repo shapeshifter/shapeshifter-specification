@@ -42,7 +42,7 @@ The process diagram is similar to the figure in [Exchange D-Prognoses per Conges
     <th>Cause of rejection</th>
   </tr>
   <tr>
-    <td>&lt;See action 3.5&gt;</td>
+    <td>&lt;See Message validation&gt;</td>
     <td>D-prognosis failed to pass validation by the DSO</td>
   </tr>
   <tr>
@@ -98,7 +98,7 @@ The process diagram is similar to the figure in [Revocation of FlexOffer](valida
     <th>Cause of rejection</th>
   </tr>
   <tr>
-    <td>&lt;See action 3.5&gt;</td>
+    <td>&lt;See Message validation&gt;</td>
     <td>FlexOfferRevocation failed to pass validation by the DSO</td>
   </tr>
   <tr>
@@ -148,7 +148,7 @@ The process diagram is similar to the figure in [Exchange Flexibility Orders](va
     <th>Cause of rejection</th>
   </tr>
   <tr>
-    <td>&lt;See action 3.5&gt;</td>
+    <td>&lt;See Message validation&gt;</td>
     <td>FlexOrder failed to pass validation by the AGR</td>
   </tr>
   <tr>

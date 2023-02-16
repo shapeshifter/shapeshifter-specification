@@ -41,7 +41,7 @@ _Use cases for the settle phase._
     <th>Cause of rejection</th>
   </tr>
   <tr>
-    <td>&lt;See action 3.5&gt;</td>
+    <td>&lt;See Message validation&gt;</td>
     <td>FlexSettlement failed to pass validation by the AGR</td>
   </tr>
   <tr>

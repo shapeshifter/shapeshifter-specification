@@ -51,7 +51,7 @@ can offer flexibility.
     <th>Cause of rejection</th>
   </tr>
   <tr>
-    <td>&lt;See action 3.5&gt;</td>
+    <td>&lt;See Message validation&gt;</td>
     <td>AGRPortfolioQuery failed to pass validation by the CRO</td>
   </tr>
   <tr>
@@ -107,7 +107,7 @@ In closed mode, participants will need to be pre-configured in order for updates
     <th>Cause of rejection</th>
   </tr>
   <tr>
-    <td>&lt;See action 3.5&gt;</td>
+    <td>&lt;See Message validation&gt;</td>
     <td>DSOPortfolioQuery failed to pass validation by the CRO</td>
   </tr>
   <tr>
@@ -160,7 +160,7 @@ Where bilateral contracts are used, the FlexReservationUpdate message can be use
     <th>Cause of rejection</th>
   </tr>
   <tr>
-    <td>&lt;See action 3.5&gt;</td>
+    <td>&lt;See Message validation&gt;</td>
     <td>FlexReservationUpdate failed to pass validation by the AGR</td>
   </tr>
   <tr>
