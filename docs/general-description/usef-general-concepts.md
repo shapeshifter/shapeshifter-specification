@@ -72,7 +72,7 @@ It is the DSOs responsibility to determine congestion points.
     How to determine which grid points are congestion points is the DSOs responsibility and therefore outside of the scope of USEF.
     However, USEF recommends declaring congestion points at the lowest possible level in the grid as this allows for detailed insight about local congestion while simultaneously, through aggregation, safeguarding the reliability of the grid safety analysis.
 
-Congestion points are registered in the common reference, see 2.2.3 Common Reference.
+Congestion points are registered in the common reference, see [Common Reference](contract-phase.md#common-reference).
 
 ## Flexiblity market time granularity
 
