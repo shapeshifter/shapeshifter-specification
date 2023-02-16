@@ -83,7 +83,7 @@ The common reference is shared between all involved parties, while respecting pr
 The common reference is operated by the Common Reference Operator (CRO) role.
 Conceptually, it contains the entities and relationships shown in the figure below:
 
-[^B5]: USEF Foundation, "USEF: The Privacy and Security Guideline," USEF Foundation, Arnhem, 2015.
+[^B5]: USEF Foundation, "USEF: The Privacy and Security Guideline," USEF Foundation, Arnhem, 2015. Available: [https://www.usef.energy/app/uploads/2016/12/USEF_PrivacySecurityGuideline_3nov15.pdf](https://www.usef.energy/app/uploads/2016/12/USEF_PrivacySecurityGuideline_3nov15.pdf)
 
 <figure markdown>
   ![Logical structure of the Common Reference](../assets/images/image8.emf.odg.svg){ width=1000px }

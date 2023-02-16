@@ -4,7 +4,7 @@
 2. USEF, "White paper: Flexibility Platforms," 2 november 2018. [Online]. Available: [https://www.usef.energy/app/uploads/2018/11/USEF-White-Paper-Flexibility-Platforms-version-1.0_Nov2018.pdf](https://www.usef.energy/app/uploads/2018/11/USEF-White-Paper-Flexibility-Platforms-version-1.0_Nov2018.pdf).
 3. USEF, "USEF - The FrameWork Specifications 2015," 2015. [Online].
 4. USEF Foundation, "USEF: The Framework Explained," USEF Foundation, Arnhem, 2015.
-5. USEF Foundation, "USEF: The Privacy and Security Guideline," USEF Foundation, Arnhem, 2015.
+5. USEF Foundation, "USEF: The Privacy and Security Guideline," USEF Foundation, Arnhem, 2015. Available: [https://www.usef.energy/app/uploads/2016/12/USEF_PrivacySecurityGuideline_3nov15.pdf](https://www.usef.energy/app/uploads/2016/12/USEF_PrivacySecurityGuideline_3nov15.pdf)
 6. USEF, "Recommended practices and key considerations for a regulatory framework and market design on explicit Demand Response," 2017. [Online]. Available: [https://www.usef.energy/app/uploads/2017/09/Recommended-practices-for-DR-market-design-2.pdf](https://www.usef.energy/app/uploads/2017/09/Recommended-practices-for-DR-market-design-2.pdf).
 7. Fielding, R., Gettys, J., Mogul, J., Frystyk, H., Masinter, L., Leach, P., and T. Berners-Lee, ""Hypertext Transfer Protocol -- HTTP/1.1", RFC 2616," 1999.
 8. Bakke, M., Hafner, J., Hufferd, J., Voruganti, K., and M. Krueger, ""Internet Small Computer Systems Interface (iSCSI) Naming and Discovery", RFC 3721," 2004.
