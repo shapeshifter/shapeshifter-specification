@@ -94,7 +94,7 @@ The common reference is, typically, setup by the DSO and includes all of its con
 However, it could be extended to form a common reference at national or European grid level.
 
 UFTP allows for the registering and tracking of changes in the common reference; e.g. a DSO might announce a new congestion point for the following week which is registered in the common reference.
-The history of all changes to the common reference is retained and can be retrieved for a certain date using the query function functions (see [AGRPortfolioQuery](../message-descriptions/message-catalog/agr-portfolio-query.md) and [DSOPortfolioUpdate](message-descriptions/message-catalog/dso-portfolio-update.md)); this will also help resolve any potential disputes.
+The history of all changes to the common reference is retained and can be retrieved for a certain date using the query function functions (see [AGRPortfolioQuery](../message-descriptions/message-catalog/agr-portfolio-query.md) and [DSOPortfolioUpdate](../message-descriptions/message-catalog/dso-portfolio-update.md)); this will also help resolve any potential disputes.
 
 ### Accessibility of the data in the common reference
 
