@@ -205,7 +205,7 @@ Note that acceptance of the FlexOffer message does not imply ordering of the fle
 <table>
   <tr>
     <th></th>
-    <th colspan="2">FlexOffer</th>
+    <th colspan="2">Revoke FlexOffer</th>
   </tr>
   <tr>
     <th>Goal in context</th>
