@@ -17,7 +17,7 @@ The use cases are explained in the following sections.
 
 ## Exchange updated D-Prognoses
 
-The process diagram is similar to Figure 3-6.
+The process diagram is similar to the figure in [Exchange D-Prognoses per Congestion Point](validate-phase.md#exchange-d-prognoses-per-congestion-point).
 
 <table>
   <tr>
@@ -73,7 +73,7 @@ When re-creating prognoses in the operate phase, values for ISPs that are alread
 
 ## Revocation Flexibility Offer
 
-The process diagram is similar to Figure 3-9.
+The process diagram is similar to the figure in [Revocation of FlexOffer](validate-phase.md#revocation-flexibility-offer).
 
 <table>
   <tr>
@@ -123,7 +123,7 @@ already in, or past, the operate phase.
 This process is triggered when flexibility is required to resolve congestion detected during the operate phase.
 This might, for example, be the case when the prognoses change after the validate phase and there are still FlexOffers available.
 
-The process diagram is similar to Figure 3-10.
+The process diagram is similar to the figure in [Exchange Flexibility Orders](validate-phase.md#exchange-flexibility-orders).
 
 <table>
   <tr>

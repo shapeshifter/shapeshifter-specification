@@ -81,7 +81,7 @@ The common reference contains a list of connection identifiers (for example EANs
 Each AGR also registers the connections on which it represents prosumers.
 The common reference is shared between all involved parties, while respecting privacy and security principles [^B5] which ensures, amongst other things, that only necessary information is shared and therefore included in the common reference.
 The common reference is operated by the Common Reference Operator (CRO) role.
-Conceptually, it contains the entities and relationships shown in Figure 2-3:
+Conceptually, it contains the entities and relationships shown in the figure below:
 
 [^B5]: USEF Foundation, "USEF: The Privacy and Security Guideline," USEF Foundation, Arnhem, 2015.
 

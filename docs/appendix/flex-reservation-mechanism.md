@@ -12,13 +12,13 @@ This appendix describes the purpose of this FlexReservationUpdate message and it
   <figcaption>Example flex reservation and FlexReservationUpdate, displayed in graphs</figcaption>
 </figure>
 
-Figure 4-2 illustrates how ISPs 11 to 16 are part of a contract, where the AGR is required to reserve flexibility at ISPs 12 to 15 (downwards power only – for more information on direction and amount of power, see Section [Power](../message-descriptions/message-catalog/power.md)).
+The figure above illustrates how ISPs 11 to 16 are part of a contract, where the AGR is required to reserve flexibility at ISPs 12 to 15 (downwards power only – for more information on direction and amount of power, see Section [Power](../message-descriptions/message-catalog/power.md)).
 The DSO was obliged to send a FlexReservationUpdate before each deadline, confirming the reserved power or partially releasing it.
 The power values from the updated reservation should always be equal to, or lower than, the (absolute) values from the original reservation but since the contract is out-of-scope for UFTP, the DSO and AGR should maintain their own agreements about this.
 
 After the FlexReservationUpdate, the AGR is obliged to keep the amount of flexibility available – even if no FlexRequest follows.
 After a FlexRequest is published, the AGR is obliged to produce a FlexOffer that meets the contract within the boundaries of the FlexRequest, where only the lowest reserved and requested power is valid for the contract.
-This is illustrated in Figure 4-3:
+This is illustrated in the following figure:
 
 <figure markdown>
   ![Example FlexRequest and requirements of FlexOffer, displayed in graphs](../assets/images/appendix-flex-reservation-mechanism-flex-request-flexoffer.svg)
@@ -35,4 +35,4 @@ Therefore, the AGR is not obliged to provide flexibility for ISP 14.
 For ISP 15 and 16, available space is given for the AGR to deviate in the opposite direction.
 **For all ISPs that are included in the contract – even when the reservation is set to 0 – the AGR is obliged to conform to the restrictions given by the FlexRequest, including the bounds of available space.**
 The AGR is also free to provide more power than agreed, as long as it contributes to the decrease in congestion.
-In this example, the resulting FlexOffer that complies to the contract must be as illustrated in the graph on the right in Figure 4-3.
+In this example, the resulting FlexOffer that complies to the contract must be as illustrated in the graph on the right in the figure above.

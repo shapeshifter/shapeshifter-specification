@@ -132,7 +132,7 @@ In addition, there is a distinction between ISPs with a ‘requested’ disposit
   <figcaption>Example forecast for a Congestion point, leading to an example FlexRequest, both displayed in graphs</figcaption>
 </figure>
 
-In the example used in Figure 2-8, congestion is expected at ISP 2 at a certain congestion point.
+In the example used in the figure above, congestion is expected at ISP 2 at a certain congestion point.
 The FlexRequest is transmitted to all AGRs that have prosumers on the congestion point, requesting a decrease of consumption (or an increase of production) on ISP 2.
 If AGRs choose to shift consumption from ISP 2 to another ISP, the available spaces in the ISPs from the FlexRequest indicate that there is more room for consumption in ISP 5 than in ISP 1, 3 and 4.
 A flexibility offer with a consumption shift to ISP 5 is therefore more likely to be ordered.
@@ -222,9 +222,9 @@ After the intraday closure time, the processes in the plan phase cannot be resta
   <figcaption>Example of USEF day-ahead gate closure time.</figcaption>
 </figure>
 
-An example of the day-ahead gate closure is given in Figure 2-9 above.
+An example of the day-ahead gate closure is given in the figure above.
 Please note that while there is a single day-ahead gate closure time per day, there will be multiple intra-day gate closures.
-This is illustrated in Figure 2-10.
+This is illustrated in the figure below.
 The ISP corresponding to the current time is in operate phase and ISP’s more than one hour ahead are still in plan or validate phase.
 
 <figure markdown>

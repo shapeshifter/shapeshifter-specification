@@ -4,7 +4,7 @@ While (similar to the current liberalized energy market) the total energy system
 Deviations can arise from a range of sources, ranging from changing weather expectations to an extension of a football match.
 Deviations can lead to: imbalances in supply and demand of energy at total system level (affecting the BRP); changes within the AGR portfolio (affecting the AGR); and local congestion in the distribution system (affecting the DSO).
 USEF’s MCM is designed such that, during the operate phase, additional flexibility can be applied in order to compensate for these deviations.
-The processes for invoking this flexibility are depicted in Figure 2-11.
+The processes for invoking this flexibility are depicted in the following figure.
 
 <!-- TODO: check why this image has been shortened in the .pdf file -->
 
