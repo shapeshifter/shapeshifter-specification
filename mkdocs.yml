@@ -8,6 +8,7 @@ theme:
     - content.action.edit
     - navigation.indexes # index pages per section
     - navigation.footer # page links to previous and next page in footer
+    - navigation.top # back-to-top button when scrolling back up
   logo: assets/images/shapeshifter-icon-white.svg
   favicon: assets/images/shapeshifter-icon-color.svg
 plugins:
