@@ -1,6 +1,6 @@
 # Flex reservation mechanism
 
-As introduced in Section 2.2.2, DSO’s may want to contract a minimum amount of flexibility to be sure that it is available on request.
+As introduced in [Bilateral contract: FlexOption](../general-description/contract-phase.md#bilateral-contract-flexoption), DSO’s may want to contract a minimum amount of flexibility to be sure that it is available on request.
 The FlexOption (not part of UFTP) is a bilateral contract between DSO and AGR to reserve a specified amount of flexibility at a specific location (i.e. congestion point), for a specified time schedule and duration.
 In the day-ahead grid planning process, the DSO’s forecast will indicate whether the contracted amount of flexibility is actually needed.
 If not, the flexibility can be used for other purposes.
@@ -12,7 +12,7 @@ This appendix describes the purpose of this FlexReservationUpdate message and it
   <figcaption>Example flex reservation and FlexReservationUpdate, displayed in graphs</figcaption>
 </figure>
 
-Figure 4-2 illustrates how ISPs 11 to 16 are part of a contract, where the AGR is required to reserve flexibility at ISPs 12 to 15 (downwards power only – for more information on direction and amount of power, see Section 4.2.1).
+Figure 4-2 illustrates how ISPs 11 to 16 are part of a contract, where the AGR is required to reserve flexibility at ISPs 12 to 15 (downwards power only – for more information on direction and amount of power, see Section [Power](../message-descriptions/message-catalog/power.md)).
 The DSO was obliged to send a FlexReservationUpdate before each deadline, confirming the reserved power or partially releasing it.
 The power values from the updated reservation should always be equal to, or lower than, the (absolute) values from the original reservation but since the contract is out-of-scope for UFTP, the DSO and AGR should maintain their own agreements about this.
 
@@ -25,7 +25,7 @@ This is illustrated in Figure 4-3:
   <figcaption>Example FlexRequest and requirements of FlexOffer, displayed in graphs</figcaption>
 </figure>
 
-For further information on the FlexRequest, see Section 2.4.4.
+For further information on the FlexRequest, see [Flexibility trading between the AGR and DSO](../general-description/validate-phase.md#flexibility-trading-between-the-agr-and-dso).
 Both the FlexReservationUpdate and the FlexRequest can only reduce the amount of power that the AGR is obliged to offer, as opposed to increase it.
 For ISP 12, the requested power exceeds the power that the AGR had to reserve in advance.
 The contract is therefore only valid for the lowest (absolute) power value, being -2.

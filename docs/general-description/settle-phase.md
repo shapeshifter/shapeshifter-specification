@@ -65,7 +65,7 @@ The settlement consists of five components:
 1. **Settlement of acquired flexibility**</br>
 The DSO will acquire flexibility through the market mechanism if congestion is expected, either ahead of time (validate phase) or real-time (operate phase).
 On average, the market price is determined by the equilibrium of demanded and offered flexibility (merit order).
-Following the recommendation given in Section 2.4.4, pay-as-bid pricing is used for individual settlements.
+Following the recommendation given in Section [Flexibility trading between the AGR and DSO](validate-phase.md#flexibility-trading-between-the-agr-and-dso), pay-as-bid pricing is used for individual settlements.
 2. **Settlement of deviations from baselines**</br>
 AGRs that have sold flexibility to the DSO need to limit their capacity to the value stated in the baseline, corrected for the sold flexibility.
 A penalty is raised for each ISP where the agreed capacity has (on average) been exceeded.

@@ -1,6 +1,6 @@
 # Contract phase
 
-In section 2.2 the informative description of the contract phase processes has been given.
+In [Contract phase](../../general-description/contract-phase.md) the informative description of the contract phase processes has been given.
 In this chapter use cases will be described as derived from the contract phase.
 
 The USEF MCM contract phase specifies the following use cases:

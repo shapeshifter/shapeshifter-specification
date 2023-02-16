@@ -1,6 +1,6 @@
 # Operate phase
 
-In Section 2.5 the informative description of the operate phase processes are provided.
+In [Operate phase](../../general-description/operate-phase.md) the informative description of the operate phase processes are provided.
 In this chapter, the use cases will be described as derived from the operate phase.
 
 The USEF MCM operate phase specifies the following use cases:
@@ -65,7 +65,7 @@ The process diagram is similar to Figure 3-6.
 
 ### Related information
 
-The process is similar to that described in Section 3.8.1.
+The process is similar to that described in [Exchange D-Prognoses per Congestion Point](validate-phase.md#exchange-d-prognoses-per-congestion-point).
 Deviations can be caused by new flexibility orders from the DSO and by unforeseen change of behavior by assets.
 
 The basic process for re-creating D-prognoses is the same as that used to create them in the first place, in the plan/validate phases.
@@ -113,7 +113,7 @@ The process diagram is similar to Figure 3-9.
 
 ### Related information
 
-The process is similar to that described in Section 3.8.4.
+The process is similar to that described in [Revocation Flexibility Offer](validate-phase.md#revocation-flexibility-offer).
 
 Flexibility offers may be revoked in the operate phase provided that none of the ISPs in the period the offer applies to are
 already in, or past, the operate phase.
@@ -171,6 +171,6 @@ The process diagram is similar to Figure 3-10.
 
 ### Related information
 
-The process is similar to that described in Section 3.8.5.
+The process is similar to that described in [Exchange Flexibility Orders](validate-phase.md#exchange-flexibility-orders).
 Note that where a FlexOrder is rejected, manual processing is unlikely to result in timely resolution at this stage.
 Note that although the updated D-prognosis is unlikely to be of immediate use to the DSO, it’s definitely required for settlement.
