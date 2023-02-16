@@ -12,7 +12,7 @@ Note that any contract negotiations for bilateral contracts also takes place in 
 [^B6]: USEF, "Recommended practices and key considerations for a regulatory framework and market design on explicit Demand Response," 2017. [Online]. Available: [https://www.usef.energy/app/uploads/2017/09/Recommended-practices-for-DR-market-design-2.pdf](https://www.usef.energy/app/uploads/2017/09/Recommended-practices-for-DR-market-design-2.pdf).
 
 <figure markdown>
-  ![General information flow in the Contract phase](../assets/images/image7.emf.odg.svg)
+  ![General information flow in the Contract phase](../assets/images/image7.emf.odg.svg){ width=1000px }
   <figcaption>General information flow in the Contract phase</figcaption>
 </figure>
 
@@ -86,7 +86,7 @@ Conceptually, it contains the entities and relationships shown in the figure bel
 [^B5]: USEF Foundation, "USEF: The Privacy and Security Guideline," USEF Foundation, Arnhem, 2015.
 
 <figure markdown>
-  ![Logical structure of the Common Reference](../assets/images/image8.emf.odg.svg)
+  ![Logical structure of the Common Reference](../assets/images/image8.emf.odg.svg){ width=1000px }
   <figcaption>Logical structure of the Common Reference</figcaption>
 </figure>
 
