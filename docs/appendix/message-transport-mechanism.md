@@ -100,8 +100,10 @@ Assuming the Internet domain name of the remote participant is example.com, the 
     Absent DNSSEC authentication, private key strings must not be relied on, and separate manual secure key exchange is required.
 
 [^19]:
-    As per IETF RFC 1034 [14], implementations must not fail when presented with CNAME chains or loops.
+    As per IETF RFC 1034 [^B14], implementations must not fail when presented with CNAME chains or loops.
     Chains should be followed (to an implementation-defined maximum depth) and any loops or errors treated as temporary.
+
+[^B14]: P. Mockapetris, ""Domain names - concepts and facilities", STD 13, RFC 1034," 1987.
 
 The message will remain in the service discovery stage until all required data is available, or a participant-configurable and possibly message-class specific timeout timer expires.
 A DNS reply must have the NOERROR status, as well as syntactically valid and DNSSEC-authenticated content, in order to be considered usable.
@@ -160,7 +162,9 @@ All usual protocol conventions should be followed during this stage.
 For example, when using HTTP version 1.1, redirects (responses with status code 3xx) should be honored in order to support load balancing.
 Any server errors (responses with status code 5xx), unknown response status codes,  and connection timeouts and resets should be considered temporary failures and delivery should be re-attempted later within the timeout period.
 Only client success or failure messages (responses with status code 200 or a non-ambiguous[^23] 4xx status code, respectively) should be considered final.
-This is standard HTTP 1.1 behavior, as fully described in IETF RFC 2616 [7].
+This is standard HTTP 1.1 behavior, as fully described in IETF RFC 2616 [^B7].
+
+[^B7]: Fielding, R., Gettys, J., Mogul, J., Frystyk, H., Masinter, L., Leach, P., and T. Berners-Lee, ""Hypertext Transfer Protocol -- HTTP/1.1", RFC 2616," 1999.
 
 [^22]: Please note that USEF makes no warranties whatsoever as to the uninterrupted availability of its web site, and that production services should not rely on the schema being hosted at this location for purposes such as validation: a local copy should be used instead.
 
@@ -229,8 +233,10 @@ An example of an EA using this scheme is: ean.871685900012636543
 - The USEF type 1 entity address (EA1) is designed to allow participants to generate unique identifiers for themselves and entities managed by them, without relying on a central authority.
 
 The USEF type 1 EA is structured analogous to the iSCSI IQN.
-Paraphrasing IETF RFCs 3720 and 3271 [8]: the EA does not define any new naming authorities but uses Internet domain names to ensure global uniqueness.
+Paraphrasing IETF RFCs 3720 and 3271 [^B8]: the EA does not define any new naming authorities but uses Internet domain names to ensure global uniqueness.
 Furthermore, the EA is constructed to give an organizational naming authority the flexibility to further subdivide the responsibility for name creation to subordinate naming authorities.
+
+[^B8]: Bakke, M., Hafner, J., Hufferd, J., Voruganti, K., and M. Krueger, ""Internet Small Computer Systems Interface (iSCSI) Naming and Discovery", RFC 3721," 2004.
 
 This makes the EA format slightly unwieldy but since bandwidth and storage space are not expected to be significant constraints in any USEF implementation, this is considered to be an acceptable tradeoff for not requiring a central authority.
 Syntactically, an EA is a variable-length, 7-bit printable ASCII text string containing up to 255 characters.
@@ -241,7 +247,9 @@ ea1.2013-11.info.usef.test:001:002.090807002a&b#
     <- naming authority -> < unique identifier >
 ```
 
-Mostly taken from IETF RFC 3720 [9], below are the semantics of the various parts of this EA:
+Mostly taken from IETF RFC 3720 [^B9], below are the semantics of the various parts of this EA:
+
+[^B9]: Satran, J., Meth, K., Sapuntzakis, C., Chadalapaka, M., and E. Zeidner, ""Internet Small Computer Systems Interface (iSCSI)", RFC 3720," 2004.
 
 |                           |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
 |---------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
