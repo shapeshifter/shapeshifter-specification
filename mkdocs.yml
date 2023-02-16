@@ -11,6 +11,21 @@ theme:
     - navigation.top # back-to-top button when scrolling back up
   logo: assets/images/shapeshifter-icon-white.svg
   favicon: assets/images/shapeshifter-icon-color.svg
+extra:
+  social:
+    # available icons in https://github.com/squidfunk/mkdocs-material/tree/master/material/.icons/fontawesome
+    - icon: fontawesome/brands/github
+      link: https://github.com/shapeshifter
+      name: GitHub organization of Shapeshifter
+    - icon: fontawesome/brands/slack
+      link: https://lfenergy.slack.com/channels/shapeshifter
+      name: "LFEnergy Slack channel #shapeshifter"
+    - icon: fontawesome/regular/envelope
+      link: https://lists.lfenergy.org/g/shapeshifter-discussion
+      name: Mailinglist shapeshifter-discussion
+    - icon: fontawesome/brands/wikipedia-w
+      link: https://wiki.lfenergy.org/display/SHAP/
+      name: Project wiki page
 plugins:
   - search
   - pdf-generate:
