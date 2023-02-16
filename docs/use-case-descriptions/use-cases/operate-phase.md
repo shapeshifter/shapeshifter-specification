@@ -7,11 +7,11 @@ The USEF MCM operate phase specifies the following use cases:
 
 _Use cases for the operate phase._
 
-| Name                             | Direction | Message types                                     |
-|----------------------------------|-----------|---------------------------------------------------|
-| **Exchange updated D-Prognoses** | AGR → DSO | Prognosis / PrognosisResponse                     |
-| **Revocation Flexibility Offer** | AGR → DSO | FlexOfferRevocation / FlexOfferRevocationResponse |
-| **Exchange Flexibility Orders**  | AGR ← DSO | FlexOrder / FlexOrderResponse                     |
+| Name                                                          | Direction | Message types                                     |
+|---------------------------------------------------------------|-----------|---------------------------------------------------|
+| [Exchange updated D-Prognoses](#exchange-updated-d-prognoses) | AGR → DSO | Prognosis / PrognosisResponse                     |
+| [Revocation Flexibility Offer](#revocation-flexibility-offer) | AGR → DSO | FlexOfferRevocation / FlexOfferRevocationResponse |
+| [Exchange Flexibility Orders](#exchange-flexibility-orders)   | AGR ← DSO | FlexOrder / FlexOrderResponse                     |
 
 The use cases are explained in the following sections.
 

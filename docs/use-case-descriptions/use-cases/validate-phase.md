@@ -6,13 +6,13 @@ The USEF MCM validate phase specifies the following use cases:
 
 _Use cases for the Validate phase._
 
-| Name                                          | Direction | Message types                                     |
-|-----------------------------------------------|-----------|---------------------------------------------------|
-| **Exchange D-Prognoses per Congestion Point** | AGR → DSO | Prognosis / PrognosisResponse                     |
-| **Exchange Flexibility Requests**             | AGR ← DSO | FlexRequest / FlexRequestResponse                 |
-| **Exchange Flexibility Offers**               | AGR → DSO | FlexOffer / FlexOfferResponse                     |
-| **Revocation Flexibility Offer**              | AGR → DSO | FlexOfferRevocation / FlexOfferRevocationResponse |
-| **Exchange Flexibility Orders**               | AGR ← DSO | FlexOrder / FlexOrderResponse                     |
+| Name                                                                                    | Direction | Message types                                     |
+|-----------------------------------------------------------------------------------------|-----------|---------------------------------------------------|
+| [Exchange D-Prognoses per Congestion Point](#exchange-d-prognoses-per-congestion-point) | AGR → DSO | Prognosis / PrognosisResponse                     |
+| [Exchange Flexibility Requests](#exchange-flexibility-requests)                         | AGR ← DSO | FlexRequest / FlexRequestResponse                 |
+| [Exchange Flexibility Offers](#exchange-flexibility-offers)                             | AGR → DSO | FlexOffer / FlexOfferResponse                     |
+| [Revocation Flexibility Offer](#revocation-flexibility-offer)                           | AGR → DSO | FlexOfferRevocation / FlexOfferRevocationResponse |
+| [Exchange Flexibility Orders](#exchange-flexibility-orders)                             | AGR ← DSO | FlexOrder / FlexOrderResponse                     |
 
 The use cases are explained in the following sections.
 

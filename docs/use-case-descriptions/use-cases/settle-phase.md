@@ -7,9 +7,9 @@ The USEF MCM settle phase specifies the following use case:
 
 _Use cases for the settle phase._
 
-| Name                         | Direction | Message types                          |
-|------------------------------|-----------|----------------------------------------|
-| **Process Settlement Items** | AGR ← DSO | FlexSettlement/ FlexSettlementResponse |
+| Name                                                  | Direction | Message types                          |
+|-------------------------------------------------------|-----------|----------------------------------------|
+| [Process Settlement Items](#process-settlement-items) | AGR ← DSO | FlexSettlement/ FlexSettlementResponse |
 
 ## Process Settlement Items
 
