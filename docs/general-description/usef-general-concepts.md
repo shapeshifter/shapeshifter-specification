@@ -44,7 +44,9 @@ The orange regime is introduced as a fallback for situations where there is insu
 </figure>
 
 
-UFTP flexibility trading takes place solely in the yellow regime. Full descriptions of all other regimes can be found in [3].
+UFTP flexibility trading takes place solely in the yellow regime. Full descriptions of all other regimes can be found in [^B3].
+
+[^B3]: USEF, "USEF - The FrameWork Specifications 2015," 2015. [Online].
 
 ## Day-head and intraday flexiblity trading
 

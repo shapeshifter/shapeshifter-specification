@@ -91,7 +91,7 @@ The grid safety analysis can lead to either of the following conclusions:
 Where no AGRs are active at the congestion point, there is no market to supply the DSO with flexibility to reduce its energy flows to levels below the safety margins.
 In this situation, the system moves to the orange regime.
 The resulting DSO processes are outside the scope of this document.
-See [4] for a global description.
+See [^B4] for a global description.
 
 ## Flexibility trading between the AGR and DSO
 
@@ -105,10 +105,12 @@ In its request, the DSO indicates the magnitude (amount of excess power) and tim
 4. The DSO receives the flexibility offers
 5. The DSO procures flexibility to resolve the congestion issues by placing flexibility orders.
 6. The DSO determines whether the expected congestion is solved using the ordered flexibility.
-If this is not the case, the system moves to the orange regime (see [4] for more details)
+If this is not the case, the system moves to the orange regime (see [^B4] for more details)
 7. The AGRs receive the flexibility orders which result in the actual procurement of flexibility by the DSO.
 8. AGRs provide an (updated) D-prognosis, incorporating the ordered flexibility.
 This step only applies when D-prognoses are used as baseline methodology.
+
+[^B4]: USEF Foundation, "USEF: The Framework Explained," USEF Foundation, Arnhem, 2015.
 
 [^8]: Either by decreasing energy use, increasing local generation, or time-shifting load.
 

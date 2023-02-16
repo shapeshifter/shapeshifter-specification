@@ -16,8 +16,10 @@ The processes that take place during the plan phase are schematically depicted i
 Since the list of connections belonging to a congestion point, and the list of customers that are served by the AGR, may switch from day to day, USEF specifies that this information is requested on a day-to-day basis.
 
 The AGRs portfolio optimization is out-of-scope and depicted only for reference.
-See [3] for a detailed description of this process.
+See [^3] for a detailed description of this process.
 For UFTP, it is important to realize that the AGR optimizes its portfolio based on its clients’ needs, optionally taking into account its long-term contractual obligations.
 
 For bilateral contracts, the DSO might provide a FlexReservationUpdate message e.g. signaling which part of the contracted volume is still reserved and which part is not needed and may be used for other purposes.
 This will typically re-trigger the AGRs portfolio optimization process. More information about the flex reservation mechanism is added in Appendix 3.
+
+[^3]: USEF, "USEF - The FrameWork Specifications 2015," 2015. [Online].

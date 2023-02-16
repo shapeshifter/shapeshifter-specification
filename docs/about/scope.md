@@ -3,8 +3,10 @@
 ## Constraint management services
 
 Constraint management services help grid operators (TSOs and DSOs) to optimize grid operation according to physical and market constraints.
-USEF [1] distinguishes four different flexibility services within the constraint management category: grid capacity management, congestion management, voltage control and controlled islanding.
+USEF [^B1] distinguishes four different flexibility services within the constraint management category: grid capacity management, congestion management, voltage control and controlled islanding.
 UFTP can be used for the first two of these.
+
+[^B1]: USEF, "Flexibility Value Chain (update 2018)," 8 10 2018. [Online]. Available: [https://www.usef.energy/app/uploads/2018/11/USEF-White-paper-Flexibility-Value-Chain-2018-version-1.0_Oct18.pdf](https://www.usef.energy/app/uploads/2018/11/USEF-White-paper-Flexibility-Value-Chain-2018-version-1.0_Oct18.pdf).
 
 ### Grid capacity management
 
@@ -31,7 +33,7 @@ The two mechanisms differ in the freedom of dispatch, trade and/or connect and t
 ![](../assets/images/image3.emf.odg.svg)
 
 UFTP is designed for bilateral trading between the AGR and DSO.
-Trading via market platforms can bring added value, see [2].
+Trading via market platforms can bring added value, see [^B2].
 In UFTP, market platforms may take the role of trading counterparty, hence serving as a DSO proxy in trades with the AGR, and as an AGR proxy in trades with the DSO.
 When trading via a platform, the role of FlexRequests from DSOs to AGRs is less obvious; i.e., a DSO has free choice of the available FlexOffers.
 In addition, FlexOffers and FlexRequests do not need to be directly related and so UFTP supports unsolicited FlexOffers without requiring a reference to an underlying FlexRequest.
@@ -43,7 +45,9 @@ In addition, FlexOffers and FlexRequests do not need to be directly related and 
 USEF assumes that a DSO or TSO can freely and independently trade flexibility with AGRs.
 Any potential goal conflicts can be settled through the market mechanism.
 Alternatively, TSO and DSO requests can be aligned, resulting in a TSO/DSO coordination platform where TSOs and DSOs coordinate the tendering, trading, activation and/or settlement of flexibility for their own purposes ( i. e. ancillary services).
-See [2] for a discussion on this topic.
+See [^B2] for a discussion on this topic.
+
+[^B2]: USEF, "White paper: Flexibility Platforms," 2 november 2018. [Online]. Available: [https://www.usef.energy/app/uploads/2018/11/USEF-White-Paper-Flexibility-Platforms-version-1.0_Nov2018.pdf](https://www.usef.energy/app/uploads/2018/11/USEF-White-Paper-Flexibility-Platforms-version-1.0_Nov2018.pdf).
 
 UFTP can be applied without any further changes in a configuration where there is TSO/DSO coordination.
 
@@ -53,5 +57,6 @@ The text, graphs and examples in this document assume flex trading between AGR a
 However, UFTP can equally be used for grid constraint services between an AGR and TSO.
 
 The messages defined in UFTP can also be used for flexibility trading in the plan phase between an AGR and BRP.
-See the USEF Framework Specifications [3] for a complete description of this alternative use.
+See the USEF Framework Specifications [^B3] for a complete description of this alternative use.
 
+[^B3]: USEF, "USEF - The FrameWork Specifications 2015," 2015. [Online].

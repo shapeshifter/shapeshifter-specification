@@ -4,8 +4,10 @@ USEF – like most complex information systems – deals with sensitive data and
 Privacy & security are system-wide issues; protection of individual subsystems/components is not enough; the system is as strong as the weakest link.
 USEF therefore follows the principle of privacy & security by design.
 
-USEF provides a separate privacy and security guideline [5] that lists approximately 50 design principles which, combined, present a complete view of the privacy and security aspects associated with smart energy systems.
+USEF provides a separate privacy and security guideline [^B5] that lists approximately 50 design principles which, combined, present a complete view of the privacy and security aspects associated with smart energy systems.
 It takes into account the current legal and social views on privacy & security and links these to the future directions in which they will likely evolve.
+
+[^B5]: USEF Foundation, "USEF: The Privacy and Security Guideline," USEF Foundation, Arnhem, 2015.
 
 The guideline forms the basis for the logical security architecture that is reflected in USEF’s process flows and use cases.
 Some remarks about security and responsibility:

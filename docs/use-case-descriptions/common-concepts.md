@@ -14,5 +14,7 @@ The USEF foundation does not want to narrow down the open nature of the USEF spe
 Therefore, the use cases also prescribe only the default main scenario without error handling, and only the successful outcome.
 The single exception to this rule is described in the next bullet.
 USEF does provide some recommended practices for handling some of the failure handling.
-- Any USEF IT architecture must adhere to the USEF privacy & security guideline (see [5]).
+- Any USEF IT architecture must adhere to the USEF privacy & security guideline (see [^B5]).
 In the USEF use cases the most relevant privacy & security considerations are provided.
+
+[^B5]: USEF Foundation, "USEF: The Privacy and Security Guideline," USEF Foundation, Arnhem, 2015.
