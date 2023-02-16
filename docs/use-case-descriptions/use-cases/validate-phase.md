@@ -46,7 +46,7 @@ The use cases are explained in the following sections.
     <th>Cause of rejection</th>
   </tr>
   <tr>
-    <td>&lt;See action 3.5&gt;</td>
+    <td>&lt;See Message validation&gt;</td>
     <td>D-prognosis failed to pass validation by the DSO</td>
   </tr>
   <tr>
@@ -103,7 +103,7 @@ It is essential to use a sequence number that is incremented each time a new rev
     <th>Cause of rejection</th>
   </tr>
   <tr>
-    <td>&lt;See action 3.5&gt;</td>
+    <td>&lt;See Message validation&gt;</td>
     <td>FlexRequest failed to pass validation by the AGR</td>
   </tr>
   <tr>
@@ -161,7 +161,7 @@ Which variations (more/less requested power per ISP, time-shift of load) are cre
     <th>Cause of rejection</th>
   </tr>
   <tr>
-    <td>&lt;See action 3.5&gt;</td>
+    <td>&lt;See Message validation&gt;</td>
     <td>FlexOffer failed to pass validation by the DSO</td>
   </tr>
   <tr>
@@ -225,7 +225,7 @@ Note that acceptance of the FlexOffer message does not imply ordering of the fle
     <th>Cause of rejection</th>
   </tr>
   <tr>
-    <td>&lt;See action 3.5&gt;</td>
+    <td>&lt;See Message validation&gt;</td>
     <td>FlexOfferRevocation failed to pass validation by the DSO</td>
   </tr>
   <tr>
@@ -279,7 +279,7 @@ Where this is the case, priority should be given to the FlexOfferRevocation.
     <th>Cause of rejection</th>
   </tr>
   <tr>
-    <td>&lt;See action 3.5&gt;</td>
+    <td>&lt;See Message validation&gt;</td>
     <td>FlexOrder failed to pass validation by the AGR</td>
   </tr>
   <tr>

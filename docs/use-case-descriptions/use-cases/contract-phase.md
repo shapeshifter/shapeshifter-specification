@@ -49,7 +49,7 @@ Once populated, the common reference will allow AGRs to determine whether there 
     <th>Cause of rejection</th>
   </tr>
   <tr>
-    <td>&lt;See action 3.5&gt;</td>
+    <td>&lt;See Message validation&gt;</td>
     <td>DSOPortfolioUpdate failed to pass validation by the CRO</td>
   </tr>
   <tr>
@@ -114,7 +114,7 @@ This list is stored and, subject to access controls, made available to other mar
     <th>Cause of rejection</th>
   </tr>
   <tr>
-    <td>&lt;See action 3.5&gt;</td>
+    <td>&lt;See Message validation&gt;</td>
     <td>AGRPortfolioUpdate failed to pass validation by the CRO</td>
   </tr>
   <tr>
