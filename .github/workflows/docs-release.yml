@@ -28,7 +28,9 @@ jobs:
         run: |
           git config --global user.name Docs deploy
           git config --global user.email docs-action@shapshifter
-      - name: Push the verisioned documentation
-        run: poetry run mike deploy --push --update-aliases ${{ github.event.release.tag_name }}
+      - name: Push the verisioned documentation with alias latest
+        run: poetry run mike deploy --push --update-aliases ${{ github.event.release.tag_name }} latest
         env:
           ENABLE_PDF_EXPORT: 1
+      - name: Set latest as default (should only have te be run once)
+        run: poetry run mike set-default --push latest
