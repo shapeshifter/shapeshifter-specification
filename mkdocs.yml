@@ -35,7 +35,8 @@ plugins:
   - search
   - with-pdf:
       cover_logo: assets/images/shapeshifter-horizontal-color.svg
-      cover_subtitle: "v3.0.0"
+      # cover_subtitle below is replaced in CI to the release version
+      cover_subtitle: "development"
       enabled_if_env: ENABLE_PDF_EXPORT
   - glightbox:
       width: 50vw
