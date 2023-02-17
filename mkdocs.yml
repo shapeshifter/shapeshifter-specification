@@ -1,6 +1,8 @@
 site_name: Shapeshifter specification
 repo_url: https://github.com/shapeshifter/shapeshifter-specification
 site_url: http://localhost:8000/
+site_author: "Contributors to the Shapeshifter project"
+copyright: "Copyright 2020-2023 Contributors to the Shapeshifter project"
 docs_dir: docs/
 theme:
   name: material
@@ -28,23 +30,9 @@ extra:
       name: Project wiki page
 plugins:
   - search
-  - pdf-generate:
-      author: "Shapeshifter contributors"
-      # author_logo: img/logo.svg
-      copyright: "Copyright © 2023 - Shapeshifter authors"
-      disclaimer: "Disclaimer: Content can change at anytime and best to refer to website for latest information."
-      # cover: true
-      cover_title: TITLE TEXT
-      cover_subtitle: SUBTITLE TEXT
-      custom_template_path: TEMPLATES PATH
-      toc: false
-      toc_level: 3
-      toc_title: TOC TITLE TEXT
-      toc_numbering: true
-      # cover_images:
-      #   default: img/default.svg
-      #   type1: img/type1.png
-      #   type2: https://example.com/cover.svg
+  - with-pdf:
+      cover_logo: assets/images/shapeshifter-horizontal-color.svg
+      cover_subtitle: "v3.0.0"
       enabled_if_env: ENABLE_PDF_EXPORT
   - glightbox:
       width: 50vw

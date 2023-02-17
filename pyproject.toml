@@ -11,8 +11,8 @@ packages = [{include = "shapeshifter_specification"}]
 python = "^3.10"
 mkdocs-material = "^9.0.11"
 mike = "^1.1.2"
-mkdocs-pdf-generate = {git = "https://github.com/iSOLveIT/mkdocs-pdf-generate/"}
 mkdocs-glightbox = "^0.3.1"
+mkdocs-with-pdf = "^0.9.3"
 
 
 [build-system]

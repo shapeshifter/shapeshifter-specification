@@ -10,7 +10,7 @@ For more information see the projects used to render and upload the documentatio
 
 - [MkDocs](https://www.mkdocs.org/) the rendering engine
 - [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/) the theme
-- [MkDocs PDF Generate Plugin](https://isolveit.github.io/mkdocs-pdf-generate/) to render pdf document of sections
+- [PDF Generate Plugin for MkDocs](https://github.com/orzih/mkdocs-with-pdf) to render pdf document of sections
 - [Mike](https://github.com/jimporter/mike) to publish multiple versions
 
 Besides the technical features, here are some brief recommendations on using Markdown:

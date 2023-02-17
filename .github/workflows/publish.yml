@@ -24,3 +24,5 @@ jobs:
           pip install poetry
           poetry install --no-interaction --no-root
       - run: poetry run mkdocs gh-deploy --force
+        env:
+          ENABLE_PDF_EXPORT: 1
