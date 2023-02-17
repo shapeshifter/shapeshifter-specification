@@ -13,6 +13,7 @@ theme:
     - navigation.top # back-to-top button when scrolling back up
   logo: assets/images/shapeshifter-icon-white.svg
   favicon: assets/images/shapeshifter-icon-color.svg
+  custom_dir: overrides # to add the warning bar for the latest version
 extra:
   version:
     provider: mike
