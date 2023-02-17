@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2021 orzih
+#
+# SPDX-License-Identifier: MIT
+
 import logging
 
 from bs4 import BeautifulSoup
