@@ -1,0 +1,34 @@
+name: docs-release
+
+on:
+  release:
+    types:
+      - published
+permissions:
+  contents: write
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0 # checkout branch history required to update
+      - uses: actions/setup-python@v4
+        with:
+          python-version: 3.x
+      - uses: actions/cache@v2
+        with:
+          key: ${{ github.ref }}
+          path: .cache
+      - name: Install Poetry and dependencies
+        run: |
+          pip install poetry
+          poetry install --no-interaction --no-root
+      - name: Configure fake git user to associate commits
+        run: |
+          git config --global user.name Docs deploy
+          git config --global user.email docs-action@shapshifter
+      - name: Push the verisioned documentation
+        run: poetry run mike deploy --push --update-aliases ${{ github.event.release.tag_name }}
+        env:
+          ENABLE_PDF_EXPORT: 1

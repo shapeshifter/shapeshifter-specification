@@ -14,6 +14,8 @@ theme:
   logo: assets/images/shapeshifter-icon-white.svg
   favicon: assets/images/shapeshifter-icon-color.svg
 extra:
+  version:
+    provider: mike
   social:
     # available icons in https://github.com/squidfunk/mkdocs-material/tree/master/material/.icons/fontawesome
     - icon: fontawesome/brands/github
@@ -36,6 +38,7 @@ plugins:
       enabled_if_env: ENABLE_PDF_EXPORT
   - glightbox:
       width: 50vw
+  - mike
 markdown_extensions:
   - admonition # for Recommended Practice blocks
   - md_in_html # for figcaption at images
