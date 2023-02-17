@@ -2043,15 +2043,15 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
      showgrid="false"
-     inkscape:zoom="1.1892616"
-     inkscape:cx="221.98648"
-     inkscape:cy="123.18568"
+     inkscape:zoom="1.6818699"
+     inkscape:cx="216.42578"
+     inkscape:cy="129.32035"
      inkscape:window-width="1920"
-     inkscape:window-height="1141"
+     inkscape:window-height="1043"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
-     inkscape:current-layer="g8" />
+     inkscape:current-layer="g4482" />
   <g
      id="g8"
      inkscape:groupmode="layer"
@@ -2770,26 +2770,6 @@
          style="fill:#0f596e;fill-opacity:1;fill-rule:nonzero;stroke:none"
          id="path2006" />
       <g
-         id="g2008">
-        <g
-           id="g2010"
-           clip-path="url(#clipPath2014)">
-          <g
-             id="g2016"
-             transform="matrix(157.68,0,0,12.96,201.84,410.4)">
-            <image
-               width="1"
-               height="1"
-               style="image-rendering:optimizeSpeed"
-               preserveAspectRatio="none"
-               transform="matrix(1,0,0,-1,0,1)"
-               xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAbYAAAAjCAYAAAD41S80AAAABHNCSVQICAgIfAhkiAAAAKJJREFUeJzt1cEJACAQwLDT/XfWJQShJBP01zUzZwAgYv8OAICXjA2AFGMDIMXYAEgxNgBSjA2AFGMDIMXYAEgxNgBSjA2AFGMDIMXYAEgxNgBSjA2AFGMDIMXYAEgxNgBSjA2AFGMDIMXYAEgxNgBSjA2AFGMDIMXYAEgxNgBSjA2AFGMDIMXYAEgxNgBSjA2AFGMDIMXYAEgxNgBSjA2AlAt7VQFFIiz1rAAAAABJRU5ErkJggg=="
-               mask="url(#mask2018)"
-               id="image2022" />
-          </g>
-        </g>
-      </g>
-      <g
          id="g2024">
         <g
            id="g2026"
@@ -2815,26 +2795,6 @@
          d="m 367.46,416.73 7.68,40.6 -0.49,0.09 -7.68,-40.6 z m 10.2,39.11 -1.83,6.45 -4.07,-5.34 z"
          style="fill:#0f596e;fill-opacity:1;fill-rule:nonzero;stroke:none"
          id="path2044" />
-      <g
-         id="g2046">
-        <g
-           id="g2048"
-           clip-path="url(#clipPath2052)">
-          <g
-             id="g2054"
-             transform="matrix(157.68,0,0,13.08,285.84,404.04)">
-            <image
-               width="1"
-               height="1"
-               style="image-rendering:optimizeSpeed"
-               preserveAspectRatio="none"
-               transform="matrix(1,0,0,-1,0,1)"
-               xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAbUAAAAkCAYAAAAO56SPAAAABHNCSVQICAgIfAhkiAAAAKZJREFUeJzt1cEJACAQwLDT/XfWJQShJBP01zUzZwAgYP8OAIBXTA2ADFMDIMPUAMgwNQAyTA2ADFMDIMPUAMgwNQAyTA2ADFMDIMPUAMgwNQAyTA2ADFMDIMPUAMgwNQAyTA2ADFMDIMPUAMgwNQAyTA2ADFMDIMPUAMgwNQAyTA2ADFMDIMPUAMgwNQAyTA2ADFMDIMPUAMgwNQAyTA2ADFMDIOMClrwBR7Ndr4MAAAAASUVORK5CYII="
-               mask="url(#mask2056)"
-               id="image2060" />
-          </g>
-        </g>
-      </g>
       <g
          id="g2062">
         <g
