@@ -1,3 +1,9 @@
+<!--
+SPDX-FileCopyrightText: 2020-2023 Contributors to the Shapeshifter project
+
+SPDX-License-Identifier: Apache-2.0
+-->
+
 # FlexSettlementResponse
 
 Upon receiving and processing a FlexSettlement message, the AGR must reply with a FlexSettlementResponse, indicating whether the initial message was handled successfully.

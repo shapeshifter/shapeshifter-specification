@@ -1,3 +1,9 @@
+<!--
+SPDX-FileCopyrightText: 2020-2023 Contributors to the Shapeshifter project
+
+SPDX-License-Identifier: Apache-2.0
+-->
+
 # Message transport mechanism
 
 When implementing the USEF best-practice message transfer mechanism, the procedures outlined in this section apply.

@@ -1,3 +1,9 @@
+<!--
+SPDX-FileCopyrightText: 2020-2023 Contributors to the Shapeshifter project
+
+SPDX-License-Identifier: Apache-2.0
+-->
+
 # Contract phase
 
 In [Contract phase](../../general-description/contract-phase.md) the informative description of the contract phase processes has been given.

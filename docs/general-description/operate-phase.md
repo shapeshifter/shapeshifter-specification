@@ -1,3 +1,9 @@
+<!--
+SPDX-FileCopyrightText: 2020-2023 Contributors to the Shapeshifter project
+
+SPDX-License-Identifier: Apache-2.0
+-->
+
 # Operate phase
 
 While (similar to the current liberalized energy market) the total energy system will remain in balance, without any congestion issues, as long as there are no deviations from the plans, it is unlikely that all plans will be executed exactly.

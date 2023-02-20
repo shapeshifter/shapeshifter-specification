@@ -1,3 +1,9 @@
+<!--
+SPDX-FileCopyrightText: 2020-2023 Contributors to the Shapeshifter project
+
+SPDX-License-Identifier: Apache-2.0
+-->
+
 # DSOPortfolioUpdateResponse
 
 Upon receiving and processing a DSOPortfolioUpdate message, the receiving implementation must reply with a DSOPortfolioUpdateResponse, indicating whether the update was handled successfully.

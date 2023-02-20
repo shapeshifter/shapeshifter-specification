@@ -1,3 +1,9 @@
+<!--
+SPDX-FileCopyrightText: 2020-2023 Contributors to the Shapeshifter project
+
+SPDX-License-Identifier: Apache-2.0
+-->
+
 # TestMessageResponse
 
 Upon receiving a TestMessage, the receiving implementation must reply with a TestMessageResponse.

@@ -1,3 +1,9 @@
+<!--
+SPDX-FileCopyrightText: 2020-2023 Contributors to the Shapeshifter project
+
+SPDX-License-Identifier: Apache-2.0
+-->
+
 # Purpose
 
 The USEF Flex Trading protocol (UFTP) is a subset of the USEF framework.

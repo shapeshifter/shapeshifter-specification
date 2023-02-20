@@ -1,3 +1,9 @@
+<!--
+SPDX-FileCopyrightText: 2020-2023 Contributors to the Shapeshifter project
+
+SPDX-License-Identifier: Apache-2.0
+-->
+
 # DSOPortfolioQueryResponse
 
 Upon receiving and processing a DSOPortfolioQuery message, the receiving implementation must reply with a DSOPortfolioQueryResponse, indicating whether the query executed successfully, and if it did, including the query results.

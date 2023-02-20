@@ -1,3 +1,9 @@
+<!--
+SPDX-FileCopyrightText: 2020-2023 Contributors to the Shapeshifter project
+
+SPDX-License-Identifier: Apache-2.0
+-->
+
 # Message catalog
 
 USEF messages consist of XML, use UTF-8 encoding, and should validate against the USEF schema corresponding to the specification version implemented by a participant.

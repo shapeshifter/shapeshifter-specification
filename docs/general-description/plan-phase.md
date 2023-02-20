@@ -1,3 +1,9 @@
+<!--
+SPDX-FileCopyrightText: 2020-2023 Contributors to the Shapeshifter project
+
+SPDX-License-Identifier: Apache-2.0
+-->
+
 # Plan phase
 
 USEF’s plan phase aims to find an economically optimized program to supply the energy demand of both AGR and BRP portfolios for a certain period.

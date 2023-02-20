@@ -1,3 +1,9 @@
+<!--
+SPDX-FileCopyrightText: 2020-2023 Contributors to the Shapeshifter project
+
+SPDX-License-Identifier: Apache-2.0
+-->
+
 # Operate phase
 
 In [Operate phase](../../general-description/operate-phase.md) the informative description of the operate phase processes are provided.

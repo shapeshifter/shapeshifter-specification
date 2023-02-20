@@ -1,3 +1,9 @@
+<!--
+SPDX-FileCopyrightText: 2020-2023 Contributors to the Shapeshifter project
+
+SPDX-License-Identifier: Apache-2.0
+-->
+
 # DSOPortfolioUpdate
 
 The DSOPortfolioUpdate is used by the DSO to indicate on which congestion points it wants to engage in flexibility trading.

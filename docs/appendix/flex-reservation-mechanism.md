@@ -1,3 +1,9 @@
+<!--
+SPDX-FileCopyrightText: 2020-2023 Contributors to the Shapeshifter project
+
+SPDX-License-Identifier: Apache-2.0
+-->
+
 # Flex reservation mechanism
 
 As introduced in [Bilateral contract: FlexOption](../general-description/contract-phase.md#bilateral-contract-flexoption), DSO’s may want to contract a minimum amount of flexibility to be sure that it is available on request.

@@ -1,3 +1,9 @@
+<!--
+SPDX-FileCopyrightText: 2020-2023 Contributors to the Shapeshifter project
+
+SPDX-License-Identifier: Apache-2.0
+-->
+
 # Rationale for information exchange in flexibility request
 
 USEF specifies that when sending a flexibility request, the DSO provides the following information about expected congestion. This appendix provides the rationale.

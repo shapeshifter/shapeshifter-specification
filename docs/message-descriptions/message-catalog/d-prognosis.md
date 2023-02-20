@@ -1,3 +1,9 @@
+<!--
+SPDX-FileCopyrightText: 2020-2023 Contributors to the Shapeshifter project
+
+SPDX-License-Identifier: Apache-2.0
+-->
+
 # D-Prognosis
 
 D-Prognosis messages are used to communicate D-prognoses between AGRs and DSOs.

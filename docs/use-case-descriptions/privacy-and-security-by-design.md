@@ -1,3 +1,9 @@
+<!--
+SPDX-FileCopyrightText: 2020-2023 Contributors to the Shapeshifter project
+
+SPDX-License-Identifier: Apache-2.0
+-->
+
 # Privacy and security by design
 
 USEF – like most complex information systems – deals with sensitive data and therefore requires security and privacy preservation measures.
