@@ -1,3 +1,9 @@
+<!--
+SPDX-FileCopyrightText: 2020-2023 Contributors to the Shapeshifter project
+
+SPDX-License-Identifier: Apache-2.0
+-->
+
 # SignedMessage
 
 The SignedMessage element represents the secure wrapper used to submit USEF XML messages from the local message queue to the message queue of a remote participant.

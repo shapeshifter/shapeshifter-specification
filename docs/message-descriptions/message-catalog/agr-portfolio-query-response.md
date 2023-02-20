@@ -1,3 +1,9 @@
+<!--
+SPDX-FileCopyrightText: 2020-2023 Contributors to the Shapeshifter project
+
+SPDX-License-Identifier: Apache-2.0
+-->
+
 # AGRPortfolioQueryResponse
 
 Upon receiving and processing an AGRPortfolioQuery message, the receiving implementation must reply with an AGRPortfolioUpdate, indicating whether the query was handled successfully.

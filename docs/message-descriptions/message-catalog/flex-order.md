@@ -1,3 +1,9 @@
+<!--
+SPDX-FileCopyrightText: 2020-2023 Contributors to the Shapeshifter project
+
+SPDX-License-Identifier: Apache-2.0
+-->
+
 # FlexOrder
 
 FlexOrder messages are used by DSOs to purchase flexibility from an AGR based on a previous FlexOffer.

@@ -1,3 +1,9 @@
+<!--
+SPDX-FileCopyrightText: 2020-2023 Contributors to the Shapeshifter project
+
+SPDX-License-Identifier: Apache-2.0
+-->
+
 # Common concepts
 
 The USEF specification standardizes the logical interfaces and defines the minimum functionality of the components in the form of use cases (this chapter) and [message transport specifications](../appendix/message-transport-mechanism.md) and [message descriptions](../message-descriptions/scope.md).

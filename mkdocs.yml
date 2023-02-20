@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2020-2023 Contributors to the Shapeshifter project
+#
+# SPDX-License-Identifier: Apache-2.0
+
 site_name: Shapeshifter specification
 repo_url: https://github.com/shapeshifter/shapeshifter-specification
 site_url: http://localhost:8000/

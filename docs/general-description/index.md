@@ -1,3 +1,9 @@
+<!--
+SPDX-FileCopyrightText: 2020-2023 Contributors to the Shapeshifter project
+
+SPDX-License-Identifier: Apache-2.0
+-->
+
 # General description
 
 This chapter describes the global information flows for flexibility trading between AGR and DSO for grid contraint purposes.

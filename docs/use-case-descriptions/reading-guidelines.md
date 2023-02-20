@@ -1,3 +1,9 @@
+<!--
+SPDX-FileCopyrightText: 2020-2023 Contributors to the Shapeshifter project
+
+SPDX-License-Identifier: Apache-2.0
+-->
+
 # Reading guidelines
 
 This chapter contains separate sections per USEF phase: Plan, Validate, Operate, and Settle.

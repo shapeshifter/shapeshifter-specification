@@ -1,3 +1,9 @@
+<!--
+SPDX-FileCopyrightText: 2020-2023 Contributors to the Shapeshifter project
+
+SPDX-License-Identifier: Apache-2.0
+-->
+
 # Reading guideline
 
 The USEF Flexibility Trading Protocol Specification is accompanied by ‘USEF: The Framework explained’ [^B4] which provides insight into the background, scope and concepts underpinning USEF.

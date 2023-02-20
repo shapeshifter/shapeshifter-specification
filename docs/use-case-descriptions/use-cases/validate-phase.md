@@ -1,3 +1,9 @@
+<!--
+SPDX-FileCopyrightText: 2020-2023 Contributors to the Shapeshifter project
+
+SPDX-License-Identifier: Apache-2.0
+-->
+
 # Validate phase
 
 In [Validate phase](../../general-description/validate-phase.md), informative description of the validate phase processes has been given. In this chapter the use cases will be described as derived from the validate phase.

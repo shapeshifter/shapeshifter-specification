@@ -1,3 +1,9 @@
+<!--
+SPDX-FileCopyrightText: 2020-2023 Contributors to the Shapeshifter project
+
+SPDX-License-Identifier: Apache-2.0
+-->
+
 # TestMessage
 
 TestMessage does not have any content (other than the mandatory metadata) and may be used by implementations for (connectivity) testing purposes.

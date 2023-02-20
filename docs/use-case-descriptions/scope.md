@@ -1,3 +1,9 @@
+<!--
+SPDX-FileCopyrightText: 2020-2023 Contributors to the Shapeshifter project
+
+SPDX-License-Identifier: Apache-2.0
+-->
+
 # Scope
 
 This chapter provides details of the functions that contain interactions relevant to the DSO and AGR, in order to be active in the USEF MCM.

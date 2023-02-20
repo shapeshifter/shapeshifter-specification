@@ -1,3 +1,9 @@
+<!--
+SPDX-FileCopyrightText: 2020-2023 Contributors to the Shapeshifter project
+
+SPDX-License-Identifier: Apache-2.0
+-->
+
 # FlexSettlement
 
 The FlexSettlement message is sent by DSOs on a regular basis (typically monthly) to AGRs, in order to initiate settlement.

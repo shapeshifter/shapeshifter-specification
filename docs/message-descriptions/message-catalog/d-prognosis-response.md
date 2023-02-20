@@ -1,3 +1,9 @@
+<!--
+SPDX-FileCopyrightText: 2020-2023 Contributors to the Shapeshifter project
+
+SPDX-License-Identifier: Apache-2.0
+-->
+
 # D-PrognosisResponse
 
 Upon receiving and processing a prognosis message, the receiving implementation must reply with a D-PrognosisResponse, indicating whether the prognosis was syntactically and semantically valid, and, where any FlexOrder messages have previously been sent for any ISP in the period the prognosis applies to, a FlexOrderStatus indication for each of those orders.

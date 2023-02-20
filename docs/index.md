@@ -1,3 +1,9 @@
+<!--
+SPDX-FileCopyrightText: 2020-2023 Contributors to the Shapeshifter project
+
+SPDX-License-Identifier: Apache-2.0
+-->
+
 # USEF Flex Trading Protocol
 
 The Universal Smart Energy Framework (USEF) has been developed to drive a fast, fair and lowest cost route to an integrated smart energy future.

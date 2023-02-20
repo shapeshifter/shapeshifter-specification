@@ -1,3 +1,9 @@
+<!--
+SPDX-FileCopyrightText: 2020-2023 Contributors to the Shapeshifter project
+
+SPDX-License-Identifier: Apache-2.0
+-->
+
 # Scope
 
 USEF defines the content of XML messages between role processes, as required for implementation of USEF’s MCM.

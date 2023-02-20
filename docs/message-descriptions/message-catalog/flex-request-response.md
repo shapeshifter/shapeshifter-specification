@@ -1,3 +1,9 @@
+<!--
+SPDX-FileCopyrightText: 2020-2023 Contributors to the Shapeshifter project
+
+SPDX-License-Identifier: Apache-2.0
+-->
+
 # FlexRequestResponse
 
 Upon receiving and processing a FlexRequest message, the receiving implementation must reply with a FlexRequestResponse, indicating whether the flexibility request was processed successfully.
