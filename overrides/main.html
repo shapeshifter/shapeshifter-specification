@@ -1,0 +1,14 @@
+<!--
+SPDX-FileCopyrightText: 2021 Martin Donath (squidfunk)
+
+SPDX-License-Identifier: MIT
+-->
+
+{% extends "base.html" %}
+
+{% block outdated %}
+You're not viewing the latest released version.
+<a href="{{ '../' ~ base_url }}">
+  <strong>Click here to go to latest release.</strong>
+</a>
+{% endblock %}

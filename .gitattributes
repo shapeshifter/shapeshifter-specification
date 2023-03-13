@@ -1,2 +1,6 @@
+# Copyright Contributors to the Shapeshifter project
+#
+# SPDX-License-Identifier: Apache-2.0
+
 * text=auto eol=lf
 *.xsd eol=lf

@@ -1,0 +1,119 @@
+# SPDX-FileCopyrightText: 2020-2023 Contributors to the Shapeshifter project
+#
+# SPDX-License-Identifier: Apache-2.0
+
+site_name: Shapeshifter specification
+repo_url: https://github.com/shapeshifter/shapeshifter-specification
+site_url: http://localhost:8000/
+site_author: "Contributors to the Shapeshifter project"
+copyright: "Copyright 2020-2023 Contributors to the Shapeshifter project"
+docs_dir: docs/
+theme:
+  name: material
+  features:
+    - content.action.edit
+    - navigation.indexes # index pages per section
+    - navigation.footer # page links to previous and next page in footer
+    - navigation.top # back-to-top button when scrolling back up
+  logo: assets/images/shapeshifter-icon-white.svg
+  favicon: assets/images/shapeshifter-icon-color.svg
+  custom_dir: overrides # to add the warning bar for the latest version
+extra:
+  version:
+    provider: mike
+  social:
+    # available icons in https://github.com/squidfunk/mkdocs-material/tree/master/material/.icons/fontawesome
+    - icon: fontawesome/brands/github
+      link: https://github.com/shapeshifter
+      name: GitHub organization of Shapeshifter
+    - icon: fontawesome/brands/slack
+      link: https://lfenergy.slack.com/channels/shapeshifter
+      name: "LFEnergy Slack channel #shapeshifter"
+    - icon: fontawesome/regular/envelope
+      link: https://lists.lfenergy.org/g/shapeshifter-discussion
+      name: Mailinglist shapeshifter-discussion
+    - icon: fontawesome/brands/wikipedia-w
+      link: https://wiki.lfenergy.org/display/SHAP/
+      name: Project wiki page
+plugins:
+  - search
+  - with-pdf:
+      cover_logo: assets/images/shapeshifter-horizontal-color.svg
+      # cover_subtitle below is replaced in CI to the release version
+      cover_subtitle: "development"
+      enabled_if_env: ENABLE_PDF_EXPORT
+  - glightbox:
+      width: 50vw
+  - mike
+markdown_extensions:
+  - admonition # for Recommended Practice blocks
+  - md_in_html # for figcaption at images
+  - footnotes
+  - attr_list # to support width property on images
+
+nav:
+  - USEF Flex Trading Protocol: index.md
+  - About UFTP:
+      - Purpose: about/purpose.md
+      - Scope: about/scope.md
+      - Levels of compliancy: about/levels-of-compliancy.md
+      - Reading guideline: about/reading-guideline.md
+  - General description:
+      - general-description/index.md
+      - USEF general concepts: general-description/usef-general-concepts.md
+      - Contract phase: general-description/contract-phase.md
+      - Plan phase: general-description/plan-phase.md
+      - Validate phase: general-description/validate-phase.md
+      - Operate phase: general-description/operate-phase.md
+      - Settle phase: general-description/settle-phase.md
+  - Use case descriptions:
+      - Scope: use-case-descriptions/scope.md
+      - Privacy and security by design: use-case-descriptions/privacy-and-security-by-design.md
+      - Common concepts: use-case-descriptions/common-concepts.md
+      - Reading guidelines: use-case-descriptions/reading-guidelines.md
+      - Message validation: use-case-descriptions/message-validation.md
+      - Use Cases:
+          - Contract phase: use-case-descriptions/use-cases/contract-phase.md
+          - Plan phase: use-case-descriptions/use-cases/plan-phase.md
+          - Validate phase: use-case-descriptions/use-cases/validate-phase.md
+          - Operate phase: use-case-descriptions/use-cases/operate-phase.md
+          - Settle phase: use-case-descriptions/use-cases/settle-phase.md
+  - Message descriptions:
+      - Scope: message-descriptions/scope.md
+      - Message catalog:
+          - message-descriptions/message-catalog/index.md
+          - Power: message-descriptions/message-catalog/power.md
+          - Metadata attributes: message-descriptions/message-catalog/metadata-attributes.md
+          - SignedMessage: message-descriptions/message-catalog/signed-message.md
+          - TestMessage: message-descriptions/message-catalog/test-message.md
+          - TestMessageResponse: message-descriptions/message-catalog/test-message-response.md
+          - AGRPortfolioUpdate: message-descriptions/message-catalog/agr-portfolio-update.md
+          - AGRPortfolioUpdateResponse: message-descriptions/message-catalog/agr-portfolio-update-response.md
+          - AGRPortfolioQuery: message-descriptions/message-catalog/agr-portfolio-query.md
+          - AGRPortfolioQueryResponse: message-descriptions/message-catalog/agr-portfolio-query-response.md
+          - DSOPortfolioUpdate: message-descriptions/message-catalog/dso-portfolio-update.md
+          - DSOPortfolioUpdateResponse: message-descriptions/message-catalog/dso-portfolio-update-response.md
+          - DSOPortfolioQuery: message-descriptions/message-catalog/dso-portfolio-query.md
+          - DSOPortfolioQueryResponse: message-descriptions/message-catalog/dso-portfolio-query-response.md
+          - FlexReservationUpdate: message-descriptions/message-catalog/flex-reservation-update.md
+          - FlexReservationUpdateReponse: message-descriptions/message-catalog/flex-reservation-update-response.md
+          - D-Prognosis: message-descriptions/message-catalog/d-prognosis.md
+          - D-PrognosisResponse: message-descriptions/message-catalog/d-prognosis-response.md
+          - FlexRequest: message-descriptions/message-catalog/flex-request.md
+          - FlexRequestResponse: message-descriptions/message-catalog/flex-request-response.md
+          - FlexOffer: message-descriptions/message-catalog/flex-offer.md
+          - FlexOfferResponse: message-descriptions/message-catalog/flex-offer-response.md
+          - FlexOfferRevocation: message-descriptions/message-catalog/flex-offer-revocation.md
+          - FlexOfferRevocationResponse: message-descriptions/message-catalog/flex-offer-revocation-response.md
+          - FlexOrder: message-descriptions/message-catalog/flex-order.md
+          - FlexOrderResponse: message-descriptions/message-catalog/flex-order-response.md
+          - Metering: message-descriptions/message-catalog/metering.md
+          - MeteringResponse: message-descriptions/message-catalog/metering-response.md
+          - FlexSettlement: message-descriptions/message-catalog/flex-settlement.md
+          - FlexSettlementResponse: message-descriptions/message-catalog/flex-settlement-response.md
+  - Appendix:
+      - Glossary: appendix/glossary.md
+      - Rationale for information exchange in flexiblity request: appendix/rationale-for-information-exchange-in-flexibility-request.md
+      - Flex reservation mechanism: appendix/flex-reservation-mechanism.md
+      - Message transport mechanism: appendix/message-transport-mechanism.md
+      - Bibliography: appendix/bibliography.md
