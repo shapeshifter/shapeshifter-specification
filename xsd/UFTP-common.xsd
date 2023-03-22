@@ -224,7 +224,7 @@ SPDX-License-Identifier: Apache-2.0
     <!-- -->
     <xs:complexType name="TestMessageResponseType">
         <xs:complexContent>
-            <xs:extension base="PayloadMessageType"/>
+            <xs:extension base="PayloadMessageResponseType"/>
         </xs:complexContent>
     </xs:complexType>
     <!-- -->
