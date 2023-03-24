@@ -63,10 +63,6 @@ Once populated, the common reference will allow AGRs to determine whether there 
     <td>CRO is operating in closed mode and the DSO is not pre-registered as an authorized participant</td>
   </tr>
   <tr>
-    <td>Connection conflict: [&lt;Connection EntityAdress&gt;] at [&lt;CongestionPoint EntityAddress&gt;]</td>
-    <td>A connection is transmitted before at another Congestion Point. Return EntityAddress of the concerning Connection and Congestion Point where it has been placed before.</td>
-  </tr>
-  <tr>
     <td>Subordinate sequence number</td>
     <td>The message sequence is lower than that of a previously received DSOPortfolioUpdate</td>
   </tr>
