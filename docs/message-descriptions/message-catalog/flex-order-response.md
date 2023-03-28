@@ -11,7 +11,7 @@ Upon receiving and processing a FlexOrder message, the receiving implementation 
 ```
 <FlexOrderResponse
   Metadata…
-  FlexOrderMessageID = UUID
+  ReferenceMessageID = UUID
   Result             = ("Accepted" | "Rejected")
   RejectionReason    = String (Only if Result = "Rejected")
 />
@@ -20,6 +20,6 @@ Upon receiving and processing a FlexOrder message, the receiving implementation 
 |                    |                                                                                                                                                                                                                                 |
 |--------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Metadata           | The metadata for this message. For details, see [metadata attributes](metadata-attributes.md).                                                                                                                                  |
-| FlexOrderMessageID | MessageID of the FlexOrder that has just been accepted or rejected.                                                                                                                                                             |
+| ReferenceMessageID | MessageID of the FlexOrder that has just been accepted or rejected.                                                                                                                                                             |
 | Result             | Indication whether the order was accepted or rejected. Rejection is only allowed in case the FlexOrder was already accepted previously, cannot be found, or does not exactly match the contents of the corresponding FlexOffer. |
 | RejectionReason    | In case the order was rejected, this attribute must contain a human-readable description of the reason.                                                                                                                         |
