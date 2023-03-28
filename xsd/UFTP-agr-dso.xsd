@@ -181,7 +181,7 @@ SPDX-License-Identifier: Apache-2.0
                             FlexRequest message is sent.</xs:documentation>
                     </xs:annotation>
                 </xs:attribute>
-                <xs:attribute name="ExpirationDateTime" type="xs:dateTime" use="required">
+                <xs:attribute name="ExpirationDateTime" type="DateTimeType" use="required">
                     <xs:annotation>
                         <xs:documentation>Date and time, including the time zone (ISO 8601 formatted as per http://www.w3.org/TR/NOTE-datetime) until which the FlexRequest message is valid.</xs:documentation>
                     </xs:annotation>
@@ -251,7 +251,7 @@ SPDX-License-Identifier: Apache-2.0
                     </xs:annotation>
                     <xs:element name="OfferOption" type="FlexOfferOptionType" minOccurs="1" maxOccurs="unbounded"/>
                 </xs:sequence>
-                <xs:attribute name="ExpirationDateTime" type="xs:dateTime" use="required">
+                <xs:attribute name="ExpirationDateTime" type="DateTimeType" use="required">
                     <xs:annotation>
                         <xs:documentation>Date and time, including the time zone (ISO 8601 formatted as per http://www.w3.org/TR/NOTE-datetime) until which the FlexOffer is valid.</xs:documentation>
                     </xs:annotation>
