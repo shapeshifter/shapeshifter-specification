@@ -11,15 +11,15 @@ Upon receiving and processing a DSOPortfolioUpdate message, the receiving implem
 ```
 <DSOPortfolioUpdateResponse
   Metadata…
-  DSOPortfolioUpdateMessageID = UUID
+  ReferenceMessageID          = UUID
   Result                      = ("Accepted" | "Rejected")
   RejectionReason             = String (only if Result = "Rejected")
 />
 ```
 
-|                             |                                                                                                                      |
-|-----------------------------|----------------------------------------------------------------------------------------------------------------------|
-| Metadata                    | The metadata for this message. For details, see [metadata attributes](metadata-attributes.md).                       |
-| DSOPortfolioUpdateMessageID | MessageID of the DSOPortfolioUpdate message                                                                          |
-| Result                      | Indication whether the DSOPortfolioUpdate was accepted or rejected.                                                  |
-| RejectionReason             | In case the DSOPortfolioUpdate was rejected, this attribute must contain a human-readable description of the reason. |
+|                    |                                                                                                                      |
+|--------------------|----------------------------------------------------------------------------------------------------------------------|
+| Metadata           | The metadata for this message. For details, see [metadata attributes](metadata-attributes.md).                       |
+| ReferenceMessageID | MessageID of the DSOPortfolioUpdate message                                                                          |
+| Result             | Indication whether the DSOPortfolioUpdate was accepted or rejected.                                                  |
+| RejectionReason    | In case the DSOPortfolioUpdate was rejected, this attribute must contain a human-readable description of the reason. |
