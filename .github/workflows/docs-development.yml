@@ -38,3 +38,5 @@ jobs:
         run: poetry run mike deploy --push --update-aliases development
         env:
           ENABLE_PDF_EXPORT: 1
+      - name: Set latest as default (should only have te be run once)
+        run: poetry run mike set-default --push latest
