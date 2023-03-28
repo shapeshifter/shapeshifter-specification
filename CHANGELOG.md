@@ -11,11 +11,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased]
+## [Latest]
 
-## [2.0.0]
+### Added
+* `ReferenceMessageID` attribute in `PayloadMessageResponseType` to replace the specific `*MessageID` attributes in each specific response type. This will simplify handling of response messages.
 
-Project was called USEF (Universal Smart Energy Framework) UFTP (USEF Flexibility Trading Protocol)
+### Removed
+* Specific `*MessageID` attributes in each response type. These have been replaced by the generic `ReferenceMessageID` attribute in the `PayloadMessageResponseType`.
 
 ## [3.0.0] - 2022-06-01
 
@@ -33,3 +35,7 @@ Improve the description of FlexRequestMessageID and D-PrognosisMessageID fields
 
 ### Removed
 Reference from FlexSettlement and FlexSettlementResponse - These fields supplied the same functionality as the FlexSettlementMessageID field. Now please use the FlexSettlementMessageID field in the FlexSettlementResponse
+
+## [2.0.0]
+
+Project was called USEF (Universal Smart Energy Framework) UFTP (USEF Flexibility Trading Protocol)
