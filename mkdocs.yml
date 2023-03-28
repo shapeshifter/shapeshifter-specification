@@ -20,6 +20,7 @@ theme:
   custom_dir: overrides # to add the warning bar for the latest version
 extra:
   version:
+    default: development
     provider: mike
   social:
     # available icons in https://github.com/squidfunk/mkdocs-material/tree/master/material/.icons/fontawesome
