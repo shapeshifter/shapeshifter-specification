@@ -8,8 +8,6 @@ on:
   push:
     branches:
       - main
-      # TODO: remove before merging
-      - feature/markdown
 permissions:
   contents: write
 jobs:
@@ -39,4 +37,4 @@ jobs:
         env:
           ENABLE_PDF_EXPORT: 1
       - name: Set latest as default (should only have te be run once)
-        run: poetry run mike set-default --push latest
+        run: poetry run mike set-default --push development
