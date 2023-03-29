@@ -465,7 +465,7 @@ SPDX-License-Identifier: Apache-2.0
     <!-- Flex Settlement Type -->
     <xs:complexType name="FlexSettlementType">
         <xs:complexContent>
-            <xs:extension base="PayloadMessageResponseType">
+            <xs:extension base="PayloadMessageType">
                 <xs:sequence>
                     <xs:element name="FlexOrderSettlement" type="FlexOrderSettlementType" maxOccurs="unbounded"/>
                     <xs:element name="ContractSettlement" type="ContractSettlementType" maxOccurs="unbounded"/>
