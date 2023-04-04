@@ -17,10 +17,11 @@ theme:
     - navigation.top # back-to-top button when scrolling back up
   logo: assets/images/shapeshifter-icon-white.svg
   favicon: assets/images/shapeshifter-icon-color.svg
-  custom_dir: overrides # to add the warning bar for the latest version
+  # TODO: enable this feature once versioned releases have been published
+  # custom_dir: overrides # to add the warning bar for the latest version
 extra:
   version:
-    default: latest
+    default: development
     provider: mike
   social:
     # available icons in https://github.com/squidfunk/mkdocs-material/tree/master/material/.icons/fontawesome
