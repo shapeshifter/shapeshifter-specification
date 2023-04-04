@@ -1,0 +1,1119 @@
+<!--
+SPDX-FileCopyrightText: 2021 Martin Donath (squidfunk)
+
+SPDX-License-Identifier: MIT
+-->
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="Contributors to the Shapeshifter project" name="author"/>
+<link href="http://localhost:8000/latest/use-case-descriptions/use-cases/validate-phase/" rel="canonical"/>
+<link href="../plan-phase/" rel="prev"/>
+<link href="../operate-phase/" rel="next"/>
+<link href="../../../assets/images/shapeshifter-icon-color.svg" rel="icon"/>
+<meta content="mkdocs-1.4.2, mkdocs-material-9.0.11" name="generator"/>
+<title>Validate phase - Shapeshifter specification</title>
+<link href="../../../assets/stylesheets/main.0d440cfe.min.css" rel="stylesheet"/>
+<link href="../../../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+<link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            
+                .gscrollbar-fixer { padding-right: 15px; }
+                .gdesc-inner { font-size: 0.75rem; }
+                body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+                body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+                body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+                </style><script src="../../../assets/javascripts/glightbox.min.js"></script></head>
+<body data-md-color-accent="" data-md-color-primary="" data-md-color-scheme="default" dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#validate-phase">
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<div data-md-component="outdated" hidden="">
+<aside class="md-banner md-banner--warning">
+<div class="md-banner__inner md-grid md-typeset">
+              
+You're not viewing the latest released version.
+<a href="../../../..">
+<strong>Click here to go to latest release.</strong>
+</a>
+</div>
+<script>var el=document.querySelector("[data-md-component=outdated]"),outdated=__md_get("__outdated",sessionStorage);!0===outdated&&el&&(el.hidden=!1)</script>
+</aside>
+</div>
+<header class="md-header" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="Shapeshifter specification" class="md-header__button md-logo" data-md-component="logo" href="../../.." title="Shapeshifter specification">
+<img alt="logo" src="../../../assets/images/shapeshifter-icon-white.svg"/>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            Shapeshifter specification
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              Validate phase
+            
+          </span>
+</div>
+</div>
+</div>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+</label>
+<nav aria-label="Search" class="md-search__options">
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"></path></svg>
+</button>
+</nav>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="md-header__source">
+<a class="md-source" data-md-component="source" href="https://github.com/shapeshifter/shapeshifter-specification" title="Go to repository">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"></path></svg>
+</div>
+<div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+</div>
+<a class="md-header__button md-header-nav__button md-icon" href="../../../pdf/document.pdf" title="PDF">
+<svg viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+<path d="M128,0c-17.6,0-32,14.4-32,32v448c0,17.6,14.4,32,32,32h320c17.6,0,32-14.4,32-32V128L352,0H128z" fill="#E2E5E7"></path>
+<path d="m384 128h96l-128-128v96c0 17.6 14.4 32 32 32z" fill="#B0B7BD"></path>
+<polygon fill="#CAD1D8" points="480 224 384 128 480 128"></polygon>
+<path d="M416,416c0,8.8-7.2,16-16,16H48c-8.8,0-16-7.2-16-16V256c0-8.8,7.2-16,16-16h352c8.8,0,16,7.2,16,16  V416z" fill="#F15642"></path>
+<g fill="#fff">
+<path d="m101.74 303.15c0-4.224 3.328-8.832 8.688-8.832h29.552c16.64 0 31.616 11.136 31.616 32.48 0 20.224-14.976 31.488-31.616 31.488h-21.36v16.896c0 5.632-3.584 8.816-8.192 8.816-4.224 0-8.688-3.184-8.688-8.816v-72.032zm16.88 7.28v31.872h21.36c8.576 0 15.36-7.568 15.36-15.504 0-8.944-6.784-16.368-15.36-16.368h-21.36z"></path>
+<path d="m196.66 384c-4.224 0-8.832-2.304-8.832-7.92v-72.672c0-4.592 4.608-7.936 8.832-7.936h29.296c58.464 0 57.184 88.528 1.152 88.528h-30.448zm8.064-72.912v57.312h21.232c34.544 0 36.08-57.312 0-57.312h-21.232z"></path>
+<path d="m303.87 312.11v20.336h32.624c4.608 0 9.216 4.608 9.216 9.072 0 4.224-4.608 7.68-9.216 7.68h-32.624v26.864c0 4.48-3.184 7.92-7.664 7.92-5.632 0-9.072-3.44-9.072-7.92v-72.672c0-4.592 3.456-7.936 9.072-7.936h44.912c5.632 0 8.96 3.344 8.96 7.936 0 4.096-3.328 8.704-8.96 8.704h-37.248v0.016z"></path>
+</g>
+<path d="m400 432h-304v16h304c8.8 0 16-7.2 16-16v-16c0 8.8-7.2 16-16 16z" fill="#CAD1D8"></path>
+</svg>
+</a></nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="Shapeshifter specification" class="md-nav__button md-logo" data-md-component="logo" href="../../.." title="Shapeshifter specification">
+<img alt="logo" src="../../../assets/images/shapeshifter-icon-white.svg"/>
+</a>
+    Shapeshifter specification
+  </label>
+<div class="md-nav__source">
+<a class="md-source" data-md-component="source" href="https://github.com/shapeshifter/shapeshifter-specification" title="Go to repository">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"></path></svg>
+</div>
+<div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+</div>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../..">
+        USEF Flex Trading Protocol
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          About UFTP
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+          About UFTP
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../about/purpose/">
+        Purpose
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../about/scope/">
+        Scope
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../about/levels-of-compliancy/">
+        Levels of compliancy
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../about/reading-guideline/">
+        Reading guideline
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../../../general-description/">General description</a>
+<label for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
+          General description
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../general-description/usef-general-concepts/">
+        USEF general concepts
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../general-description/contract-phase/">
+        Contract phase
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../general-description/plan-phase/">
+        Plan phase
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../general-description/validate-phase/">
+        Validate phase
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../general-description/operate-phase/">
+        Operate phase
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../general-description/settle-phase/">
+        Settle phase
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          Use case descriptions
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_4_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+          Use case descriptions
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../scope/">
+        Scope
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../privacy-and-security-by-design/">
+        Privacy and security by design
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../common-concepts/">
+        Common concepts
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../reading-guidelines/">
+        Reading guidelines
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../message-validation/">
+        Message validation
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_4_6" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_6" id="__nav_4_6_label" tabindex="0">
+          Use Cases
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_4_6_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_4_6">
+<span class="md-nav__icon md-icon"></span>
+          Use Cases
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../contract-phase/">
+        Contract phase
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../plan-phase/">
+        Plan phase
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          Validate phase
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+        Validate phase
+      </a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#exchange-d-prognoses-per-congestion-point">
+    Exchange D-Prognoses per Congestion Point
+  </a>
+<nav aria-label="Exchange D-Prognoses per Congestion Point" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#related-information">
+    Related information
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#exchange-flexibility-requests">
+    Exchange Flexibility Requests
+  </a>
+<nav aria-label="Exchange Flexibility Requests" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#related-information_1">
+    Related information
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#exchange-flexibility-offers">
+    Exchange Flexibility Offers
+  </a>
+<nav aria-label="Exchange Flexibility Offers" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#related-information_2">
+    Related information
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#revocation-flexibility-offer">
+    Revocation Flexibility Offer
+  </a>
+<nav aria-label="Revocation Flexibility Offer" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#related-information_3">
+    Related information
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#exchange-flexibility-orders">
+    Exchange Flexibility Orders
+  </a>
+<nav aria-label="Exchange Flexibility Orders" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#related-information_4">
+    Related information
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../operate-phase/">
+        Operate phase
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../settle-phase/">
+        Settle phase
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+          Message descriptions
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_5_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_5">
+<span class="md-nav__icon md-icon"></span>
+          Message descriptions
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../message-descriptions/scope/">
+        Scope
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_5_2" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../../../message-descriptions/message-catalog/">Message catalog</a>
+<label for="__nav_5_2">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_5_2_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_5_2">
+<span class="md-nav__icon md-icon"></span>
+          Message catalog
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../message-descriptions/message-catalog/power/">
+        Power
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../message-descriptions/message-catalog/metadata-attributes/">
+        Metadata attributes
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../message-descriptions/message-catalog/signed-message/">
+        SignedMessage
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../message-descriptions/message-catalog/test-message/">
+        TestMessage
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../message-descriptions/message-catalog/test-message-response/">
+        TestMessageResponse
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../message-descriptions/message-catalog/agr-portfolio-update/">
+        AGRPortfolioUpdate
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../message-descriptions/message-catalog/agr-portfolio-update-response/">
+        AGRPortfolioUpdateResponse
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../message-descriptions/message-catalog/agr-portfolio-query/">
+        AGRPortfolioQuery
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../message-descriptions/message-catalog/agr-portfolio-query-response/">
+        AGRPortfolioQueryResponse
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../message-descriptions/message-catalog/dso-portfolio-update/">
+        DSOPortfolioUpdate
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../message-descriptions/message-catalog/dso-portfolio-update-response/">
+        DSOPortfolioUpdateResponse
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../message-descriptions/message-catalog/dso-portfolio-query/">
+        DSOPortfolioQuery
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../message-descriptions/message-catalog/dso-portfolio-query-response/">
+        DSOPortfolioQueryResponse
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../message-descriptions/message-catalog/flex-reservation-update/">
+        FlexReservationUpdate
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../message-descriptions/message-catalog/flex-reservation-update-response/">
+        FlexReservationUpdateReponse
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../message-descriptions/message-catalog/d-prognosis/">
+        D-Prognosis
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../message-descriptions/message-catalog/d-prognosis-response/">
+        D-PrognosisResponse
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../message-descriptions/message-catalog/flex-request/">
+        FlexRequest
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../message-descriptions/message-catalog/flex-request-response/">
+        FlexRequestResponse
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../message-descriptions/message-catalog/flex-offer/">
+        FlexOffer
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../message-descriptions/message-catalog/flex-offer-response/">
+        FlexOfferResponse
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../message-descriptions/message-catalog/flex-offer-revocation/">
+        FlexOfferRevocation
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../message-descriptions/message-catalog/flex-offer-revocation-response/">
+        FlexOfferRevocationResponse
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../message-descriptions/message-catalog/flex-order/">
+        FlexOrder
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../message-descriptions/message-catalog/flex-order-response/">
+        FlexOrderResponse
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../message-descriptions/message-catalog/metering/">
+        Metering
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../message-descriptions/message-catalog/metering-response/">
+        MeteringResponse
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../message-descriptions/message-catalog/flex-settlement/">
+        FlexSettlement
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../message-descriptions/message-catalog/flex-settlement-response/">
+        FlexSettlementResponse
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_6" type="checkbox"/>
+<label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+          Appendix
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_6_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_6">
+<span class="md-nav__icon md-icon"></span>
+          Appendix
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../appendix/glossary/">
+        Glossary
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../appendix/rationale-for-information-exchange-in-flexibility-request/">
+        Rationale for information exchange in flexiblity request
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../appendix/flex-reservation-mechanism/">
+        Flex reservation mechanism
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../appendix/message-transport-mechanism/">
+        Message transport mechanism
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../appendix/bibliography/">
+        Bibliography
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#exchange-d-prognoses-per-congestion-point">
+    Exchange D-Prognoses per Congestion Point
+  </a>
+<nav aria-label="Exchange D-Prognoses per Congestion Point" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#related-information">
+    Related information
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#exchange-flexibility-requests">
+    Exchange Flexibility Requests
+  </a>
+<nav aria-label="Exchange Flexibility Requests" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#related-information_1">
+    Related information
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#exchange-flexibility-offers">
+    Exchange Flexibility Offers
+  </a>
+<nav aria-label="Exchange Flexibility Offers" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#related-information_2">
+    Related information
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#revocation-flexibility-offer">
+    Revocation Flexibility Offer
+  </a>
+<nav aria-label="Revocation Flexibility Offer" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#related-information_3">
+    Related information
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#exchange-flexibility-orders">
+    Exchange Flexibility Orders
+  </a>
+<nav aria-label="Exchange Flexibility Orders" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#related-information_4">
+    Related information
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<a class="md-content__button md-icon" href="https://github.com/shapeshifter/shapeshifter-specification/edit/master/docs/use-case-descriptions/use-cases/validate-phase.md" title="Edit this page">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"></path></svg>
+</a>
+<!--
+SPDX-FileCopyrightText: 2020-2023 Contributors to the Shapeshifter project
+
+SPDX-License-Identifier: Apache-2.0
+-->
+<h1 id="validate-phase">Validate phase</h1>
+<p>In <a href="../../../general-description/validate-phase/">Validate phase</a>, informative description of the validate phase processes has been given. In this chapter the use cases will be described as derived from the validate phase.</p>
+<p>The USEF MCM validate phase specifies the following use cases:</p>
+<p><em>Use cases for the Validate phase.</em></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Direction</th>
+<th>Message types</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#exchange-d-prognoses-per-congestion-point">Exchange D-Prognoses per Congestion Point</a></td>
+<td>AGR → DSO</td>
+<td>Prognosis / PrognosisResponse</td>
+</tr>
+<tr>
+<td><a href="#exchange-flexibility-requests">Exchange Flexibility Requests</a></td>
+<td>AGR ← DSO</td>
+<td>FlexRequest / FlexRequestResponse</td>
+</tr>
+<tr>
+<td><a href="#exchange-flexibility-offers">Exchange Flexibility Offers</a></td>
+<td>AGR → DSO</td>
+<td>FlexOffer / FlexOfferResponse</td>
+</tr>
+<tr>
+<td><a href="#revocation-flexibility-offer">Revocation Flexibility Offer</a></td>
+<td>AGR → DSO</td>
+<td>FlexOfferRevocation / FlexOfferRevocationResponse</td>
+</tr>
+<tr>
+<td><a href="#exchange-flexibility-orders">Exchange Flexibility Orders</a></td>
+<td>AGR ← DSO</td>
+<td>FlexOrder / FlexOrderResponse</td>
+</tr>
+</tbody>
+</table>
+<p>The use cases are explained in the following sections.</p>
+<h2 id="exchange-d-prognoses-per-congestion-point">Exchange D-Prognoses per Congestion Point</h2>
+<figure>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="50vw" href="../../../assets/images/use-case-3-6-exchange-of-d-prognoses.svg"><img alt="Exchange of D-prognoses" src="../../../assets/images/use-case-3-6-exchange-of-d-prognoses.svg" width="1000px"/></a>
+</p>
+<figcaption>Exchange of D-prognoses</figcaption>
+</figure>
+<table>
+<tr>
+<th></th>
+<th colspan="2">D-prognosis</th>
+</tr>
+<tr>
+<th>Goal in context</th>
+<td colspan="2">D-prognoses are (re)created by the AGR per congestion point, based on its portfolio. These D-prognoses will be submitted to the DSO. D-prognoses should be submitted at least once before the gate closure time. D-prognoses can be updated by transmitting a new one.</td>
+</tr>
+<tr>
+<th>Preconditions</th>
+<td colspan="2">Congestion point(s) defined and retrieved from the CRO, AGR per congestion point retrieved from CRO by DSO, AGR-DSO contracts in place.</td>
+</tr>
+<tr>
+<th>Successful outcome</th>
+<td colspan="2">D-prognosis message created and accepted by the DSO for each congestion point on which the AGR has active Connections</td>
+</tr>
+<tr>
+<th rowspan="6">Failure outcome</th>
+<th>RejectionReason</th>
+<th>Cause of rejection</th>
+</tr>
+<tr>
+<td>&lt;See Message validation&gt;</td>
+<td>D-prognosis failed to pass validation by the DSO</td>
+</tr>
+<tr>
+<td>Lacking ISPs</td>
+<td>The prognosis does not include all ISPs in the Period it applies to</td>
+</tr>
+<tr>
+<td>Power value rejection</td>
+<td>One or more Power values in the prognosis are not plausible</td>
+</tr>
+<tr>
+<td>Subordinate sequence number</td>
+<td>The message sequence is lower than that of a previously received D-prognosis</td>
+</tr>
+<tr>
+<td>[User defined]</td>
+<td>Any other reasonable cause to reject the message</td>
+</tr>
+</table>
+<h3 id="related-information">Related information</h3>
+<p>Congestion points (with associated DSOs) at which the AGR has contracted prosumers, and active AGRs, are available via the common reference and should have been retrieved prior to executing this use case.</p>
+<p>It is essential to use a sequence number that is incremented each time a new revision is sent so the order of transmission can be traced.</p>
+<h2 id="exchange-flexibility-requests">Exchange Flexibility Requests</h2>
+<figure>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="50vw" href="../../../assets/images/use-case-3-7-exchange-of-flexrequests.svg"><img alt="Exchange of FlexRequests" src="../../../assets/images/use-case-3-7-exchange-of-flexrequests.svg" width="1000px"/></a>
+</p>
+<figcaption>Exchange of FlexRequests</figcaption>
+</figure>
+<table>
+<tr>
+<th></th>
+<th colspan="2">FlexRequest</th>
+</tr>
+<tr>
+<th>Goal in context</th>
+<td colspan="2">If grid congestion is expected, requests for flexibility are created by the DSO and sent to AGRs potentially capable of helping to reduce that congestion. These requests serve as the basis for subsequent flexibility offers.</td>
+</tr>
+<tr>
+<th>Preconditions</th>
+<td colspan="2">AGR-DSO market contract in place.One or more Congestion Points registered in the Common Reference, with at least one AGR with contracted Connections on that point.DSO grid safety analysis performed.</td>
+</tr>
+<tr>
+<th>Successful outcome</th>
+<td colspan="2">Flexibility requests submitted to AGR(s)</td>
+</tr>
+<tr>
+<th rowspan="6">Failure outcome</th>
+<th>RejectionReason</th>
+<th>Cause of rejection</th>
+</tr>
+<tr>
+<td>&lt;See Message validation&gt;</td>
+<td>FlexRequest failed to pass validation by the AGR</td>
+</tr>
+<tr>
+<td>Lacking Requested Disposition</td>
+<td>The FlexRequest has no ISP with a “requested” disposition.</td>
+</tr>
+<tr>
+<td>Requested Power discrepancy</td>
+<td>One or more ISPs with a "requested" disposition has no direction: MinPower &lt; 0 and MaxPower &gt; 0.</td>
+</tr>
+<tr>
+<td>Power discrepancy</td>
+<td>One or more ISPs has a higher MinPower than MaxPower value.</td>
+</tr>
+<tr>
+<td>[User defined]</td>
+<td>Any other reasonable cause to reject the message</td>
+</tr>
+</table>
+<h3 id="related-information_1">Related information</h3>
+<p>Each flexibility request should include the ISPs for which congestion is expected, including a direction (MinPower ≥ 0 or MaxPower ≤ 0), and it is advisable to send multiple ISPs for which capacity is still available, to allow AGRs to time-shift load.
+For each period during which congestion is expected, the DSO may create any number of flexibility requests (including no requests at all).
+If multiple requests are created, their content must not be identical.
+Which variations (more/less requested power per ISP, time-shift of load) are created is a DSO-internal business decision.</p>
+<h2 id="exchange-flexibility-offers">Exchange Flexibility Offers</h2>
+<figure>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="50vw" href="../../../assets/images/use-case-3-8-exchange-of-flexoffers.svg"><img alt="Exchange of FlexOffers" src="../../../assets/images/use-case-3-8-exchange-of-flexoffers.svg" width="1000px"/></a>
+</p>
+<figcaption>Exchange of FlexOffers</figcaption>
+</figure>
+<table>
+<tr>
+<th></th>
+<th colspan="2">FlexOffer</th>
+</tr>
+<tr>
+<th>Goal in context</th>
+<td colspan="2">The AGR creates flexibility offers based on previous DSO flexibility requests and sends these to the originating DSOs. It is also possible to send FlexOffers that do not originate from a FlexRequest, which are called unsolicited FlexOffers. Each offer indicates to which extent the AGR can provide flexibility, what the effect on its baseline will be and what the price for the flexibility would be.</td>
+</tr>
+<tr>
+<th>Preconditions</th>
+<td colspan="2">AGR-DSO market contract in place.AGR has at least one contracted Connection on the Congestion point. Flexibility offers can be based on previous flexibility requests that have been accepted and stored, or be initiated without a preliminary flex request (called an unsolicited flex offer).</td>
+</tr>
+<tr>
+<th>Successful outcome</th>
+<td colspan="2">Flexibility offers sent to the DSO</td>
+</tr>
+<tr>
+<th rowspan="6">Failure outcome</th>
+<th>RejectionReason</th>
+<th>Cause of rejection</th>
+</tr>
+<tr>
+<td>&lt;See Message validation&gt;</td>
+<td>FlexOffer failed to pass validation by the DSO</td>
+</tr>
+<tr>
+<td>No baseline</td>
+<td>The AGR has no valid baseline, possibly lacking a valid D-prognosis</td>
+</tr>
+<tr>
+<td>Power value rejection</td>
+<td>One or more Power values in the FlexOffer are not plausible</td>
+</tr>
+<tr>
+<td>Request mismatch</td>
+<td>None of the ISPs with a "requested" disposition in the referred FlexRequest, is mentioned in the FlexOffer</td>
+</tr>
+<tr>
+<td>No MutEx offer support</td>
+<td>The FlexOffer contains mutual exclusive offers (OfferOptions), which is not supported by the DSO</td>
+</tr>
+<tr>
+<td>[User defined]</td>
+<td>Any other reasonable cause to reject the message</td>
+</tr>
+</table>
+<h3 id="related-information_2">Related information</h3>
+<ul>
+<li>USEF does not specify how the AGR determines the optimal flexibility offer, offer price or optimal timing to send the offer to the DSO.</li>
+<li>AGRs may choose to send multiple FlexOffer messages: this includes sending a FlexOffer that better meets the DSO request at a much later time when circumstances have changed.
+Unsolicited FlexOffers are also allowed, in which case the FlexRequestOrigin and FlexRequestSequence fields are empty.</li>
+<li>Sending a FlexOffer for partial activation is always allowed, although it is ignored by the DSO if it does not support partial activation (in which case the MinActivationFactor is always 1).</li>
+</ul>
+<p>Note that acceptance of the FlexOffer message does not imply ordering of the flexibility.</p>
+<h2 id="revocation-flexibility-offer">Revocation Flexibility Offer</h2>
+<figure>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="50vw" href="../../../assets/images/use-case-3-9-revocation-of-flexoffer.svg"><img alt="Revocation of FlexOffer" src="../../../assets/images/use-case-3-9-revocation-of-flexoffer.svg" width="1000px"/></a>
+</p>
+<figcaption>Revocation of FlexOffer</figcaption>
+</figure>
+<table>
+<tr>
+<th></th>
+<th colspan="2">Revoke FlexOffer</th>
+</tr>
+<tr>
+<th>Goal in context</th>
+<td colspan="2">When a previously sent flexibility offer is no longer valid, despite the validity period of the offer not having expired yet, the AGR informs the DSO that the offer is revoked. After revocation, the DSO cannot order the flexibility from this offer anymore.</td>
+</tr>
+<tr>
+<th>Preconditions</th>
+<td colspan="2">The concerning flexibility offer has been sent to and acknowledged by the DSO, and has not (yet) been procured using a FlexOrder</td>
+</tr>
+<tr>
+<th>Successful outcome</th>
+<td colspan="2">Flexibility offer revocation notification submitted to the DSO</td>
+</tr>
+<tr>
+<th rowspan="6">Failure outcome</th>
+<th>RejectionReason</th>
+<th>Cause of rejection</th>
+</tr>
+<tr>
+<td>&lt;See Message validation&gt;</td>
+<td>FlexOfferRevocation failed to pass validation by the DSO</td>
+</tr>
+<tr>
+<td>Flexibility procured</td>
+<td>The FlexOffer cannot be revoked because its flexibility has already been ordered</td>
+</tr>
+<tr>
+<td>[User defined]</td>
+<td>Any other reasonable cause to reject the message</td>
+</tr>
+</table>
+<h3 id="related-information_3">Related information</h3>
+<p>Only flexibility offers communicated using a FlexOffer message which has already been acknowledged by the DSO can be revoked.
+If the acknowledgement is still pending, the AGR should delay sending its FlexOfferRevocation message until the acknowledgement has been received.
+When the DSO receives a revocation of a flexibility offer it wants to order, this is not a valid base to reject the revocation.
+After revocation, the offer can no longer be ordered.</p>
+<p>FlexOffers may be revoked at any time in the plan and validate phases (and also in operate phase as described in <a href="../operate-phase/#revocation-flexibility-offer">Revocation Flexibility Offer</a>), unless there is already a FlexOrder based on the offer.
+Notice that FlexOrders and FlexOfferRevocations can cross each other.
+Where this is the case, priority should be given to the FlexOfferRevocation.</p>
+<h2 id="exchange-flexibility-orders">Exchange Flexibility Orders</h2>
+<figure>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="50vw" href="../../../assets/images/use-case-3-10-exchange-of-flexoffer.svg"><img alt="Exchange of FlexOrder" src="../../../assets/images/use-case-3-10-exchange-of-flexoffer.svg" width="1000px"/></a>
+</p>
+<figcaption>Exchange of FlexOrder</figcaption>
+</figure>
+<table>
+<tr>
+<th></th>
+<th colspan="2">FlexOrder</th>
+</tr>
+<tr>
+<th>Goal in context</th>
+<td colspan="2">Process for the DSO to accept (some) flexibility offers to solve Congestion based on the Prognosis.</td>
+</tr>
+<tr>
+<th>Preconditions</th>
+<td colspan="2">Corresponding FlexOffer has been received and accepted by DSO and is still valid.</td>
+</tr>
+<tr>
+<th>Successful outcome</th>
+<td colspan="2">Flexibility procured</td>
+</tr>
+<tr>
+<th rowspan="6">Failure outcome</th>
+<th>RejectionReason</th>
+<th>Cause of rejection</th>
+</tr>
+<tr>
+<td>&lt;See Message validation&gt;</td>
+<td>FlexOrder failed to pass validation by the AGR</td>
+</tr>
+<tr>
+<td>ISP mismatch</td>
+<td>ISPs from the FlexOrder do not match the ISPs given in the FlexOffer</td>
+</tr>
+<tr>
+<td>Power mismatch</td>
+<td>Ordered flexibility does not match the offered flexibility</td>
+</tr>
+<tr>
+<td>Price mismatch</td>
+<td>Price in the order does not match the price given in the offer</td>
+</tr>
+<tr>
+<td>[User defined]</td>
+<td>Any other reasonable cause to reject the message</td>
+</tr>
+</table>
+<h3 id="related-information_4">Related information</h3>
+<p>The DSO needs to make its own decisions about which FlexOffers to accept.
+FlexOffers can only be ordered once and have to be ordered as specified in the corresponding offer for the specified price.
+Only in situations where partial activation is supported and offered in the FlexOffer can the ISP power and price be altered to conform to the specifications from Section <a href="../../../general-description/validate-phase/#flexibility-trading-between-the-agr-and-dso">Flexibility trading between the AGR and DSO</a>.
+After a successful FlexOrder transmission, the AGR is responsible for providing the ordered flexibility via an updated D-prognosis which reflects the traded flexibility.</p>
+</article>
+</div>
+</div>
+<a class="md-top md-icon" data-md-component="top" hidden="" href="#">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"></path></svg>
+            Back to top
+          </a>
+</main>
+<footer class="md-footer">
+<nav aria-label="Footer" class="md-footer__inner md-grid">
+<a aria-label="Previous: Plan phase" class="md-footer__link md-footer__link--prev" href="../plan-phase/" rel="prev">
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+</div>
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
+                  Previous
+                </span>
+                Plan phase
+              </div>
+</div>
+</a>
+<a aria-label="Next: Operate phase" class="md-footer__link md-footer__link--next" href="../operate-phase/" rel="next">
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
+                  Next
+                </span>
+                Operate phase
+              </div>
+</div>
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"></path></svg>
+</div>
+</a>
+</nav>
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+<div class="md-copyright__highlight">
+      Copyright 2020-2023 Contributors to the Shapeshifter project
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+      Material for MkDocs
+    </a>
+</div>
+<div class="md-social">
+<a class="md-social__link" href="https://github.com/shapeshifter" rel="noopener" target="_blank" title="GitHub organization of Shapeshifter">
+<svg viewbox="0 0 496 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg>
+</a>
+<a class="md-social__link" href="https://lfenergy.slack.com/channels/shapeshifter" rel="noopener" target="_blank" title="LFEnergy Slack channel #shapeshifter">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M94.12 315.1c0 25.9-21.16 47.06-47.06 47.06S0 341 0 315.1c0-25.9 21.16-47.06 47.06-47.06h47.06v47.06zm23.72 0c0-25.9 21.16-47.06 47.06-47.06s47.06 21.16 47.06 47.06v117.84c0 25.9-21.16 47.06-47.06 47.06s-47.06-21.16-47.06-47.06V315.1zm47.06-188.98c-25.9 0-47.06-21.16-47.06-47.06S139 32 164.9 32s47.06 21.16 47.06 47.06v47.06H164.9zm0 23.72c25.9 0 47.06 21.16 47.06 47.06s-21.16 47.06-47.06 47.06H47.06C21.16 243.96 0 222.8 0 196.9s21.16-47.06 47.06-47.06H164.9zm188.98 47.06c0-25.9 21.16-47.06 47.06-47.06 25.9 0 47.06 21.16 47.06 47.06s-21.16 47.06-47.06 47.06h-47.06V196.9zm-23.72 0c0 25.9-21.16 47.06-47.06 47.06-25.9 0-47.06-21.16-47.06-47.06V79.06c0-25.9 21.16-47.06 47.06-47.06 25.9 0 47.06 21.16 47.06 47.06V196.9zM283.1 385.88c25.9 0 47.06 21.16 47.06 47.06 0 25.9-21.16 47.06-47.06 47.06-25.9 0-47.06-21.16-47.06-47.06v-47.06h47.06zm0-23.72c-25.9 0-47.06-21.16-47.06-47.06 0-25.9 21.16-47.06 47.06-47.06h117.84c25.9 0 47.06 21.16 47.06 47.06 0 25.9-21.16 47.06-47.06 47.06H283.1z"></path></svg>
+</a>
+<a class="md-social__link" href="https://lists.lfenergy.org/g/shapeshifter-discussion" rel="noopener" target="_blank" title="Mailinglist shapeshifter-discussion">
+<svg viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M64 112c-8.8 0-16 7.2-16 16v22.1l172.5 141.6c20.7 17 50.4 17 71.1 0L464 150.1V128c0-8.8-7.2-16-16-16H64zM48 212.2V384c0 8.8 7.2 16 16 16h384c8.8 0 16-7.2 16-16V212.2L322 328.8c-38.4 31.5-93.7 31.5-132 0L48 212.2zM0 128c0-35.3 28.7-64 64-64h384c35.3 0 64 28.7 64 64v256c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V128z"></path></svg>
+</a>
+<a class="md-social__link" href="https://wiki.lfenergy.org/display/SHAP/" rel="noopener" target="_blank" title="Project wiki page">
+<svg viewbox="0 0 640 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="m640 51.2-.3 12.2c-28.1.8-45 15.8-55.8 40.3-25 57.8-103.3 240-155.3 358.6H415l-81.9-193.1c-32.5 63.6-68.3 130-99.2 193.1-.3.3-15 0-15-.3C172 352.3 122.8 243.4 75.8 133.4 64.4 106.7 26.4 63.4.2 63.7c0-3.1-.3-10-.3-14.2h161.9v13.9c-19.2 1.1-52.8 13.3-43.3 34.2 21.9 49.7 103.6 240.3 125.6 288.6 15-29.7 57.8-109.2 75.3-142.8-13.9-28.3-58.6-133.9-72.8-160-9.7-17.8-36.1-19.4-55.8-19.7V49.8l142.5.3v13.1c-19.4.6-38.1 7.8-29.4 26.1 18.9 40 30.6 68.1 48.1 104.7 5.6-10.8 34.7-69.4 48.1-100.8 8.9-20.6-3.9-28.6-38.6-29.4.3-3.6 0-10.3.3-13.6 44.4-.3 111.1-.3 123.1-.6v13.6c-22.5.8-45.8 12.8-58.1 31.7l-59.2 122.8c6.4 16.1 63.3 142.8 69.2 156.7L559.2 91.8c-8.6-23.1-36.4-28.1-47.2-28.3V49.6l127.8 1.1.2.5z"></path></svg>
+</a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "../../..", "features": ["content.action.edit", "navigation.indexes", "navigation.footer", "navigation.top"], "search": "../../../assets/javascripts/workers/search.db81ec45.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"default": "latest", "provider": "mike"}}</script>
+<script src="../../../assets/javascripts/bundle.6df46069.min.js"></script>
+<script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
+</html>
