@@ -563,7 +563,7 @@ SPDX-License-Identifier: Apache-2.0
 <p>Upon receiving and processing an AGRPortfolioQuery message, the receiving implementation must reply with an AGRPortfolioUpdate, indicating whether the query was handled successfully.</p>
 <pre><code>&lt;AGRPortfolioQueryResponse
   Metadata…
-  AGRPortfolioQueryMessageID = UUID
+  ReferenceMessageID         = UUID
   Result                     = ("Accepted" | "Rejected")
   RejectionReason            = String (only if Result = "Rejected")
   Period                     = Date
@@ -600,7 +600,7 @@ SPDX-License-Identifier: Apache-2.0
 <td>The metadata for this message. For details, see section <a href="../metadata-attributes/">metadata attributes</a>.</td>
 </tr>
 <tr>
-<td>AGRPortfolioQueryMessageID</td>
+<td>ReferenceMessageID</td>
 <td>MessageID of the AGRPortfolioQuery message</td>
 </tr>
 <tr>

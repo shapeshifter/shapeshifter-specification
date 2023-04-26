@@ -563,7 +563,7 @@ SPDX-License-Identifier: Apache-2.0
 <p>Upon receiving and processing a FlexReservationUpdate message, the AGR must reply with a FlexReservationUpdateResponse, indicating whether the FlexReservationUpdate was processed successfully.</p>
 <pre><code>&lt;FlexReservationUpdateResponse
   Metadata…
-  FlexReservationUpdateMessageID = UUID
+  ReferenceMessageID             = UUID
   Result                         = ("Accepted" | "Rejected")
   RejectionReason                = String (only if Result = "Rejected")
 /&gt;
@@ -581,7 +581,7 @@ SPDX-License-Identifier: Apache-2.0
 <td>The metadata for this message. For details, see section <a href="../metadata-attributes/">metadata attributes</a>.</td>
 </tr>
 <tr>
-<td>FlexReservationUpdateMessageID</td>
+<td>ReferenceMessageID</td>
 <td>MessageID  of the concerning FlexReservationUpdate message</td>
 </tr>
 <tr>

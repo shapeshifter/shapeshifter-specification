@@ -563,7 +563,7 @@ SPDX-License-Identifier: Apache-2.0
 <p>Upon receiving and processing a DSOPortfolioUpdate message, the receiving implementation must reply with a DSOPortfolioUpdateResponse, indicating whether the update was handled successfully.</p>
 <pre><code>&lt;DSOPortfolioUpdateResponse
   Metadata…
-  DSOPortfolioUpdateMessageID = UUID
+  ReferenceMessageID          = UUID
   Result                      = ("Accepted" | "Rejected")
   RejectionReason             = String (only if Result = "Rejected")
 /&gt;
@@ -581,7 +581,7 @@ SPDX-License-Identifier: Apache-2.0
 <td>The metadata for this message. For details, see <a href="../metadata-attributes/">metadata attributes</a>.</td>
 </tr>
 <tr>
-<td>DSOPortfolioUpdateMessageID</td>
+<td>ReferenceMessageID</td>
 <td>MessageID of the DSOPortfolioUpdate message</td>
 </tr>
 <tr>

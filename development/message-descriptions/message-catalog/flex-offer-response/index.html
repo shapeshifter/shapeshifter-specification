@@ -563,7 +563,7 @@ SPDX-License-Identifier: Apache-2.0
 <p>Upon receiving and processing a FlexOffer message, the receiving implementation must reply with a FlexOfferResponse, indicating whether the flexibility offer was processed successfully.</p>
 <pre><code>&lt;FlexOfferResponse
   Metadata…
-  FlexOfferMessageID = UUID
+  ReferenceMessageID = UUID
   Result             = ("Accepted" | "Rejected")
   RejectionReason    = String (Only if Result = "Rejected")
 /&gt;
@@ -581,7 +581,7 @@ SPDX-License-Identifier: Apache-2.0
 <td>The metadata for this message. For details, see <a href="../metadata-attributes/">metadata attributes</a>.</td>
 </tr>
 <tr>
-<td>FlexOfferMessageID</td>
+<td>ReferenceMessageID</td>
 <td>MessageID of the FlexOffer that has been accepted or rejected.</td>
 </tr>
 <tr>

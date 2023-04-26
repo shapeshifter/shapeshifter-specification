@@ -563,9 +563,9 @@ SPDX-License-Identifier: Apache-2.0
 <p>Upon receiving and processing a Metering message, the receiving implementation must reply with a MeteringResponse, indicating whether the update was handled successfully.</p>
 <pre><code>&lt;MeteringResponse
   Metadata…
-  MeteringMessageID = UUID
-  Result            = ("Accepted" | "Rejected")
-  RejectionReason   = String (Only if Result = "Rejected")
+  ReferenceMessageID = UUID
+  Result             = ("Accepted" | "Rejected")
+  RejectionReason    = String (Only if Result = "Rejected")
 /&gt;
 </code></pre>
 <table>
@@ -581,7 +581,7 @@ SPDX-License-Identifier: Apache-2.0
 <td>The metadata for this message. For details, see section <a href="../metadata-attributes/">metadata attributes</a>.</td>
 </tr>
 <tr>
-<td>MeteringMessageID</td>
+<td>ReferenceMessageID</td>
 <td>MessageID of the Metering message that has just been accepted or rejected.</td>
 </tr>
 <tr>

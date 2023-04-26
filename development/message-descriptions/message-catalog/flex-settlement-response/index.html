@@ -564,7 +564,7 @@ SPDX-License-Identifier: Apache-2.0
 When a FlexSettlement message is rejected, the DSO should consider all FlexOrderSettlement elements of that message related to potential dispute.</p>
 <pre><code>&lt;FlexSettlementResponse
   Metadata…
-  FlexSettlementMessageID    = UUID
+  ReferenceMessageID         = UUID
   Result                     = ("Accepted" | "Rejected")
   RejectionReason            = String (Only if Result = "Rejected")
   &lt;FlexOrderSettlementStatus   (0...n, only if Result = "Accepted")
@@ -599,7 +599,7 @@ When a FlexSettlement message is rejected, the DSO should consider all FlexOrder
 <td>The metadata for this message. For details, see <a href="../metadata-attributes/">metadata attributes</a>.</td>
 </tr>
 <tr>
-<td>FlexSettlementMessageID</td>
+<td>ReferenceMessageID</td>
 <td>MessageID of the FlexSettlement that has just been accepted or rejected</td>
 </tr>
 <tr>

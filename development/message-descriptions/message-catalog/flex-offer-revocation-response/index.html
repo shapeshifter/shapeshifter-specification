@@ -563,9 +563,9 @@ SPDX-License-Identifier: Apache-2.0
 <p>Upon receiving and processing a FlexOfferRevocation message, the receiving implementation must reply with a FlexOfferRevocationResponse, indicating whether the revocation was handled successfully.</p>
 <pre><code>&lt;FlexOfferRevocationResponse
   Metadata...
-  FlexOfferRevocationMessageID = UUID
-  Result                       = ("Accepted" | "Rejected")
-  RejectionReason              = String (Only if Result = "Rejected")
+  ReferenceMessageID = UUID
+  Result             = ("Accepted" | "Rejected")
+  RejectionReason    = String (Only if Result = "Rejected")
 /&gt;
 </code></pre>
 <table>
@@ -581,8 +581,8 @@ SPDX-License-Identifier: Apache-2.0
 <td>The metadata for this message. For details, see <a href="../metadata-attributes/">metadata attributes</a>.</td>
 </tr>
 <tr>
-<td>FlexOfferRevocationMessageID</td>
-<td>MessageID  of the FlexOffer that a revocation message was received for.</td>
+<td>ReferenceMessageID</td>
+<td>MessageID of the FlexOfferRevocation that has been accepted or rejected.</td>
 </tr>
 <tr>
 <td>Result</td>

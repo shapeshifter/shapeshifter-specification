@@ -564,6 +564,9 @@ SPDX-License-Identifier: Apache-2.0
 Like the TestMessage itself, the TestMessageResponse does not have any content (other than the mandatory metadata).</p>
 <pre><code>&lt;TestMessageResponse
   Metadata...
+  ReferenceMessageID = UUID
+  Result             = ("Accepted" | "Rejected")
+  RejectionReason    = String (Only if Result = "Rejected")
 /&gt;
 </code></pre>
 <table>
@@ -577,6 +580,18 @@ Like the TestMessage itself, the TestMessageResponse does not have any content (
 <tr>
 <td>Metadata</td>
 <td>The metadata for this message. For details, see <a href="../metadata-attributes/">metadata attributes</a>.</td>
+</tr>
+<tr>
+<td>ReferenceMessageID</td>
+<td>MessageID of the TestMessage message that has just been accepted or rejected.</td>
+</tr>
+<tr>
+<td>Result</td>
+<td>Indication whether the TestMessage was accepted or rejected.</td>
+</tr>
+<tr>
+<td>RejectionReason</td>
+<td>In case the TestMessage was rejected, this attribute must contain a human-readable description of the reason.</td>
 </tr>
 </tbody>
 </table>

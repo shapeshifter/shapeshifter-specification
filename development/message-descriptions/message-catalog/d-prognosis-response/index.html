@@ -563,7 +563,7 @@ SPDX-License-Identifier: Apache-2.0
 <p>Upon receiving and processing a prognosis message, the receiving implementation must reply with a D-PrognosisResponse, indicating whether the prognosis was syntactically and semantically valid, and, where any FlexOrder messages have previously been sent for any ISP in the period the prognosis applies to, a FlexOrderStatus indication for each of those orders.</p>
 <pre><code>&lt;D-PrognosisResponse
   Metadata…
-  D-PrognosisMessageID = UUID
+  ReferenceMessageID   = UUID
   Result               = ("Accepted" | "Rejected")
   RejectionReason      = String (Only if Result = "Rejected")
   &lt;FlexOrderStatus       (0..n)
@@ -585,7 +585,7 @@ SPDX-License-Identifier: Apache-2.0
 <td>The metadata for this message. For details, see <a href="../metadata-attributes/">metadata attributes</a>.</td>
 </tr>
 <tr>
-<td>D-PrognosisMessageID</td>
+<td>ReferenceMessageID</td>
 <td>Reference to the the D-prognosis that was accepted or rejected</td>
 </tr>
 <tr>
