@@ -50,7 +50,11 @@ The entire message exchange, from the client’s outgoing message queue to the s
   <figcaption>End-to-end USEF message exchange.</figcaption>
 </figure>
 
-Messages go through the following stages between retrieval from the client’s outgoing message queue and delivery to the server’s inbound message queue:
+Messages go through the following stages between retrieval from the client’s outgoing message queue and delivery to the server’s inbound message queue.
+
+To prevent transient Internet connectivity or participant configuration issues from inhibiting message exchange, a retry mechanism could be implemented. The timer value used for such a period should be at least one hour for routine messages.
+Note that, although message queue implementations may inform the sending process about delivery delays, only the final success or failure status is authoritative.
+When retrying failed requests, the implementation must implement an exponential back off mechanism to prevent undue load on the remote service.
 
 ## Service discovery
 
@@ -86,7 +90,22 @@ A rejection reason will be added to reject a message with an invalid version
 
 ### Service discovery
 
-In the service discovery stage, DNS[^16] is used to discover the capabilities as well as the endpoint host name and IP address of the remote participant.
+The purpose of the discovery stage is to discover the endpoint, public-key for signing and, optionally, the capabilities (e.g. supported Shapeshifter versions) of the other participants.  
+The requirements for this stage rely heavily on agreements made between the participants that will be communicating with each other using the protocol.
+
+If service discovery fails due to inability to collect all required data within this timeout period, the delivery of the message fails.
+Such messages are removed from the outgoing queue and returned to the sending process, indicating a transport error.
+
+#### Single authority
+
+One possible implementation for service discovery is creating a single authority that administers all the relevant information, and provides this to participants.
+This approach could be seen as having a central address book, so all participants know where and how to send messages to each other. 
+
+Activities on the energy market are most likely regulated by national oversight bodies. Such organizations are natural candidates for running such a service. Role-wise, this would be handled by the CRO, but in practice it might often be a DSO.
+
+#### DNS
+
+Another possible implementation for service discovery is DNS[^16]. 
 Assuming the Internet domain name of the remote participant is example.com, the relevant DNS records are as follows:
 
 [^16]:
@@ -110,42 +129,6 @@ Assuming the Internet domain name of the remote participant is example.com, the 
     Chains should be followed (to an implementation-defined maximum depth) and any loops or errors treated as temporary.
 
 [^B14]: P. Mockapetris, ""Domain names - concepts and facilities", STD 13, RFC 1034," 1987.
-
-The message will remain in the service discovery stage until all required data is available, or a participant-configurable and possibly message-class specific timeout timer expires.
-A DNS reply must have the NOERROR status, as well as syntactically valid and DNSSEC-authenticated content, in order to be considered usable.
-Other status codes such as SERVFAIL/NXDOMAIN, as well as connection failures or invalid record contents are considered temporary errors, in which case the lookup will be retried later within the timeout period.
-
-To prevent transient Internet connectivity or participant configuration issues from inhibiting message exchange, the timer value used for such a period should be at least one hour for routine messages.
-If service discovery fails due to inability to collect all required data within this timeout period, the delivery of the message fails.
-Such messages are removed from the outgoing queue and returned to the sending process, indicating a transport error.
-Note that, although message queue implementations may inform the sending process about delivery delays, only the final success or failure status is authoritative.
-When retrying failed requests, the implementation must implement an exponential back off mechanism to prevent undue load on the remote service.
-The implementation should set a reasonable maximum delay interval based on local factors, such as network capacity.
-
-For test situations or small-scale deployments where service discovery via DNS is too cumbersome, or requires unreasonable amounts of additional work, participants should be able to specify service information in a local configuration file.
-Since activities on the energy market are most likely regulated by  national oversight bodies, and such organizations are natural candidates for running the authoritative DNS zone for accredited market participants, implementations are encouraged to support a list of DNS suffixes that correspond to the zones maintained by such regulators, and to automatically query these zones.
-For example, if an energy.authority.test is on the DNS suffix list, this zone is queried for _usef.example.com.energy.authority.test in order to determine if example.com is an authorized market participant.
-
-<figure markdown>
-  ![Example of the DNS relationships between a single USEF endpoint and multiple zones](../assets/images/image24.svg){ width=1000px }
-  <figcaption>Example of the DNS relationships between a single USEF endpoint and multiple zones</figcaption>
-</figure>
-
-An example of an anticipated DNS setup is shown above. Here, an incumbent DSO (using the Internet domain `DSO.example`) operates a USEF endpoint, named `SSL.DSO.example`.
-The DNS entries for the USEF DSO and CRO role processes that underpin the DSO’s core business both refer to this endpoint, ultimately leading to an IP/port combination usable for submitting USEF messages to.
-
-In order to offer differentiated services to various customer segments, the DSO has also set up various AGRs, each operating its own web site and Internet domain.
-One of these AGRs is shown in the diagram.
-Instead of operating its own USEF endpoint, this AGR delegates this responsibility to its parent company, by pointing its USEF DNS records at the `SSL.DSO.example` endpoint.
-
-The second AGR shown in the diagram is an independent market participant but lacks sufficient scale to warrant running its own USEF endpoint.
-Instead, it outsources that task to the DSO.
-Note that, due to the sensitive data included in some USEF messages, strong contractual and technological safeguards (such as full-message encryption) are required to correctly apply the USEF privacy and security guidelines.
-Using a single USEF endpoint as shown here has a number of advantages, mostly related to the fact that only a single SSL certificate and IP address are required to operate the endpoint.
-Requiring unique instances of these would be complex and expensive, especially if the DSO runs tens or even hundreds of segment-specific AGRs.
-
-There are, of course, disadvantages as well.
-Unless network-level measures are taken to prevent this, a single endpoint also means a single point of failure, and shared hosting scenarios that do not ultimately involve only a single legal entity require special attention to the protection of message contents.
 
 ## Transmission
 
