@@ -11,7 +11,7 @@ Upon receiving and processing an AGRPortfolioQuery message, the receiving implem
 ```
 <AGRPortfolioQueryResponse
   Metadata…
-  AGRPortfolioQueryMessageID = UUID
+  ReferenceMessageID         = UUID
   Result                     = ("Accepted" | "Rejected")
   RejectionReason            = String (only if Result = "Rejected")
   Period                     = Date
@@ -39,7 +39,7 @@ Upon receiving and processing an AGRPortfolioQuery message, the receiving implem
 |                            |                                                                                                                                                              |
 |----------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Metadata                   | The metadata for this message. For details, see section [metadata attributes](metadata-attributes.md).                                                       |
-| AGRPortfolioQueryMessageID | MessageID of the AGRPortfolioQuery message                                                                                                                   |
+| ReferenceMessageID         | MessageID of the AGRPortfolioQuery message                                                                                                                   |
 | Result                     | Indication whether the AGRPortfolioQuery was accepted or rejected.                                                                                           |
 | RejectionReason            | In case the AGRPortfolioQuery was rejected, this attribute must contain a human-readable description of the reason.                                          |
 | Period                     | The Period that the portfolio is valid.                                                                                                                      |

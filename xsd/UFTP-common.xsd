@@ -206,6 +206,11 @@ SPDX-License-Identifier: Apache-2.0
     <xs:complexType name="PayloadMessageResponseType" abstract="true">
         <xs:complexContent>
             <xs:extension base="PayloadMessageType">
+                <xs:attribute name="ReferenceMessageID" type="UUIDType" use="required">
+                    <xs:annotation>
+                        <xs:documentation>MessageID of the message that has just been accepted or rejected.</xs:documentation>
+                    </xs:annotation>
+                </xs:attribute>
                 <xs:attribute name="Result" type="AcceptedRejectedType" use="required">
                     <xs:annotation>
                         <xs:documentation>Indication whether the query was executed successfully or failed.</xs:documentation>

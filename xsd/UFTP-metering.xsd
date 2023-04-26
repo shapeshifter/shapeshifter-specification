@@ -149,13 +149,7 @@ SPDX-License-Identifier: Apache-2.0
     <!-- -->
     <xs:complexType name="MeteringResponseType">
         <xs:complexContent>
-            <xs:extension base="PayloadMessageResponseType">
-                <xs:attribute name="MeteringMessageID" type="UUIDType" use="required">
-                    <xs:annotation>
-                        <xs:documentation>MessageID of the Metering message this response is based on.</xs:documentation>
-                    </xs:annotation>
-                </xs:attribute>
-            </xs:extension>
+            <xs:extension base="PayloadMessageResponseType"/>
         </xs:complexContent>
     </xs:complexType>
     <!-- ELEMENT DEFINITIONS -->

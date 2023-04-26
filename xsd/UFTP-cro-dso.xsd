@@ -94,13 +94,7 @@ SPDX-License-Identifier: Apache-2.0
 	<!-- -->
 	<xs:complexType name="DSOPortfolioUpdateResponseType">
 		<xs:complexContent>
-			<xs:extension base="PayloadMessageResponseType">
-				<xs:attribute name="DSOPortfolioUpdateResponseMessageID" type="UUIDType" use="required">
-					<xs:annotation>
-						<xs:documentation>MessageID of the DSOPortfolioUpdateResponse that has just been accepted or rejected</xs:documentation>
-					</xs:annotation>
-				</xs:attribute>
-			</xs:extension>
+			<xs:extension base="PayloadMessageResponseType"/>
 		</xs:complexContent>
 	</xs:complexType>
 	<!-- -->
@@ -136,11 +130,6 @@ SPDX-License-Identifier: Apache-2.0
 				<xs:sequence>
 					<xs:element name="CongestionPoint" type="DSOPortfolioQueryCongestionPointType" minOccurs="0" maxOccurs="1"/>
 				</xs:sequence>
-				<xs:attribute name="DSOPortfolioQueryMessageID" type="UUIDType" use="required">
-					<xs:annotation>
-						<xs:documentation>MessageID of the AGRPortfolioQuery that has just been accepted or rejected</xs:documentation>
-					</xs:annotation>
-				</xs:attribute>
 				<xs:attribute name="TimeZone" type="TimeZoneNameType" use="required">
 					<xs:annotation>
 						<xs:documentation>Time zone ID (as per the IANA time zone database, http://www.iana.org/time-zones, for example: Europe/Amsterdam) indicating the UTC offset that applies to the Period referenced in this message. Although the time zone is a market-wide fixed value, making this assumption explicit in each message is important for validation purposes, allowing implementations to reject messages with an errant UTC offset.</xs:documentation>
