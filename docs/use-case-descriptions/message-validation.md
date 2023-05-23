@@ -17,10 +17,15 @@ This list is not all-encompassing: stakeholders are allowed to formulate other r
 This field can contain multiple reasons for rejections (separated by a semicolon).
 
 | RejectionReason                  | Cause of rejection                                                                                                                                                                                                    |
-|----------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Invalid Sender                   | Despite being schema-compliant, the syntax, type or semantics of the message were unacceptable for the receiving implementation.                                                                                      |
-| Invalid Message                  | There is a mismatch between the SenderDomain/Role combination in the message wrapper and the inner XML message.                                                                                                       |
-| Unknown Recipient                | The RecipientDomain and/or RecipientRole specified in the inner XML message is not handled by this endpoint.                                                                                                          |
+|---|---|
+| Unknown SenderDomain | SenderDomain specified in the SignedMessage is unknown to the receiving implementation.                                                                                   | 
+|Invalid SenderRole| The SenderRole specified in the SignedMessage is invalid. |
+|Invalid Sender combination|The combination SenderDomain and SenderRole in the SignedMessage is invalid.|
+|Mismatch SenderDomain|SenderDomain specified in the SignedMessage doesn't match with the SenderDomain in the inner XML message. |
+| Invalid SignedMessage                  |    Despite being schema-compliant, the syntax, type or semantics of the SignedMessage were unacceptable for the receiving implementation.                                                                                                    |
+|Invalid Message|Despite being schema-compliant, the syntax, type or semantics of the message were unacceptable for the receiving implementation.|
+| Unknown RecipientDomain                | The RecipientDomain specified in the inner XML message is not known to the receiving implementation.. |
+| Unknown SenderDomain           | SignedMessage\SenderDomain doesn't match SignedMessage\Body\SenderDomain. |
 | Barred Sender                    | This endpoint is explicitly blocking messages from this sender.                                                                                                                                                       |
 | Duplicate Identifier             | The MessageID attribute of the inner XML message is not unique, and has already been used for a message with different content. This message has been rejected.                                                       |
 | Already Submitted                | The MessageID attribute of the inner XML message is not unique, but since the message content is the same as that of a previously accepted message, this copy can be considered to be successfully submitted as well. |
