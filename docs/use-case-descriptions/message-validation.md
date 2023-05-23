@@ -13,8 +13,9 @@ If it fails validation, a response message is sent with ‘rejected’ in the re
 Some causes to reject a message are specific for the type of message and are mentioned in the remainder of this chapter.
 Other causes are more generic and are listed in the table below.
 
-This list is not all-encompassing: stakeholders are allowed to formulate other reasonable causes to reject a message, as long as it is clearly explained in the RejectionReason field.
+This list is not all-encompassing: stakeholders are allowed to formulate other reasonable causes to reject a message, as long as it is clearly explained in the RejectionReason field. Adding the cause of rejection helps the receiving implementation to quickly resolve the issue. 
 This field can contain multiple reasons for rejections (separated by a semicolon).
+
 
 | RejectionReason                  | Cause of rejection                                                                                                                                                                                                    |
 |---|---|
@@ -40,3 +41,4 @@ This field can contain multiple reasons for rejections (separated by a semicolon
 | ISP conflict                     | One or more ISPs are defined more than once, possibly because of an incorrect duration.                                                                                                                               |
 | Period out of bounds             | Period of the message is inappropriate.</br>For example: a FlexRequest with a Period in the past or a settlement item in a FlexSettlement with a Period outside the concerning settlement period.                     |
 | ExpirationDateTime out of bounds | ExpirationDateTime is in the past or exceeds the ISPs in the message.                                                                                                                                                 |
+|[Other reasonable cause]|[Implementation specific rejection reason]|
