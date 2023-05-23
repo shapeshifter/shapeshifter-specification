@@ -22,7 +22,7 @@ This ISP list should be copied from the FlexOffer message without modification: 
   Price                = CurrencyAmount
   Currency             = ISO4217Currency
   OrderReference       = String
-  OptionReference      = String (only if the FlexOrder contained multiple OfferOptions)
+  OptionReference      = String
   ActivationFactor     = Number (optional [0.01-1.00])
   <ISP                  (1...n)
     Power              = Integer
