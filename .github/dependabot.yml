@@ -1,0 +1,14 @@
+# SPDX-FileCopyrightText: 2020-2023 Contributors to the Shapeshifter project
+#
+# SPDX-License-Identifier: Apache-2.0
+
+version: 2
+updates:
+  - package-ecosystem: "pip"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
