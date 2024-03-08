@@ -15,7 +15,7 @@ The result, however, will lead to a D-prognosis in the validate phase.
 The processes that take place during the plan phase are schematically depicted in the following figure.
 
 <figure markdown>
-  ![General information flow in the Plan phase](../assets/images/image9.emf.odg.svg){ width=1000px }
+  ![General information flow in the Plan phase](../assets/images/image9.emf.odg.svg.png){ width=1000px }
   <figcaption>General information flow in the Plan phase</figcaption>
 </figure>
 

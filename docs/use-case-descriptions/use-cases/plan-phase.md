@@ -30,7 +30,7 @@ The common reference allows an AGR to determine whether there are any congestion
 can offer flexibility.
 
 <figure markdown>
-  ![Retrieval of Congestion Points corresponding to AGR's connections](../../assets/images/use-case-3-3-retrieval-of-congestion-points.svg){ width=1000px }
+  ![Retrieval of Congestion Points corresponding to AGR's connections](../../assets/images/use-case-3-3-retrieval-of-congestion-points.svg.png){ width=1000px }
   <figcaption>Retrieval of Congestion Points corresponding to AGR's connections</figcaption>
 </figure>
 
@@ -86,7 +86,7 @@ If operating in open mode, the CRO will accept queries from any USEF-compliant p
 In closed mode, participants will need to be pre-configured in order for updates to be accepted.
 
 <figure markdown>
-  ![Retrieval of registered Connections, grouped by Congestion Point, including corresponding AGR identity](../../assets/images/use-case-3-4-retrieval-of-registered-connections.svg){ width=1000px }
+  ![Retrieval of registered Connections, grouped by Congestion Point, including corresponding AGR identity](../../assets/images/use-case-3-4-retrieval-of-registered-connections.svg.png){ width=1000px }
   <figcaption>Retrieval of registered Connections, grouped by Congestion Point, including corresponding AGR identity</figcaption>
 </figure>
 
@@ -139,7 +139,7 @@ DSOs may only obtain AGR identities and combined connection counts for those con
 Where bilateral contracts are used, the FlexReservationUpdate message can be used at this stage to set or release reserved flexibility.
 
 <figure markdown>
-  ![Exchange of FlexReservationUpdate](../../assets/images/use-case-3-5-exchange-of-flexreservationupdate.svg){ width=1000px }
+  ![Exchange of FlexReservationUpdate](../../assets/images/use-case-3-5-exchange-of-flexreservationupdate.svg.png){ width=1000px }
   <figcaption>Exchange of FlexReservationUpdate</figcaption>
 </figure>
 

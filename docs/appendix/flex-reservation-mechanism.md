@@ -14,7 +14,7 @@ The DSO can send a FlexReservationUpdate message to signal the actual needs to t
 This appendix describes the purpose of this FlexReservationUpdate message and its impact on the contractual obligations and the actual FlexRequest that may follow in the validate phase.
 
 <figure markdown>
-  ![Example flex reservation and FlexReservationUpdate, displayed in graphs](../assets/images/appendix-flex-reservation-mechanism-flex-reservation-flex-reservation-update.svg){ width=1000px }
+  ![Example flex reservation and FlexReservationUpdate, displayed in graphs](../assets/images/appendix-flex-reservation-mechanism-flex-reservation-flex-reservation-update.svg.png){ width=1000px }
   <figcaption>Example flex reservation and FlexReservationUpdate, displayed in graphs</figcaption>
 </figure>
 
@@ -27,7 +27,7 @@ After a FlexRequest is published, the AGR is obliged to produce a FlexOffer that
 This is illustrated in the following figure:
 
 <figure markdown>
-  ![Example FlexRequest and requirements of FlexOffer, displayed in graphs](../assets/images/appendix-flex-reservation-mechanism-flex-request-flexoffer.svg){ width=1000px }
+  ![Example FlexRequest and requirements of FlexOffer, displayed in graphs](../assets/images/appendix-flex-reservation-mechanism-flex-request-flexoffer.svg.png){ width=1000px }
   <figcaption>Example FlexRequest and requirements of FlexOffer, displayed in graphs</figcaption>
 </figure>
 

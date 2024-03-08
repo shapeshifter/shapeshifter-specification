@@ -46,7 +46,7 @@ Since this all happens in the same API call, it is not possible to accidentally 
 The entire message exchange, from the client’s outgoing message queue to the server’s incoming message queue, using HTTP-over-TLS transport and the default cryptographic scheme, is visualized in detail in the picture below.
 
 <figure markdown>
-  ![End-to-end USEF message exchange.](../assets/images/image23.emf.odg.svg){ width=1000px }
+  ![End-to-end USEF message exchange.](../assets/images/image23.emf.odg.svg.png){ width=1000px }
   <figcaption>End-to-end USEF message exchange.</figcaption>
 </figure>
 
