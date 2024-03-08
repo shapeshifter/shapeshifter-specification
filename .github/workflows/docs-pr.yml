@@ -1,0 +1,36 @@
+# Copyright Contributors to the Shapeshifter project
+#
+# SPDX-License-Identifier: Apache-2.0
+
+name: docs-pr
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0 # checkout branch history required to update
+      - uses: actions/setup-python@v4
+        with:
+          python-version: 3.x
+      - uses: actions/cache@v2
+        with:
+          key: ${{ github.ref }}
+          path: .cache
+      - name: Install Poetry and dependencies
+        run: |
+          pip install poetry
+          poetry install --no-interaction --no-root
+      - name: Create local documentation build
+        run: poetry run mkdocs build
+        env:
+          ENABLE_PDF_EXPORT: 1
+      - name: Archive reports
+        uses: actions/upload-artifact@v3
+        with:
+          name: Shapeshifter documentation build
+          path: site/
