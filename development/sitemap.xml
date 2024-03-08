@@ -51,6 +51,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>http://localhost:8000/development/assets/images/</loc>
+         <lastmod>2024-03-08</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>http://localhost:8000/development/general-description/</loc>
          <lastmod>2024-03-08</lastmod>
          <changefreq>daily</changefreq>
