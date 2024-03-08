@@ -11,7 +11,7 @@ Each message has a unique recipient, identified by the Internet domain and USEF 
 The message transfer mechanism is responsible for sending and receiving these messages.
 
 <figure markdown>
-  ![Relationship between the normative USEF XML messages (yellow pane) and the best-practice message transfer mechanism (light-blue pane).](../assets/images/image18.emf.odg.svg){ width=1000px }
+  ![Relationship between the normative USEF XML messages (yellow pane) and the best-practice message transfer mechanism (light-blue pane).](../assets/images/image18.emf.odg.svg.png){ width=1000px }
   <figcaption>Relationship between the normative USEF XML messages (yellow pane) and the best-practice message transfer mechanism (light-blue pane).</figcaption>
 </figure>
 

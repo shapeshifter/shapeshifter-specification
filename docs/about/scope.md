@@ -36,7 +36,7 @@ The two mechanisms differ in the freedom of dispatch, trade and/or connect and t
 
 ## Bilateral trading and trading via a market platform
 
-![](../assets/images/image3.emf.odg.svg)
+![](../assets/images/image3.emf.odg.svg.png)
 
 UFTP is designed for bilateral trading between the AGR and DSO.
 Trading via market platforms can bring added value, see [^B2].
@@ -46,7 +46,7 @@ In addition, FlexOffers and FlexRequests do not need to be directly related and 
 
 ## TSO/DSO coordination
 
-![](../assets/images/image4.emf.odg.svg)
+![](../assets/images/image4.emf.odg.svg.png)
 
 USEF assumes that a DSO or TSO can freely and independently trade flexibility with AGRs.
 Any potential goal conflicts can be settled through the market mechanism.
