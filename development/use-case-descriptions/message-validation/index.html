@@ -694,86 +694,164 @@ If the message passes validation, a response message is sent with ‘accepted’
 If it fails validation, a response message is sent with ‘rejected’ in the result field, along with a description of the reason why the message is rejected in the RejectionReason field.
 Some causes to reject a message are specific for the type of message and are mentioned in the remainder of this chapter.
 Other causes are more generic and are listed in the table below.</p>
-<p>This list is not all-encompassing: stakeholders are allowed to formulate other reasonable causes to reject a message, as long as it is clearly explained in the RejectionReason field.
+<p>This list is not all-encompassing: stakeholders are allowed to formulate other reasonable causes to reject a message, as long as it is clearly explained in the RejectionReason field. Adding the cause of the rejection will facilitate in building a correct implementation. 
 This field can contain multiple reasons for rejections (separated by a semicolon).</p>
 <table>
 <thead>
 <tr>
 <th>RejectionReason</th>
 <th>Cause of rejection</th>
+<th>Applicable to messages</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Invalid Sender</td>
-<td>Despite being schema-compliant, the syntax, type or semantics of the message were unacceptable for the receiving implementation.</td>
+<td>Unknown SenderDomain (SignedMessage)</td>
+<td>SenderDomain specified in the SignedMessage is unknown to the receiving implementation.</td>
+<td>SM</td>
+</tr>
+<tr>
+<td>Invalid SenderRole</td>
+<td>The SenderRole specified in the SignedMessage is invalid.</td>
+<td>SM</td>
+</tr>
+<tr>
+<td>Invalid Sender combination</td>
+<td>The combination SenderDomain and SenderRole in the SignedMessage is invalid.</td>
+<td>SM</td>
+</tr>
+<tr>
+<td>Mismatch SenderDomain</td>
+<td>SenderDomain specified in the SignedMessage doesn't match with the SenderDomain in the inner XML message.</td>
+<td>SM &amp; All other message types</td>
+</tr>
+<tr>
+<td>Invalid SignedMessage</td>
+<td>The SignedMessage complies with the XSD schema, but failed to pass validation.</td>
+<td>SM</td>
 </tr>
 <tr>
 <td>Invalid Message</td>
-<td>There is a mismatch between the SenderDomain/Role combination in the message wrapper and the inner XML message.</td>
+<td>Despite being schema-compliant, the syntax, type or semantics of the message were unacceptable for the receiving implementation.</td>
+<td>All message types</td>
 </tr>
 <tr>
-<td>Unknown Recipient</td>
-<td>The RecipientDomain and/or RecipientRole specified in the inner XML message is not handled by this endpoint.</td>
+<td>Unknown RecipientDomain</td>
+<td>The RecipientDomain specified in the inner XML message is not known to the receiving implementation.</td>
+<td>All message types</td>
+</tr>
+<tr>
+<td>Unknown SenderDomain (message)</td>
+<td>SenderDomain specified in the message is unknown to the receiving implementation.</td>
+<td>All message types except SM</td>
 </tr>
 <tr>
 <td>Barred Sender</td>
 <td>This endpoint is explicitly blocking messages from this sender.</td>
+<td>SM</td>
 </tr>
 <tr>
 <td>Duplicate Identifier</td>
 <td>The MessageID attribute of the inner XML message is not unique, and has already been used for a message with different content. This message has been rejected.</td>
+<td>All message types except SM</td>
 </tr>
 <tr>
 <td>Already Submitted</td>
 <td>The MessageID attribute of the inner XML message is not unique, but since the message content is the same as that of a previously accepted message, this copy can be considered to be successfully submitted as well.</td>
+<td>All message types except SM</td>
 </tr>
 <tr>
 <td>ISP duration rejected</td>
 <td>The message specifies a ISP duration that is not the agreed-upon common value for the market in which it is used.</td>
+<td>All message types that contain ISP's: FRU, DP, FR, FO, FOR, M, FS, FS_R</td>
 </tr>
 <tr>
-<td>Time zone rejected</td>
-<td>The message specifies a time zone that has a different UTC offset than is the agreed- upon common value for the market.</td>
+<td>TimeZone rejected</td>
+<td>The message specifies a TimeZone that has a different UTC offset than is the agreed-upon common value for the market.</td>
+<td>All message types that contain Period: APQ, APQ_R, DPQ, DPQ_R, FRU, DP, FR, FO, FOR, M, FS, FS_R</td>
 </tr>
 <tr>
-<td>Invalid congestion point</td>
-<td>Unknown congestion point or the recipient is not active at this congestion point.</td>
+<td>Invalid CongestionPoint</td>
+<td>Unknown CongestionPoint or the recipient is not active at this CongestionPoint.</td>
+<td>FRU, DP, FR, FO, FOR, FS</td>
 </tr>
 <tr>
-<td>Unknown reference &lt;Reference&gt;</td>
-<td>The message with the sequence where is referred to is unknown.For &lt;Reference&gt; the concerning reference field name can be filled in (for example FlexRequestSequence or PrognosisSequence).</td>
+<td>Unknown &lt;MessageType&gt;MessageID reference</td>
+<td>The message the MessageID refers to is unknown.<br/>For &lt;MessageType&gt; the referenced MessageType can be filled in.<br/>For example: <em>FlexRequestMessageID</em> or <em>D-PrognosisMessageID</em>.</td>
+<td>APU_R, APQ_R, FRU_R, DP_R, FR_R, FO, FOF_R, FOFR, FOFR_R, FOR, FOR_R, M_R, FS, FS_R</td>
 </tr>
 <tr>
 <td>Reference Period mismatch</td>
-<td>The message(s) with the sequence where is referred to contains a different Period.</td>
+<td>The message the &lt;MessageType&gt;MessageID refers to contains a different Period.</td>
+<td>MessageTypes that refer to other messages using &lt;MessageType&gt;MessageID AND contain a Period themselves: APQ_R, FO FOFR, FOR, FS, FS_R</td>
 </tr>
 <tr>
 <td>Reference message expired</td>
-<td>The message that is referred to is expired.</td>
+<td>The message &lt;MessageType&gt;MessageID refers to is expired.</td>
+<td>APU_R, APQ_R, FRU_R, DP_R, FR_R, FO, FOF_R, FOFR, FOFR_R, FOR, FOR_R, M_R, FS, FS_R</td>
 </tr>
 <tr>
 <td>Reference message revoked</td>
-<td>The message that is referred to is revoked.</td>
+<td>The message &lt;MessageType&gt;MessageID refers is revoked.</td>
+<td>APU_R, APQ_R, FRU_R, DP_R, FR_R, FO, FOF_R, FOFR, FOFR_R, FOR, FOR_R, M_R, FS, FS_R</td>
 </tr>
 <tr>
 <td>ISPs out of bounds</td>
-<td>One or more ISPs are outside the tolerated boundaries: ISPs do not exist.</td>
+<td>One or more ISPs are outside the tolerated boundaries.<br/> - At least 1 ISP should exist in the messages that expect them. <br/>- Also, the amount of ISPs that are about a Period (one <em>day</em>) can never exceed <em>(24 hours / ISP-Duration (in hours)) + DST_offset</em><br/>What that means is that for example: you can't have more than (24 hours (1 Period) / 0.25 (PT15M)) = 96 ISPss. <br/>Exceptions are depending on wether or not DST applies (for Europe for example), then you have an hour less or more on the day so the maximums would in those cases be: 96 - 4 = 92 or 96 + 4 = 100. More ISPs for that specific Period would be invalid.</td>
+<td>FRU, DP, FR, FO, FOR, M, FS, FS_R</td>
 </tr>
 <tr>
 <td>ISP conflict</td>
-<td>One or more ISPs are defined more than once, possibly because of an incorrect duration.</td>
+<td>One or more ISPs are defined more than once, possibly because of an incorrect duration.<br/>For example:<br/><pre><flexrequest\<br></flexrequest\<br>   \\<isp\<br></isp\<br>      Start    = 1\<br/>      Duration = 4\<br/>   /&gt;\<br/>   \\<isp\<br></isp\<br>      Start    = 2\<br/>      Duration = 1\<br/>   /&gt;\<br/>/&gt;</pre><br/> The second ISP will overlap the first.</td>
+<td>FRU, DP, FR, FO, FOR, M, FS, FS_R</td>
 </tr>
 <tr>
 <td>Period out of bounds</td>
-<td>Period of the message is inappropriate.For example: a FlexRequest with a Period in the past or a settlement item in a FlexSettlement with a Period outside the concerning settlement period.</td>
+<td>Period of the message is inappropriate.<br/>For example: a FlexRequest with a Period in the past or a settlement item in a FlexSettlement with a Period outside the concerning settlement period.</td>
+<td>APQ, APQ_R, DPQ, DPQ_R, FRU, DP, FR, FO, FOR, M, FS, FS_R</td>
 </tr>
 <tr>
 <td>ExpirationDateTime out of bounds</td>
-<td>ExpirationDateTime is in the past or exceeds the ISPs in the message.</td>
+<td>ExpirationDateTime is in the past or exceeds the ISPs in the message. The acceptable content can best be discussed and agreed upon between the sending and receiving parties.</td>
+<td>FR, FOF</td>
+</tr>
+<tr>
+<td>[Other reasonable cause]</td>
+<td>[Implementation specific rejection reason]</td>
+<td>TBD</td>
 </tr>
 </tbody>
 </table>
+<p>Because typing all MessageTypes out in full takes a lot of space, a list of abbreviations has been created that can be used when communicating about the specification:
+|   MessageType |   Abbreviation    |
+|---|---|
+|   SignedMessage |   SM  |
+|   TestMessage |   TM  |
+|   TestMessageResponse |   TM_R  |
+|   AGRPortfolioUpdate |   APU  |
+|   AGRPortfolioUpdateResponse |   APU_R  |
+|   AGRPortfolioQuery |   APQ  |
+|   AGRPortfolioQueryResponse |   APQ_R  |
+|   DSOPortfolioUpdate |   DPU  |
+|   DSOPortfolioUpdateResponse |   DPU_R  |
+|   DSOPortfolioQuery |   DPQ  |
+|   DSOPortfolioQueryResponse |   DPQ_R  |
+|   FlexReservationUpdate |   FRU  |
+|   FlexReservationUpdateResponse |   FRU_R  |
+|   D-Prognosis |   DP  |
+|   D-PrognosisResponse |   DP_R  |
+|   FlexRequest |   FR  |
+|   FlexRequestResponse |   FR_R  |
+|   FlexOffer |   FOF  |
+|   FlexOfferResponse |   FOF_R  |
+|   FlexOfferRevocation |   FOFR  |
+|   FlexOfferRevocationResponse |   FOFR_R  |
+|   FlexOrder |   FOR  |
+|   FlexOrderResponse |   FOR_R  |
+|   Metering |   M  |
+|   MeteringResponse |   M_R  |
+|   FlexSettlement |   FS  |
+|   FlexSettlementResponse |   FS_R  |</p>
 </article>
 </div>
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
