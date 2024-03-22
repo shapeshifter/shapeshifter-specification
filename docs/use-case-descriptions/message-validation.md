@@ -22,7 +22,7 @@ This field can contain multiple reasons for rejections (separated by a semicolon
 | Invalid SenderRole | The SenderRole specified in the SignedMessage is invalid. | SM |
 | Invalid Sender combination | The combination SenderDomain and SenderRole in the SignedMessage is invalid.| SM |
 | Mismatch SenderDomain | SenderDomain specified in the SignedMessage doesn't match with the SenderDomain in the inner XML message. | SM & All other message types |
-| Invalid SignedMessage | Despite being schema-compliant, the syntax, type or semantics of the SignedMessage were unacceptable for the receiving implementation. | SM |
+| Invalid SignedMessage | The SignedMessage complies with the XSD schema, but failed to pass validation. | SM |
 | Invalid Message | Despite being schema-compliant, the syntax, type or semantics of the message were unacceptable for the receiving implementation. | All message types |
 | Unknown RecipientDomain | The RecipientDomain specified in the inner XML message is not known to the receiving implementation. | All message types |
 | Unknown SenderDomain (message) | SenderDomain specified in the message is unknown to the receiving implementation. | All message types except SM |
