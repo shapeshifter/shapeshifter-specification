@@ -30,7 +30,7 @@ jobs:
         env:
           ENABLE_PDF_EXPORT: 1
       - name: Archive reports
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: Shapeshifter documentation build
           path: site/
