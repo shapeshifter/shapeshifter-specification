@@ -802,7 +802,7 @@ This field can contain multiple reasons for rejections (separated by a semicolon
 </tr>
 <tr>
 <td>ISP conflict</td>
-<td>One or more ISPs are defined more than once, possibly because of an incorrect duration.<br/>For example:<br/><pre><flexrequest\<br></flexrequest\<br>   \\<isp\<br></isp\<br>      Start    = 1\<br/>      Duration = 4\<br/>   /&gt;\<br/>   \\<isp\<br></isp\<br>      Start    = 2\<br/>      Duration = 1\<br/>   /&gt;\<br/>/&gt;</pre><br/> The second ISP will overlap the first.</td>
+<td>One or more ISPs are defined more than once, possibly because of an incorrect duration.<br/>For example:<br/><pre>&lt;FlexRequest<br/>  &lt;ISP Start = 1 Duration = 4 ... /&gt;<br/>  &lt;ISP Start = 2 Duration = 1 ... /&gt;<br/>/&gt;</pre><br/> The second ISP will overlap the first.</td>
 <td>FRU, DP, FR, FO, FOR, M, FS, FS_R</td>
 </tr>
 <tr>
@@ -822,36 +822,125 @@ This field can contain multiple reasons for rejections (separated by a semicolon
 </tr>
 </tbody>
 </table>
-<p>Because typing all MessageTypes out in full takes a lot of space, a list of abbreviations has been created that can be used when communicating about the specification:
-|   MessageType |   Abbreviation    |
-|---|---|
-|   SignedMessage |   SM  |
-|   TestMessage |   TM  |
-|   TestMessageResponse |   TM_R  |
-|   AGRPortfolioUpdate |   APU  |
-|   AGRPortfolioUpdateResponse |   APU_R  |
-|   AGRPortfolioQuery |   APQ  |
-|   AGRPortfolioQueryResponse |   APQ_R  |
-|   DSOPortfolioUpdate |   DPU  |
-|   DSOPortfolioUpdateResponse |   DPU_R  |
-|   DSOPortfolioQuery |   DPQ  |
-|   DSOPortfolioQueryResponse |   DPQ_R  |
-|   FlexReservationUpdate |   FRU  |
-|   FlexReservationUpdateResponse |   FRU_R  |
-|   D-Prognosis |   DP  |
-|   D-PrognosisResponse |   DP_R  |
-|   FlexRequest |   FR  |
-|   FlexRequestResponse |   FR_R  |
-|   FlexOffer |   FOF  |
-|   FlexOfferResponse |   FOF_R  |
-|   FlexOfferRevocation |   FOFR  |
-|   FlexOfferRevocationResponse |   FOFR_R  |
-|   FlexOrder |   FOR  |
-|   FlexOrderResponse |   FOR_R  |
-|   Metering |   M  |
-|   MeteringResponse |   M_R  |
-|   FlexSettlement |   FS  |
-|   FlexSettlementResponse |   FS_R  |</p>
+<p>Because typing all MessageTypes out in full takes a lot of space, a list of abbreviations has been created that can be used when communicating about the specification:</p>
+<table>
+<thead>
+<tr>
+<th>MessageType</th>
+<th>Abbreviation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SignedMessage</td>
+<td>SM</td>
+</tr>
+<tr>
+<td>TestMessage</td>
+<td>TM</td>
+</tr>
+<tr>
+<td>TestMessageResponse</td>
+<td>TM_R</td>
+</tr>
+<tr>
+<td>AGRPortfolioUpdate</td>
+<td>APU</td>
+</tr>
+<tr>
+<td>AGRPortfolioUpdateResponse</td>
+<td>APU_R</td>
+</tr>
+<tr>
+<td>AGRPortfolioQuery</td>
+<td>APQ</td>
+</tr>
+<tr>
+<td>AGRPortfolioQueryResponse</td>
+<td>APQ_R</td>
+</tr>
+<tr>
+<td>DSOPortfolioUpdate</td>
+<td>DPU</td>
+</tr>
+<tr>
+<td>DSOPortfolioUpdateResponse</td>
+<td>DPU_R</td>
+</tr>
+<tr>
+<td>DSOPortfolioQuery</td>
+<td>DPQ</td>
+</tr>
+<tr>
+<td>DSOPortfolioQueryResponse</td>
+<td>DPQ_R</td>
+</tr>
+<tr>
+<td>FlexReservationUpdate</td>
+<td>FRU</td>
+</tr>
+<tr>
+<td>FlexReservationUpdateResponse</td>
+<td>FRU_R</td>
+</tr>
+<tr>
+<td>D-Prognosis</td>
+<td>DP</td>
+</tr>
+<tr>
+<td>D-PrognosisResponse</td>
+<td>DP_R</td>
+</tr>
+<tr>
+<td>FlexRequest</td>
+<td>FR</td>
+</tr>
+<tr>
+<td>FlexRequestResponse</td>
+<td>FR_R</td>
+</tr>
+<tr>
+<td>FlexOffer</td>
+<td>FOF</td>
+</tr>
+<tr>
+<td>FlexOfferResponse</td>
+<td>FOF_R</td>
+</tr>
+<tr>
+<td>FlexOfferRevocation</td>
+<td>FOFR</td>
+</tr>
+<tr>
+<td>FlexOfferRevocationResponse</td>
+<td>FOFR_R</td>
+</tr>
+<tr>
+<td>FlexOrder</td>
+<td>FOR</td>
+</tr>
+<tr>
+<td>FlexOrderResponse</td>
+<td>FOR_R</td>
+</tr>
+<tr>
+<td>Metering</td>
+<td>M</td>
+</tr>
+<tr>
+<td>MeteringResponse</td>
+<td>M_R</td>
+</tr>
+<tr>
+<td>FlexSettlement</td>
+<td>FS</td>
+</tr>
+<tr>
+<td>FlexSettlementResponse</td>
+<td>FS_R</td>
+</tr>
+</tbody>
+</table>
 </article>
 </div>
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
