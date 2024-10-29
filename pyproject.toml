@@ -9,6 +9,7 @@ description = ""
 authors = ["\"Shapeshifter contributors\""]
 license = "\"Apache-2.0\""
 readme = "README.md"
+package-mode = false
 packages = [{include = "shapeshifter_specification"}]
 
 [tool.poetry.dependencies]
