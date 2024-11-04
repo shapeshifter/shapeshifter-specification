@@ -16,6 +16,7 @@ Receiving implementations should ignore the information supplied for those ISPs.
   Period          = Period
   CongestionPoint = EntityAddress
   Revision        = Long
+  Unit            = PowerUnitType (optional)
   <ISP              (1...n)
     Power         = Integer
     Start         = Integer
@@ -30,8 +31,9 @@ Receiving implementations should ignore the information supplied for those ISPs.
 | Period          | The Period this D-Prognosis applies to.                                                                                                                                                       |
 | CongestionPoint | Entity Address of the Congestion Point this prognosis applies to. Required for D-prognoses, prohibited for other prognosis types.                                                             |
 | Revision        | Revision of this message. A sequence number that must be incremented each time a new revision of a prognosis is sent. The combination of SenderDomain and PrognosisSequence should be unique. |
+| Unit            | The unit of Power that applies to the Power of the ISP's. (optional, if not specified, assume that the Power is specified in Watts)                                                           |
 | ISP             |                                                                                                                                                                                               |
-| ⇥ Power         | Power specified for this ISP in Watts. Also see the important notes about the sign of this attribute in the main documentation entry for the Power attribute.                                 |
+| ⇥ Power         | Power specified for this ISP (in the specified `Unit`). Also see the important notes about the sign of this attribute in the main documentation entry for the Power attribute.                |
 | ⇥ Start         | Number of the first ISP this element refers to. The first ISP of a day has number 1.                                                                                                          |
 | ⇥ Duration      | The number of the ISPs this element represents.                                                                                                                                               |
 

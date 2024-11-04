@@ -246,4 +246,14 @@ SPDX-License-Identifier: Apache-2.0
     <xs:element name="SignedMessage" type="SignedMessageType"/>
     <xs:element name="TestMessage" type="TestMessageType"/>
     <xs:element name="TestMessageResponse" type="TestMessageResponseType"/>
+    <!-- -->
+    <!-- -->
+    <!--  Power Unit Type -->
+    <!-- -->
+    <xs:simpleType name="PowerUnitType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Watt"/>
+            <xs:enumeration value="VAR"/>
+        </xs:restriction>
+    </xs:simpleType>
 </xs:schema>

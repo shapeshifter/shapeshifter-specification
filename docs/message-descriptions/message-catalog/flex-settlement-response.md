@@ -21,7 +21,7 @@ When a FlexSettlement message is rejected, the DSO should consider all FlexOrder
     DisputeReason            = String (Only if Disposition = "Disputed")
   />
   <ContractSettlementStatus    (0...n, only if Result = "Accepted")
-    ContractID               = Text
+    ContractID               = String
     <Period                    (0...n)
       Period                 = Period
       <ISP                     (0...n)
