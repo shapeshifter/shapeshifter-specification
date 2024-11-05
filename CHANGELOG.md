@@ -27,3 +27,24 @@ Improve the description of FlexRequestMessageID and D-PrognosisMessageID fields
 
 ### Removed
 Reference from FlexSettlement and FlexSettlementResponse - These fields supplied the same functionality as the FlexSettlementMessageID field. Now please use the FlexSettlementMessageID field in the FlexSettlementResponse
+
+## [3.1.0] - 2024-11-05
+
+### Added
+* Added attribute(s) in `FlexRequestType`
+    * `Unit`: so that the aggregate knows which in with unit of power the message sent
+* Added attribute(s) in `FlexReservationUpdateType`
+    * `Service Type`: so that the aggregate knows which service is being requested
+    * `Unit`: so that the aggregate knows which in with unit of power the message sent
+* Added attribute(s) in `FlexReservationUpdateISPType`
+    * `Disposition`: ? so that the aggrate knows whether the Power specified for this ISP represents available capacity or a request for reduction/increase.
+* Added attribute(s) in `FlexOfferType`
+    * `Service Type`: so that the DSO knows which service is being requested
+    * `Unit`: so that the DSO knows in which unit of power the message sent
+* Added attribute(s) in `FlexOrderType`
+    * `Service Type`: so that the aggregate knows which service is being requested
+    * `Unit`: so that the aggregate knows in which unit of power the message sent
+* Added attribute(s) in `PrognosisType`
+    * `Unit`: so that the DSO knows which in which unit of power the message sent
+* Added attribute(s) in `FlexSettlementType`
+    * `Unit`: so that the aggregate knows in which unit of power the message sent
