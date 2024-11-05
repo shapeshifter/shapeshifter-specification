@@ -50,6 +50,11 @@
                             prognosis is sent. The combination of SenderDomain and PrognosisSequence should be unique</xs:documentation>
                     </xs:annotation>
                 </xs:attribute>
+                <xs:attribute name="Unit" type="PowerUnitType" use="optional">
+                    <xs:annotation>
+                        <xs:documentation>The unit of Power that applies to the Power of the ISP's.</xs:documentation>
+                    </xs:annotation>
+                </xs:attribute>
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
@@ -59,8 +64,7 @@
     <xs:complexType name="D-PrognosisISPType">
         <xs:attribute name="Power" type="xs:integer" use="required">
             <xs:annotation>
-                <xs:documentation>Power specified for this ISP in Watts. Also see the important notes about the sign of this attribute in the main documentation entry for the ISP element.</xs:documentation>
-            </xs:annotation>
+                <xs:documentation>Power specified for this ISP in the given PowerUnit. Also see the important notes about the sign of this attribute in the main documentation entry for the ISP element.</xs:documentation>            </xs:annotation>
         </xs:attribute>
         <xs:attribute name="Start" type="xs:integer" use="required">
             <xs:annotation>
@@ -114,9 +118,19 @@
                         <xs:documentation>Reference to the bilateral contract in question.</xs:documentation>
                     </xs:annotation>
                 </xs:attribute>
+                <xs:attribute name="ServiceType" type="xs:string" use="optional">
+                    <xs:annotation>
+                        <xs:documentation>Service type for this request, the service type determines response characteristics such as latency or asset participation type.</xs:documentation>
+                    </xs:annotation>
+                </xs:attribute>
                 <xs:attribute name="Reference" type="xs:string" use="required">
                     <xs:annotation>
                         <xs:documentation>Message reference, assigned by the DSO originating the FlexReservationUpdate.</xs:documentation>
+                    </xs:annotation>
+                </xs:attribute>
+                <xs:attribute name="Unit" type="PowerUnitType" use="optional">
+                    <xs:annotation>
+                        <xs:documentation>The unit of Power that applies to the Power of the ISP's.</xs:documentation>
                     </xs:annotation>
                 </xs:attribute>
             </xs:extension>
@@ -126,9 +140,10 @@
     <!-- Flex Reservation Update ISP Type -->
     <!-- -->
     <xs:complexType name="FlexReservationUpdateISPType">
+        <xs:attribute name="Disposition" type="AvailableRequestedType" use="optional"/>
         <xs:attribute name="Power" type="xs:integer" use="required">
             <xs:annotation>
-                <xs:documentation>Remaining reserved power specified for this ISP in Watts.</xs:documentation>
+                <xs:documentation>Remaining reserved power specified for this ISP in the given PowerUnit.</xs:documentation>
             </xs:annotation>
         </xs:attribute>
         <xs:attribute name="Start" type="xs:positiveInteger" use="required">
@@ -189,6 +204,11 @@
                         <xs:documentation>Service type for this request, the service type determines response characteristics such as latency or asset participation type.</xs:documentation>
                     </xs:annotation>
                 </xs:attribute>
+                <xs:attribute name="Unit" type="PowerUnitType" use="optional">
+                    <xs:annotation>
+                        <xs:documentation>The unit of Power that applies to the Min/Max Power of the ISP's.</xs:documentation>
+                    </xs:annotation>
+                </xs:attribute>
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
@@ -199,12 +219,11 @@
         <xs:attribute name="Disposition" type="AvailableRequestedType"/>
         <xs:attribute name="MinPower" type="xs:integer" use="required">
             <xs:annotation>
-                <xs:documentation>Power specified for this ISP in Watts. Also see the important notes about the sign of this attribute in the main documentation entry for the ISP element.</xs:documentation>
-            </xs:annotation>
+                <xs:documentation>Power specified for this ISP in the given PowerUnit. Also see the important notes about the sign of this attribute in the main documentation entry for the ISP element.</xs:documentation>            </xs:annotation>
         </xs:attribute>
         <xs:attribute name="MaxPower" type="xs:integer" use="required">
             <xs:annotation>
-                <xs:documentation>Power specified for this ISP in Watts. Also see the important notes about the sign of this attribute in the main documentation entry for the ISP element.</xs:documentation>
+                <xs:documentation>Power specified for this ISP in the given PowerUnit. Also see the important notes about the sign of this attribute in the main documentation entry for the ISP element.</xs:documentation>
             </xs:annotation>
         </xs:attribute>
         <xs:attribute name="Start" type="xs:positiveInteger" use="required">
@@ -259,6 +278,11 @@
                         <xs:documentation>Reference to the concerning contract, if applicable. The contract may be either bilateral or commoditized market contract.</xs:documentation>
                     </xs:annotation>
                 </xs:attribute>
+                <xs:attribute name="ServiceType" type="xs:string" use="optional">
+                    <xs:annotation>
+                        <xs:documentation>Service type for this request, the service type determines response characteristics such as latency or asset participation type.</xs:documentation>
+                    </xs:annotation>
+                </xs:attribute>
                 <xs:attribute name="D-PrognosisMessageID" type="UUIDType" use="optional">
                     <xs:annotation>
                         <xs:documentation>MessageID of the D-Prognosis this request is based on, if it has been agreed that the baseline is based on D-prognoses. </xs:documentation>
@@ -272,6 +296,11 @@
                 <xs:attribute name="Currency" type="ISO4217CurrencyType" use="required">
                     <xs:annotation>
                         <xs:documentation>ISO 4217 code indicating the currency that applies to the price of the FlexOffer.</xs:documentation>
+                    </xs:annotation>
+                </xs:attribute>
+                <xs:attribute name="Unit" type="PowerUnitType" use="optional">
+                    <xs:annotation>
+                        <xs:documentation>The unit of Power that applies to the Power of the ISP's within the OfferOptions.</xs:documentation>
                     </xs:annotation>
                 </xs:attribute>
             </xs:extension>
@@ -309,8 +338,7 @@
     <xs:complexType name="FlexOfferOptionISPType">
         <xs:attribute name="Power" type="xs:integer" use="required">
             <xs:annotation>
-                <xs:documentation>Power specified for this ISP in Watts. Also see the important notes about the sign of this attribute in the main documentation entry for the ISP element.</xs:documentation>
-            </xs:annotation>
+                <xs:documentation>Power specified for this ISP in the given PowerUnit. Also see the important notes about the sign of this attribute in the main documentation entry for the ISP element.</xs:documentation>            </xs:annotation>
         </xs:attribute>
         <xs:attribute name="Start" type="xs:positiveInteger" use="required">
             <xs:annotation>
@@ -387,6 +415,11 @@
                         <xs:documentation>Reference to the concerning bilateral contract, if applicable.</xs:documentation>
                     </xs:annotation>
                 </xs:attribute>
+                <xs:attribute name="ServiceType" type="xs:string" use="optional">
+                    <xs:annotation>
+                        <xs:documentation>Service type for this request, the service type determines response characteristics such as latency or asset participation type.</xs:documentation>
+                    </xs:annotation>
+                </xs:attribute>
                 <xs:attribute name="D-PrognosisMessageID" type="UUIDType" use="optional">
                     <xs:annotation>
                         <xs:documentation>MessageID of the D-Prognosis this request is based on, if it has been agreed that the baseline is based on D-prognoses. </xs:documentation>
@@ -422,6 +455,11 @@
                         <xs:documentation>The activation factor for this OfferOption. The ActivationFactor must be greater than or equal to the MinActivationFactor in the OfferOption chosen from the FlexOffer.</xs:documentation>
                     </xs:annotation>
                 </xs:attribute>
+                <xs:attribute name="Unit" type="PowerUnitType" use="optional">
+                    <xs:annotation>
+                        <xs:documentation>The unit of Power that applies to the Power of the ISP's.</xs:documentation>
+                    </xs:annotation>
+                </xs:attribute>
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
@@ -429,7 +467,7 @@
     <xs:complexType name="FlexOrderISPType">
         <xs:attribute name="Power" type="xs:integer" use="required">
             <xs:annotation>
-                <xs:documentation>Power specified for this ISP in Watts. Also see the important notes about the sign of this attribute in the main documentation entry for the ISP element.</xs:documentation>
+                <xs:documentation>Power specified for this ISP in the given PowerUnit. Also see the important notes about the sign of this attribute in the main documentation entry for the ISP element.</xs:documentation>
             </xs:annotation>
         </xs:attribute>
         <xs:attribute name="Start" type="xs:positiveInteger" use="required">
@@ -476,6 +514,11 @@
                 <xs:attribute name="Currency" type="ISO4217CurrencyType" use="required">
                     <xs:annotation>
                         <xs:documentation>ISO 4217 code indicating the currency that applies to all amounts (flex price, penalty and net settlement) in this message.</xs:documentation>
+                    </xs:annotation>
+                </xs:attribute>
+                <xs:attribute name="Unit" type="PowerUnitType" use="optional">
+                    <xs:annotation>
+                        <xs:documentation>The power unit that applies to all given powers in this message.</xs:documentation>
                     </xs:annotation>
                 </xs:attribute>
             </xs:extension>
@@ -546,28 +589,27 @@
         </xs:attribute>
         <xs:attribute name="BaselinePower" type="xs:integer" use="required">
             <xs:annotation>
-                <xs:documentation>Power originally forecast (as per the referenced baseline) for this ISP in Watts.</xs:documentation>
+                <xs:documentation>Power originally forecast (as per the referenced baseline) for this ISP  in the given PowerUnit.</xs:documentation>
             </xs:annotation>
         </xs:attribute>
         <xs:attribute name="OrderedFlexPower" type="xs:integer" use="required">
             <xs:annotation>
-                <xs:documentation>Amount of flex power ordered (as per the referenced FlexOrder message) for this ISP in Watts.</xs:documentation>
+                <xs:documentation>Amount of flex power ordered (as per the referenced FlexOrder message) for this ISP in the given PowerUnit.</xs:documentation>
             </xs:annotation>
         </xs:attribute>
         <xs:attribute name="ActualPower" type="xs:integer" use="required">
             <xs:annotation>
-                <xs:documentation>Actual amount of power for this ISP in Watts, as measured/determined by the DSO and allocated to the AGR.
-                </xs:documentation>
+                <xs:documentation>Actual amount of power for this ISP in the given PowerUnit, as measured/determined by the DSO and allocated to the AGR.</xs:documentation>
             </xs:annotation>
         </xs:attribute>
         <xs:attribute name="DeliveredFlexPower" type="xs:integer" use="required">
             <xs:annotation>
-                <xs:documentation>Actual amount of flex power delivered for this ISP in Watts, as determined by the DSO.</xs:documentation>
+                <xs:documentation>Actual amount of flex power delivered for this ISP in the given PowerUnit, as determined by the DSO.</xs:documentation>
             </xs:annotation>
         </xs:attribute>
         <xs:attribute name="PowerDeficiency" type="xs:integer" use="optional" default="0">
             <xs:annotation>
-                <xs:documentation>Amount of flex power sold but not delivered for this ISP in Watts, as determined by the DSO.</xs:documentation>
+                <xs:documentation>Amount of flex power sold but not delivered for this ISP in the given PowerUnit, as determined by the DSO.</xs:documentation>
             </xs:annotation>
         </xs:attribute>
     </xs:complexType>
