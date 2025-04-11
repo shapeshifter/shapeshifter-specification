@@ -14,7 +14,7 @@ packages = [{include = "shapeshifter_specification"}]
 
 [tool.poetry.dependencies]
 python = "^3.10"
-mkdocs-material = "^9.6.9"
+mkdocs-material = "^9.6.10"
 mike = "^1.1.2"
 mkdocs-glightbox = "^0.4.0"
 mkdocs-with-pdf = "^0.9.3"
