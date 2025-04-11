@@ -1,0 +1,16 @@
+@startuml
+!theme cerulean
+
+participant AGR
+participant DSO
+
+== Operate ==
+DSO -> DSO: Grid safety analysis -> NOK
+DSO -> DSO: Evaluate offers
+AGR <- DSO: FlexOrder
+AGR -> AGR: control portfolio
+AGR -> DSO: (updated) D-prognosis
+AGR -> AGR: reconsider offer
+AGR -> DSO: FlexOfferRevocation
+
+@enduml

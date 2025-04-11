@@ -1,0 +1,20 @@
+@startuml
+!theme cerulean
+
+participant AGR
+participant DSO
+
+loop for each Congestion Point with expected congestion in a certain period
+    AGR <- DSO: FlexRequest
+    AGR --> DSO: HTTP OK
+
+    alt if FlexRequest is valid
+        AGR -> DSO: FlexRequestResponse Result=Accepted
+        AGR <-- DSO: HTTP OK
+    else
+        AGR -> DSO: FlexRequestResponse Result=Rejected
+        AGR <-- DSO: HTTP OK
+    end
+end
+
+@enduml

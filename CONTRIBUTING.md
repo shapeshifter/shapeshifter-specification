@@ -17,11 +17,12 @@ For more information see the projects used to render and upload the documentatio
 - [MkDocs](https://www.mkdocs.org/) the rendering engine
 - [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/) the theme
 - [PDF Generate Plugin for MkDocs](https://github.com/orzih/mkdocs-with-pdf) to render pdf document of sections
+- [PlantUML for MkDocs](https://pypi.org/project/mkdocs-plantuml/) plugin to render PlantUML diagrams
 - [Mike](https://github.com/jimporter/mike) to publish multiple versions
 
 Besides the technical features, here are some brief recommendations on using Markdown:
 
-- One scentence per line, this makes it easier to handle frequent changes and check differences.
+- One sentence per line, this makes it easier to handle frequent changes and check differences.
 - Name files using 'kebab-case' like `my-important-file.md`
 - Use HTML only if necessary, like:
   - comments within the Markdown source code
@@ -32,13 +33,15 @@ Besides the technical features, here are some brief recommendations on using Mar
 ## Local preview
 
 The Python MkDocs tools in this project are managed using [Poetry](https://python-poetry.org/).
-Using Poetry you can setup a local development environment environment:
+Using Poetry you can set up a local development environment:
 
 ```
-$ poetry install --no-root
+$ poetry install
 ```
 
-Then you can run a process that continously monitors the source and serves it online:
+For Windows users: you need to install WeasyPrint as described [here](https://doc.courtbouillon.org/weasyprint/stable/first_steps.html#windows).
+
+Then you can run a process that continuously monitors the source and serves it online:
 
 ```
 $ poetry run mkdocs serve

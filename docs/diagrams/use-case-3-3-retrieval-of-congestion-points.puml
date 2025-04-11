@@ -1,0 +1,23 @@
+@startuml
+!theme cerulean
+
+participant AGR
+participant CRO
+
+AGR -> CRO: AGRPortfolioQuery
+AGR <-- CRO: HTTP OK
+
+alt if CRO is operating in open mode
+    AGR <- CRO: AGRPortfolioQueryResponse Result=Accepted
+    AGR --> CRO: HTTP OK
+else
+    alt if AGR is an authorized participant
+        AGR <- CRO: AGRPortfolioQueryResponse Result=Accepted
+        AGR --> CRO: HTTP OK
+    else
+        AGR <- CRO: AGRPortfolioQueryResponse Result=Rejected
+        AGR --> CRO: HTTP OK
+    end
+end
+
+@enduml

@@ -15,7 +15,7 @@ The processes for invoking this flexibility are depicted in the following figure
 <!-- TODO: check why this image has been shortened in the .pdf file -->
 
 <figure markdown>
-  ![General information flows in the Operate phase.](../assets/images/image16.emf.odg.svg.png){ width=1000px }
+  ![General information flows in the Operate phase.](../diagrams/operate-phase.puml)
   <figcaption>General information flows in the Operate phase.</figcaption>
 </figure>
 
@@ -29,7 +29,7 @@ Where deviations occur, the AGR re-optimizes its portfolio.
 It is possible that deviations could be solved using the flexibility contained within the portfolio itself.
 
 If this is not the case, the AGR must change its plan (and probably limit its liabilities due to non-performance, to minimize fines) and control the assets to ensure that the new plans are realized and send an updated D-prognosis.
-If a FlexOffer has already been ordered, but the AGR is not able to comply, the AGR should inform the DSO as soon as possible through direct means outside of the UFTP protocol.
+If a FlexOrder has already been accepted, but the AGR is no longer able to comply, the AGR should inform the DSO as soon as possible through direct means outside of the UFTP protocol.
 During the operate phase, the AGR may wish to revoke outstanding (i.e. not ordered) FlexOffers if it is no longer able or willing to deliver the flexibility.
 
 Although the DSO will reduce congestion risks in the validate phase, the DSO can still request that AGRs dispatch flexible power options to resolve potential grid problems in the operate phase.
