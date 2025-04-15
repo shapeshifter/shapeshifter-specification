@@ -20,7 +20,7 @@ _Use cases for the settle phase._
 ## Process Settlement Items
 
 <figure markdown>
-  ![Transmission of settlement including acceptance process per settlement item](../../diagrams/use-case-3-11-transmission-of-settlement.puml)
+  ![Transmission of settlement including acceptance process per settlement item](../../diagrams/use-case-3-11-transmission-of-settlement.puml){ .no-lightbox }
   <figcaption>Transmission of settlement including acceptance process per settlement item</figcaption>
 </figure>
 

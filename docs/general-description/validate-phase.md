@@ -9,7 +9,7 @@ SPDX-License-Identifier: Apache-2.0
 ## Overall description
 
 <figure markdown>
-  ![Validate phase](../diagrams/validate-phase.puml)
+  ![Validate phase](../diagrams/validate-phase.puml){ .no-lightbox }
   <figcaption>General information flow in Validate phase</figcaption>
 </figure>
 
@@ -36,7 +36,7 @@ This is because any flexibility offered will still help to reduce the impact of 
 USEF’s orange regime is outside the scope of UFTP, and, therefore, not further discussed in this document.
 
 <figure markdown>
-  ![Validate phase with multiple FlexOffers](../diagrams/validate-phase-multiple-flexoffers.puml)
+  ![Validate phase with multiple FlexOffers](../diagrams/validate-phase-multiple-flexoffers.puml){ .no-lightbox }
   <figcaption>AGR may send multiple FlexOffers on the same request, and open FlexOffers, which are not yet ordered may be revoked by the AGR.</figcaption>
 </figure>
 
@@ -45,7 +45,7 @@ Where an AGR responds with multiple FlexOffers, the DSO can freely choose the mo
 Provided the flexibility has not been ordered via a FlexOrder, a FlexOffer may be revoked by the AGR (FlexOfferRevocation).
 
 <figure markdown>
-  ![Flexibility trading may go on until gate closure time](../diagrams/../diagrams/validate-phase-gate-closure-time.puml)
+  ![Flexibility trading may go on until gate closure time](../diagrams/../diagrams/validate-phase-gate-closure-time.puml){ .no-lightbox }
   <figcaption>Flexibility trading may go on until gate closure time. This includes iterations between plan phase and validate phase. The last accepted D-prognosis before gate closure time serves as a basis for the next phase. Any open FlexOffers, which are not expired, may be ordered after gate closure.</figcaption>
 </figure>
 

@@ -15,7 +15,7 @@ The processes for invoking this flexibility are depicted in the following figure
 <!-- TODO: check why this image has been shortened in the .pdf file -->
 
 <figure markdown>
-  ![General information flows in the Operate phase.](../diagrams/operate-phase.puml)
+  ![General information flows in the Operate phase.](../diagrams/operate-phase.puml){ .no-lightbox }
   <figcaption>General information flows in the Operate phase.</figcaption>
 </figure>
 

@@ -25,7 +25,7 @@ The use cases are explained in the following sections.
 ## Exchange D-Prognoses per Congestion Point
 
 <figure markdown>
-  ![Exchange of D-prognoses](../../diagrams/use-case-3-6-exchange-of-d-prognoses.puml)
+  ![Exchange of D-prognoses](../../diagrams/use-case-3-6-exchange-of-d-prognoses.puml){ .no-lightbox }
   <figcaption>Exchange of D-prognoses</figcaption>
 </figure>
 
@@ -82,7 +82,7 @@ It is essential to use a sequence number that is incremented each time a new rev
 ## Exchange Flexibility Requests
 
 <figure markdown>
-  ![Exchange of FlexRequests](../../diagrams/use-case-3-7-exchange-of-flexrequests.puml)
+  ![Exchange of FlexRequests](../../diagrams/use-case-3-7-exchange-of-flexrequests.puml){ .no-lightbox }
   <figcaption>Exchange of FlexRequests</figcaption>
 </figure>
 
@@ -140,7 +140,7 @@ Which variations (more/less requested power per ISP, time-shift of load) are cre
 ## Exchange Flexibility Offers
 
 <figure markdown>
-  ![Exchange of FlexOffers](../../diagrams/use-case-3-8-exchange-of-flexoffers.puml)
+  ![Exchange of FlexOffers](../../diagrams/use-case-3-8-exchange-of-flexoffers.puml){ .no-lightbox }
   <figcaption>Exchange of FlexOffers</figcaption>
 </figure>
 
@@ -204,7 +204,7 @@ Note that acceptance of the FlexOffer message does not imply ordering of the fle
 ## Revocation Flexibility Offer
 
 <figure markdown>
-  ![Revocation of FlexOffer](../../diagrams/use-case-3-9-revocation-of-flexoffer.puml)
+  ![Revocation of FlexOffer](../../diagrams/use-case-3-9-revocation-of-flexoffer.puml){ .no-lightbox }
   <figcaption>Revocation of FlexOffer</figcaption>
 </figure>
 
@@ -258,7 +258,7 @@ Where this is the case, priority should be given to the FlexOfferRevocation.
 ## Exchange Flexibility Orders
 
 <figure markdown>
-  ![Exchange of FlexOrder](../../diagrams/use-case-3-10-exchange-of-flexorder.puml)
+  ![Exchange of FlexOrder](../../diagrams/use-case-3-10-exchange-of-flexorder.puml){ .no-lightbox }
   <figcaption>Exchange of FlexOrder</figcaption>
 </figure>
 

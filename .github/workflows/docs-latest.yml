@@ -34,5 +34,3 @@ jobs:
           git config --global user.email docs-action@shapshifter
       - name: Push the main branch under the alias development
         run: poetry run mike deploy --push --update-aliases development
-        env:
-          ENABLE_PDF_EXPORT: 1
