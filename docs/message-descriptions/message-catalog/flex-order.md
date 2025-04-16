@@ -20,6 +20,7 @@ must) reject FlexOrder messages where the ISP list is not exactly the same as of
   CongestionPoint      = EntityAddress
   FlexOfferMessageID   = UUID (if present)
   ContractID           = Text (only if the offer and order refer to a bilateral contract)
+  ServiceType          = String (optional)  
   D-PrognosisMessageID = UUID (if present)
   BaselineReference    = Text (if present)
   Price                = CurrencyAmount
@@ -44,6 +45,7 @@ must) reject FlexOrder messages where the ISP list is not exactly the same as of
 | CongestionPoint      | Entity Address of the Congestion Point this FlexOrder message applies to                                                                                                                                                                                        |
 | FlexOfferMessageID   | MessageID of the FlexOffer message this order is based on, if present.                                                                                                                                                                                          |
 | ContractID           | Reference to the bilateral contract in question, if applicable.                                                                                                                                                                                                 |
+| ServiceType          | Service type for this order, the service type determines response characteristics such as latency or asset participation type. Each contract may specify multiple service-types.                                                                                |
 | D-PrognosisMessageID | MessageID of the D-Prognosis this order is based on, if present.                                                                                                                                                                                                |
 | BaselineReference    | Identification of the baseline prognosis, if another baseline methodology is used than based on D-prognoses.                                                                                                                                                    |
 | Price                | The price for the flexibility ordered. Usually, the price should match the price of the related FlexOffer.                                                                                                                                                      |

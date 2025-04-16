@@ -374,6 +374,11 @@ SPDX-License-Identifier: Apache-2.0
                         <xs:documentation>Reference to the concerning bilateral contract, if applicable.</xs:documentation>
                     </xs:annotation>
                 </xs:attribute>
+                <xs:attribute name="ServiceType" type="xs:string" use="optional">
+                    <xs:annotation>
+                        <xs:documentation>Service type for this order, the service type determines response characteristics such as latency or asset participation type.</xs:documentation>
+                    </xs:annotation>
+                </xs:attribute>
                 <xs:attribute name="D-PrognosisMessageID" type="UUIDType" use="optional">
                     <xs:annotation>
                         <xs:documentation>MessageID of the D-Prognosis this request is based on, if it has been agreed that the baseline is based on D-prognoses. </xs:documentation>
