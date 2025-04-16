@@ -6,9 +6,12 @@ SPDX-License-Identifier: Apache-2.0
 
 # FlexOrder
 
-FlexOrder messages are used by DSOs to purchase flexibility from an AGR, either based on a previous FlexOffer or directly.
-A FlexOrder message contains a list of ISPs, with, for each ISP, the change in consumption or production to be realized by the AGR, and the accepted price to be paid by the DSO for this amount of flexibility.
-This ISP list should be copied from the FlexOffer message (if any) without modification: AGR implementations will (and must) reject FlexOrder messages where the ISP list is not exactly the same as offered.
+FlexOrder messages are used by DSOs to purchase flexibility from an AGR, either based on a previous FlexOffer or
+directly.
+A FlexOrder message contains a list of ISPs, with, for each ISP, the change in consumption or production to be realized
+by the AGR, and the accepted price to be paid by the DSO for this amount of flexibility.
+This ISP list should be copied from the FlexOffer message (if any) without modification: AGR implementations will (and
+must) reject FlexOrder messages where the ISP list is not exactly the same as offered.
 
 ```
 <FlexOrder
@@ -26,6 +29,8 @@ This ISP list should be copied from the FlexOffer message (if any) without modif
   ActivationFactor     = Number (optional [0.01-1.00])
   <ISP                  (1...n)
     Power              = Integer
+    DefaultBaseline    = Integer (optional)
+    Baseline           = Integer (optional)
     Start              = Integer
     Duration           = Integer (optional, default = 1)
   />
@@ -48,5 +53,7 @@ This ISP list should be copied from the FlexOffer message (if any) without modif
 | ActivationFactor     | The activation factor for this OfferOption. If this  attribute is omitted, a default value of  1.00 must be assumed.</br>Notes:</br>The ActivationFactor must be greater than or equal to the MinActivationFactor in the OfferOption chosen from the FlexOffer. |
 | ISP                  |                                                                                                                                                                                                                                                                 |
 | ⇥ Power              | Power specified for this ISP in Watts. Also see the important notes about the sign of this attribute in the main documentation entry for the ISP element, section [power](power.md).                                                                            |
+| ⇥ DefaultBaseline    | Capacity (specified in Watts) in the default situation that would occur if no flexibility were activated.                                                                                                                                                       |
+| ⇥ Baseline           | Capacity baseline (specified in Watts) before this flexibility was requested. If flexibility was activated earlier for this ISP, then this is the capacity with the deviation applied.                                                                          |
 | ⇥ Start              | Number of the first ISP this element refers to. The first ISP of a day has number 1.                                                                                                                                                                            |
 | ⇥ Duration           | The number of the ISPs this element represents. Optional, default value is 1.                                                                                                                                                                                   |

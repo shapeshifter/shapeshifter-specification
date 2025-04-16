@@ -202,6 +202,16 @@ SPDX-License-Identifier: Apache-2.0
                 <xs:documentation>Power specified for this ISP in Watts. Also see the important notes about the sign of this attribute in the main documentation entry for the ISP element.</xs:documentation>
             </xs:annotation>
         </xs:attribute>
+        <xs:attribute name="DefaultBaseline" type="xs:integer" use="optional">
+            <xs:annotation>
+                <xs:documentation>Capacity (specified in Watts) in the default situation that would occur if no flexibility were activated.</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="Baseline" type="xs:integer" use="optional">
+            <xs:annotation>
+                <xs:documentation>Capacity baseline (specified in Watts) before this flexibility was requested. If flexibility was activated earlier for this ISP, then this is the capacity with the deviation applied.</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
         <xs:attribute name="Start" type="xs:positiveInteger" use="required">
             <xs:annotation>
                 <xs:documentation>Number of the first ISPs this element refers to. The first ISP of a day has number 1.</xs:documentation>
@@ -407,6 +417,16 @@ SPDX-License-Identifier: Apache-2.0
         <xs:attribute name="Power" type="xs:integer" use="required">
             <xs:annotation>
                 <xs:documentation>Power specified for this ISP in Watts. Also see the important notes about the sign of this attribute in the main documentation entry for the ISP element.</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="DefaultBaseline" type="xs:integer" use="optional">
+            <xs:annotation>
+                <xs:documentation>Capacity (specified in Watts) in the default situation that would occur if no flexibility were activated.</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="Baseline" type="xs:integer" use="optional">
+            <xs:annotation>
+                <xs:documentation>Capacity baseline (specified in Watts) before this flexibility was requested. If flexibility was activated earlier for this ISP, then this is the capacity with the deviation applied.</xs:documentation>
             </xs:annotation>
         </xs:attribute>
         <xs:attribute name="Start" type="xs:positiveInteger" use="required">
