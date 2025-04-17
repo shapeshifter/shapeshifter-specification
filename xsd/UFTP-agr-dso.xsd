@@ -364,9 +364,9 @@ SPDX-License-Identifier: Apache-2.0
                     </xs:annotation>
                     <xs:element name="ISP" type="FlexOrderISPType" maxOccurs="unbounded"/>
                 </xs:sequence>
-                <xs:attribute name="FlexOfferMessageID" type="UUIDType" use="optional">
+                <xs:attribute name="FlexOfferMessageID" type="UUIDType" use="required">
                     <xs:annotation>
-                        <xs:documentation>MessageID of the FlexOffer message this order is based on, if applicable.</xs:documentation>
+                        <xs:documentation>MessageID of the FlexOffer message this order is based on.</xs:documentation>
                     </xs:annotation>
                 </xs:attribute>
                 <xs:attribute name="ContractID" type="xs:string" use="optional">
@@ -406,7 +406,7 @@ SPDX-License-Identifier: Apache-2.0
                 </xs:attribute>
                 <xs:attribute name="OptionReference" type="xs:string" use="optional">
                     <xs:annotation>
-                        <xs:documentation>The OptionReference from the OfferOption chosen from the FlexOffer, if applicable.</xs:documentation>
+                        <xs:documentation>The OptionReference from the OfferOption chosen from the FlexOffer.</xs:documentation>
                     </xs:annotation>
                 </xs:attribute>
                 <xs:attribute name="ActivationFactor" type="ActivationFactorType" default="1.00">

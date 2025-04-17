@@ -7,8 +7,7 @@ SPDX-License-Identifier: Apache-2.0
 # FlexRequest
 
 FlexRequest messages are used by DSOs to request flexibility from AGRs.
-In addition to one or more ISP elements with Disposition=Requested, indicating the actual need to reduce consumption or
-production, the message should also include the remaining ISPs for the current period where Disposition=Available.
+In addition to one or more ISP elements with Disposition=Requested, indicating the actual need to reduce consumption or production, the message should also include the remaining ISPs for the current period where Disposition=Available.
 
 ```
 <FlexRequest
