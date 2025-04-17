@@ -27,8 +27,6 @@ jobs:
           poetry install --no-interaction
       - name: Create local documentation build
         run: poetry run mkdocs build
-        env:
-          ENABLE_PDF_EXPORT: 1
       - name: Archive reports
         uses: actions/upload-artifact@v4
         with:

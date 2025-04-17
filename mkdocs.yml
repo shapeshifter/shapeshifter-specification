@@ -6,7 +6,7 @@ site_name: Shapeshifter specification
 repo_url: https://github.com/shapeshifter/shapeshifter-specification
 site_url: http://localhost:8000/
 site_author: "Contributors to the Shapeshifter project"
-copyright: "Copyright 2020-2023 Contributors to the Shapeshifter project"
+copyright: "Copyright 2020-2025 Contributors to the Shapeshifter project"
 docs_dir: docs/
 theme:
   name: material
@@ -39,14 +39,12 @@ extra:
       name: Project wiki page
 plugins:
   - search
-  - with-pdf:
-      cover_logo: assets/images/shapeshifter-horizontal-color.svg
-      # cover_subtitle below is replaced in CI to the release version
-      cover_subtitle: "development"
-      enabled_if_env: ENABLE_PDF_EXPORT
   - glightbox:
       width: 50vw
+      skip_classes:
+        - no-lightbox
   - mike
+  - plantuml-colocator
 markdown_extensions:
   - admonition # for Recommended Practice blocks
   - md_in_html # for figcaption at images
