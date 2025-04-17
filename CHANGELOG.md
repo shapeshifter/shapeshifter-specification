@@ -16,6 +16,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 * `ReferenceMessageID` attribute in `PayloadMessageResponseType` to replace the specific `*MessageID` attributes in each specific response type. This will simplify handling of response messages.
 
+### Changed
+* `FlexOrder` can be sent directly without a `FlexOfferMessageID`.
+
 ### Removed
 * Specific `*MessageID` attributes in each response type. These have been replaced by the generic `ReferenceMessageID` attribute in the `PayloadMessageResponseType`.
 
