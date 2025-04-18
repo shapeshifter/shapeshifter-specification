@@ -22,6 +22,8 @@ In addition to one or more ISP elements with Disposition=Requested, indicating t
     Disposition      = "Available" | "Requested"
     MinPower         = Integer
     MaxPower         = Integer
+    DefaultBaseline  = Integer (optional)
+    Baseline         = Integer (optional)    
     Start            = Integer
     Duration         = Integer (optional, default = 1)
   />
@@ -41,5 +43,7 @@ In addition to one or more ISP elements with Disposition=Requested, indicating t
 | ⇥ Disposition      | indication whether the Power specified for this ISP represents available capacity or a request for reduction/increase.</br>At least one ISP should have Disposition = Requested                                                                                                                                                                                                  |
 | ⇥ MinPower         | Lower bound for available/requested space to deviate from the baseline (in Watts).</br>For further explanation, see section [Flexibility trading between the AGR and DSO](../../general-description/validate-phase.md#flexibility-trading-between-the-agr-and-dso). Also see the important notes about the sign of this attribute in the ISP element, section [power](power.md). |
 | ⇥ MaxPower         | Upper bound for available/requested space to deviate from the baseline (in Watts).</br>For further explanation, see section [Flexibility trading between the AGR and DSO](../../general-description/validate-phase.md#flexibility-trading-between-the-agr-and-dso). Also see the important notes about the sign of this attribute in the ISP element, section [power](power.md). |
+| ⇥ DefaultBaseline  | Capacity (specified in Watts) in the default situation that would occur if no flexibility were activated.                                                                                                                                                                                                                                                                        |
+| ⇥ Baseline         | Capacity baseline (specified in Watts) before this flexibility was requested. If flexibility was activated earlier for this ISP, then this is the capacity with the deviation applied.                                                                                                                                                                                           |
 | ⇥ Start            | Number of the first ISP this element refers to. The first ISP of a day has number 1.                                                                                                                                                                                                                                                                                             |
 | ⇥ Duration         | The number of the ISPs this element represents. Optional, default value is 1.                                                                                                                                                                                                                                                                                                    |

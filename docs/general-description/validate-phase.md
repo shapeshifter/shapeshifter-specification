@@ -44,15 +44,6 @@ AGRs may respond with one or more FlexOffers.
 Where an AGR responds with multiple FlexOffers, the DSO can freely choose the most appropriate offer(s).
 Provided the flexibility has not been ordered via a FlexOrder, a FlexOffer may be revoked by the AGR (FlexOfferRevocation).
 
-Alternatively, if there is an existing agreement between the DSO and AGR, the DSO can procure the flexibility by directly placing a _FlexOrder_, without sending a _FlexRequest_ first:
-
-<figure markdown>
-  ![Direct FlexOrder without FlexRequest](../diagrams/../diagrams/validate-phase-direct-flexorder.puml){ .no-lightbox }
-  <figcaption>If there is an existing agreement, DSO can procure flexibility by sending a FlexOrder directly, without FlexRequest</figcaption>
-</figure>
-
-Flexibility trading may go on until gate closure time:
-
 <figure markdown>
   ![Flexibility trading may go on until gate closure time](../diagrams/../diagrams/validate-phase-gate-closure-time.puml){ .no-lightbox }
   <figcaption>Flexibility trading may go on until gate closure time. This includes iterations between plan phase and validate phase. The last accepted D-prognosis before gate closure time serves as a basis for the next phase. Any open FlexOffers, which are not expired, may be ordered after gate closure.</figcaption>
