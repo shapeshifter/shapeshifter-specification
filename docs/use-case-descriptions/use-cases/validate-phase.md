@@ -257,6 +257,8 @@ Where this is the case, priority should be given to the FlexOfferRevocation.
 
 ## Exchange Flexibility Orders
 
+### Accepting a FlexOffer
+
 <figure markdown>
   ![Exchange of FlexOrder](../../diagrams/use-case-3-10-exchange-of-flexorder.puml){ .no-lightbox }
   <figcaption>Exchange of FlexOrder</figcaption>
@@ -299,6 +301,53 @@ Where this is the case, priority should be given to the FlexOfferRevocation.
   <tr>
     <td>Price mismatch</td>
     <td>Price in the order does not match the price given in the offer</td>
+  </tr>
+  <tr>
+    <td>[User defined]</td>
+    <td>Any other reasonable cause to reject the message</td>
+  </tr>
+</table>
+
+### FlexOrder without offer
+
+<figure markdown>
+  ![Exchange of FlexOrder without FlexOffer](../../diagrams/use-case-3-10-exchange-of-flexorder-direct.puml){ .no-lightbox }
+  <figcaption>Exchange of FlexOrder without FlexOffer</figcaption>
+</figure>
+
+<table>
+  <tr>
+    <th></th>
+    <th colspan="2">FlexOrder</th>
+  </tr>
+  <tr>
+    <th>Goal in context</th>
+    <td colspan="2">Process for the DSO to procure flexibility directly, without a FlexOffer, based on existing agreement, to solve Congestion based on the Prognosis.</td>
+  </tr>
+  <tr>
+    <th>Preconditions</th>
+    <td colspan="2">AGR-DSO market contract in place.<br/>One or more Congestion Points registered in the Common Reference, with at least one AGR with contracted Connections on that point.</br>DSO grid safety analysis performed.</td>
+  </tr>
+  <tr>
+    <th>Successful outcome</th>
+    <td colspan="2">Flexibility procured</td>
+  </tr>
+  <tr>
+    <th rowspan="6">Failure outcome</th>
+    <th>RejectionReason</th>
+    <th>Cause of rejection</th>
+  </tr>
+  <tr>
+    <td>&lt;See Message validation&gt;</td>
+    <td>FlexOrder failed to pass validation by the AGR</td>
+  </tr>
+  <tr>
+    <td>Requested Power discrepancy</td>
+    <td>One or more ISPs with a "requested" disposition has no direction: MinPower &lt; 0 and MaxPower &gt; 0.</td>
+  </tr>
+  <tr>
+    <td>Power discrepancy</td>
+    <td>One or more ISPs has a higher MinPower than MaxPower value.</td>
   </tr>
   <tr>
     <td>[User defined]</td>
