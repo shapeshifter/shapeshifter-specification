@@ -1035,6 +1035,24 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#accepting-a-flexoffer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Accepting a FlexOffer
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flexorder-without-offer" class="md-nav__link">
+    <span class="md-ellipsis">
+      FlexOrder without offer
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#related-information_4" class="md-nav__link">
     <span class="md-ellipsis">
       Related information
@@ -2283,6 +2301,24 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#accepting-a-flexoffer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Accepting a FlexOffer
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flexorder-without-offer" class="md-nav__link">
+    <span class="md-ellipsis">
+      FlexOrder without offer
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#related-information_4" class="md-nav__link">
     <span class="md-ellipsis">
       Related information
@@ -2588,6 +2624,7 @@ After revocation, the offer can no longer be ordered.</p>
 Notice that FlexOrders and FlexOfferRevocations can cross each other.
 Where this is the case, priority should be given to the FlexOfferRevocation.</p>
 <h2 id="exchange-flexibility-orders">Exchange Flexibility Orders</h2>
+<h3 id="accepting-a-flexoffer">Accepting a FlexOffer</h3>
 <figure>
 <p><img alt="Exchange of FlexOrder" class="no-lightbox" src="../../../diagrams/use-case-3-10-exchange-of-flexorder.png" />
   </p>
@@ -2630,6 +2667,52 @@ Where this is the case, priority should be given to the FlexOfferRevocation.</p>
   <tr>
     <td>Price mismatch</td>
     <td>Price in the order does not match the price given in the offer</td>
+  </tr>
+  <tr>
+    <td>[User defined]</td>
+    <td>Any other reasonable cause to reject the message</td>
+  </tr>
+</table>
+
+<h3 id="flexorder-without-offer">FlexOrder without offer</h3>
+<figure>
+<p><img alt="Exchange of FlexOrder without FlexOffer" class="no-lightbox" src="../../../diagrams/use-case-3-10-exchange-of-flexorder-direct.png" />
+  </p>
+<figcaption>Exchange of FlexOrder without FlexOffer</figcaption>
+</figure>
+<table>
+  <tr>
+    <th></th>
+    <th colspan="2">FlexOrder</th>
+  </tr>
+  <tr>
+    <th>Goal in context</th>
+    <td colspan="2">Process for the DSO to procure flexibility directly, without a FlexOffer, based on existing agreement, to solve Congestion based on the Prognosis.</td>
+  </tr>
+  <tr>
+    <th>Preconditions</th>
+    <td colspan="2">AGR-DSO market contract in place.<br/>One or more Congestion Points registered in the Common Reference, with at least one AGR with contracted Connections on that point.</br>DSO grid safety analysis performed.</td>
+  </tr>
+  <tr>
+    <th>Successful outcome</th>
+    <td colspan="2">Flexibility procured</td>
+  </tr>
+  <tr>
+    <th rowspan="6">Failure outcome</th>
+    <th>RejectionReason</th>
+    <th>Cause of rejection</th>
+  </tr>
+  <tr>
+    <td>&lt;See Message validation&gt;</td>
+    <td>FlexOrder failed to pass validation by the AGR</td>
+  </tr>
+  <tr>
+    <td>Requested Power discrepancy</td>
+    <td>One or more ISPs with a "requested" disposition has no direction: MinPower &lt; 0 and MaxPower &gt; 0.</td>
+  </tr>
+  <tr>
+    <td>Power discrepancy</td>
+    <td>One or more ISPs has a higher MinPower than MaxPower value.</td>
   </tr>
   <tr>
     <td>[User defined]</td>

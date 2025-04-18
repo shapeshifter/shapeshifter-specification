@@ -2047,21 +2047,21 @@ SPDX-License-Identifier: Apache-2.0
 -->
 
 <h1 id="flexorder">FlexOrder</h1>
-<p>FlexOrder messages are used by DSOs to purchase flexibility from an AGR based on a previous FlexOffer.
+<p>FlexOrder messages are used by DSOs to purchase flexibility from an AGR, either based on a previous FlexOffer or directly.
 A FlexOrder message contains a list of ISPs, with, for each ISP, the change in consumption or production to be realized by the AGR, and the accepted price to be paid by the DSO for this amount of flexibility.
-This ISP list should be copied from the FlexOffer message without modification: AGR implementations will (and must) reject FlexOrder messages where the ISP list is not exactly the same as offered.</p>
+This ISP list should be copied from the FlexOffer message (if any) without modification: AGR implementations will (and must) reject FlexOrder messages where the ISP list is not exactly the same as offered.</p>
 <pre><code>&lt;FlexOrder
   Metadata…
   Period               = Period
   CongestionPoint      = EntityAddress
-  FlexOfferMessageID   = UUID
+  FlexOfferMessageID   = UUID (if present)
   ContractID           = Text (only if the offer and order refer to a bilateral contract)
   D-PrognosisMessageID = UUID (if present)
   BaselineReference    = Text (if present)
   Price                = CurrencyAmount
   Currency             = ISO4217Currency
   OrderReference       = String
-  OptionReference      = String
+  OptionReference      = String (if applicable)
   ActivationFactor     = Number (optional [0.01-1.00])
   &lt;ISP                  (1...n)
     Power              = Integer
@@ -2092,7 +2092,7 @@ This ISP list should be copied from the FlexOffer message without modification: 
 </tr>
 <tr>
 <td>FlexOfferMessageID</td>
-<td>MessageID of the FlexOffer message this order is based on.</td>
+<td>MessageID of the FlexOffer message this order is based on, if present.</td>
 </tr>
 <tr>
 <td>ContractID</td>
@@ -2100,7 +2100,7 @@ This ISP list should be copied from the FlexOffer message without modification: 
 </tr>
 <tr>
 <td>D-PrognosisMessageID</td>
-<td>MessageID of the D-Prognosis this order is based on, if present</td>
+<td>MessageID of the D-Prognosis this order is based on, if present.</td>
 </tr>
 <tr>
 <td>BaselineReference</td>
@@ -2120,7 +2120,7 @@ This ISP list should be copied from the FlexOffer message without modification: 
 </tr>
 <tr>
 <td>OptionReference</td>
-<td>The OptionReference from the OfferOption chosen from the FlexOffer.</td>
+<td>The OptionReference from the OfferOption chosen from the FlexOffer, if applicable.</td>
 </tr>
 <tr>
 <td>ActivationFactor</td>
