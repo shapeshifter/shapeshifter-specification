@@ -15,7 +15,7 @@ This ISP list should be copied from the FlexOffer message (if any) without modif
   Metadata…
   Period               = Period
   CongestionPoint      = EntityAddress
-  FlexOfferMessageID   = UUID (if present)
+  FlexOfferMessageID   = UUID (mandatory if and only if solicited)
   ContractID           = Text (only if the offer and order refer to a bilateral contract)
   D-PrognosisMessageID = UUID (if present)
   BaselineReference    = Text (if present)
@@ -37,7 +37,8 @@ This ISP list should be copied from the FlexOffer message (if any) without modif
 | Metadata             | The metadata for this message. For details, see [metadata attributes](metadata-attributes.md).                                                                                                                                                                  |
 | Period               | Period the ISPs referenced in this FlexOrder message belong to.                                                                                                                                                                                                 |
 | CongestionPoint      | Entity Address of the Congestion Point this FlexOrder message applies to                                                                                                                                                                                        |
-| FlexOfferMessageID   | MessageID of the FlexOffer message this order is based on, if present.                                                                                                                                                                                          |
+| Unsolicited          | Indicates whether this FlexOrder is intended to be unsolicited.                                                                                                                                                                                                 |
+| FlexOfferMessageID   | MessageID of the FlexOffer message this order is based on (mandatory if and only if solicited).                                                                                                                                                                                                     |
 | ContractID           | Reference to the bilateral contract in question, if applicable.                                                                                                                                                                                                 |
 | D-PrognosisMessageID | MessageID of the D-Prognosis this order is based on, if present.                                                                                                                                                                                                |
 | BaselineReference    | Identification of the baseline prognosis, if another baseline methodology is used than based on D-prognoses.                                                                                                                                                    |
