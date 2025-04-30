@@ -18,6 +18,7 @@ The AGR must make sure that it can actually provide the flexibility offered acro
   Period                = Period
   CongestionPoint       = EntityAddress
   ExpirationDateTime    = DateTime
+  Unsolicited           = Boolean
   FlexRequestMessageID  = UUID (mandatory if and only if solicited)
   ContractID            = Text (only if this offer refers to a bilateral contract)
   D-PrognosisMessageID  = UUID (mandatory if and only if unsolicited)
