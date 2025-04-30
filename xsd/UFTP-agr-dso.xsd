@@ -369,6 +369,11 @@ SPDX-License-Identifier: Apache-2.0
                         <xs:documentation>MessageID of the FlexOffer message this order is based on. Mandatory if Unsolicited=false.</xs:documentation>
                     </xs:annotation>
                 </xs:attribute>
+                <xs:attribute name="ServiceType" type="xs:string" use="optional">
+                    <xs:annotation>
+                        <xs:documentation>Service type for this order, the service type determines response characteristics such as latency or asset participation type.</xs:documentation>
+                    </xs:annotation>
+                </xs:attribute>
                 <xs:attribute name="ContractID" type="xs:string" use="optional">
                     <xs:annotation>
                         <xs:documentation>Reference to the concerning bilateral contract, if applicable.</xs:documentation>
