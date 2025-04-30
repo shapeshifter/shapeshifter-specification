@@ -238,9 +238,14 @@ SPDX-License-Identifier: Apache-2.0
                         <xs:documentation>Date and time, including the time zone (ISO 8601 formatted as per http://www.w3.org/TR/NOTE-datetime) until which the FlexOffer is valid.</xs:documentation>
                     </xs:annotation>
                 </xs:attribute>
+                <xs:attribute name="Unsolicited" type="xs:boolean" use="optional" default="false">
+                    <xs:annotation>
+                        <xs:documentation>Indicates whether this FlexOffer is intended to be unsolicited (i.e. without a preceding FlexRequest).</xs:documentation>
+                    </xs:annotation>
+                </xs:attribute>
                 <xs:attribute name="FlexRequestMessageID" type="UUIDType" use="optional">
                     <xs:annotation>
-                        <xs:documentation>MessageID of the FlexRequest message this request is based on. Mandatory if and only if solicited.</xs:documentation>
+                        <xs:documentation>MessageID of the FlexRequest message this request is based on. Mandatory if Unsolicited=false.</xs:documentation>
                     </xs:annotation>
                 </xs:attribute>
                 <xs:attribute name="ContractID" type="xs:string" use="optional">
@@ -354,9 +359,19 @@ SPDX-License-Identifier: Apache-2.0
                     </xs:annotation>
                     <xs:element name="ISP" type="FlexOrderISPType" maxOccurs="unbounded"/>
                 </xs:sequence>
+                <xs:attribute name="Unsolicited" type="xs:boolean" use="optional" default="false">
+                    <xs:annotation>
+                        <xs:documentation>Indicates whether this FlexOrder is intended to be unsolicited (i.e. without a preceding FlexOffer).</xs:documentation>
+                    </xs:annotation>
+                </xs:attribute>
                 <xs:attribute name="FlexOfferMessageID" type="UUIDType" use="optional">
                     <xs:annotation>
-                        <xs:documentation>MessageID of the FlexOffer message this order is based on, if applicable.</xs:documentation>
+                        <xs:documentation>MessageID of the FlexOffer message this order is based on. Mandatory if Unsolicited=false.</xs:documentation>
+                    </xs:annotation>
+                </xs:attribute>
+                <xs:attribute name="ServiceType" type="xs:string" use="optional">
+                    <xs:annotation>
+                        <xs:documentation>Service type for this order, the service type determines response characteristics such as latency or asset participation type.</xs:documentation>
                     </xs:annotation>
                 </xs:attribute>
                 <xs:attribute name="ContractID" type="xs:string" use="optional">
