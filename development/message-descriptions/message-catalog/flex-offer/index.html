@@ -2057,6 +2057,7 @@ The AGR must make sure that it can actually provide the flexibility offered acro
   Period                = Period
   CongestionPoint       = EntityAddress
   ExpirationDateTime    = DateTime
+  Unsolicited           = Boolean
   FlexRequestMessageID  = UUID (mandatory if and only if solicited)
   ContractID            = Text (only if this offer refers to a bilateral contract)
   D-PrognosisMessageID  = UUID (mandatory if and only if unsolicited)
@@ -2099,8 +2100,12 @@ The AGR must make sure that it can actually provide the flexibility offered acro
 <td>Date and time, including the time zone (ISO 8601 formatted as per <a href="http://www.w3.org/TR/NOTE-datetime">http://www.w3.org/TR/NOTE-datetime</a>) until when the FlexOffer message is valid.</td>
 </tr>
 <tr>
+<td>Unsolicited</td>
+<td>Indicates whether this FlexOffer is intended to be unsolicited  (i.e. without a preceding FlexRequest).</td>
+</tr>
+<tr>
 <td>FlexRequestMessageID</td>
-<td>MessageID of the FlexRequest message this request is based on.</td>
+<td>MessageID of the FlexRequest message this request is based on (mandatory if and only if solicited).</td>
 </tr>
 <tr>
 <td>ContractID</td>

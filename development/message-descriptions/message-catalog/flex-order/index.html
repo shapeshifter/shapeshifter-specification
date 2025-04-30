@@ -2054,7 +2054,8 @@ This ISP list should be copied from the FlexOffer message (if any) without modif
   Metadata…
   Period               = Period
   CongestionPoint      = EntityAddress
-  FlexOfferMessageID   = UUID (if present)
+  Unsolicited          = Boolean
+  FlexOfferMessageID   = UUID (mandatory if and only if solicited)
   ContractID           = Text (only if the offer and order refer to a bilateral contract)
   D-PrognosisMessageID = UUID (if present)
   BaselineReference    = Text (if present)
@@ -2091,8 +2092,12 @@ This ISP list should be copied from the FlexOffer message (if any) without modif
 <td>Entity Address of the Congestion Point this FlexOrder message applies to</td>
 </tr>
 <tr>
+<td>Unsolicited</td>
+<td>Indicates whether this FlexOrder is intended to be unsolicited (i.e. without a preceding FlexOffer).</td>
+</tr>
+<tr>
 <td>FlexOfferMessageID</td>
-<td>MessageID of the FlexOffer message this order is based on, if present.</td>
+<td>MessageID of the FlexOffer message this order is based on (mandatory if and only if solicited).</td>
 </tr>
 <tr>
 <td>ContractID</td>
