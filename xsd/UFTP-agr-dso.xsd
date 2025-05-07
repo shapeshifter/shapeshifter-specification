@@ -249,7 +249,7 @@
                         <xs:documentation>Date and time, including the time zone (ISO 8601 formatted as per http://www.w3.org/TR/NOTE-datetime) until which the FlexOffer is valid.</xs:documentation>
                     </xs:annotation>
                 </xs:attribute>
-                <xs:attribute name="Unsolicited" type="xs:boolean" use="optional" default="false">
+                <xs:attribute name="Unsolicited" type="xs:boolean" use="optional">
                     <xs:annotation>
                         <xs:documentation>Indicates whether this FlexOffer is intended to be unsolicited (i.e. without a preceding FlexRequest).</xs:documentation>
                     </xs:annotation>
@@ -382,7 +382,7 @@
                     </xs:annotation>
                     <xs:element name="ISP" type="FlexOrderISPType" maxOccurs="unbounded"/>
                 </xs:sequence>
-                <xs:attribute name="Unsolicited" type="xs:boolean" use="optional" default="false">
+                <xs:attribute name="Unsolicited" type="xs:boolean" use="optional">
                     <xs:annotation>
                         <xs:documentation>Indicates whether this FlexOrder is intended to be unsolicited (i.e. without a preceding FlexOffer).</xs:documentation>
                     </xs:annotation>
