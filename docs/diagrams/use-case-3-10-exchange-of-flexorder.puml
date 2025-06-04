@@ -1,0 +1,20 @@
+@startuml
+!theme cerulean
+
+participant AGR
+participant DSO
+
+loop for each available FlexOffer to be accepted
+    AGR <- DSO: FlexOrder
+    AGR --> DSO: HTTP OK
+
+    alt if FlexOrder is valid
+        AGR -> DSO: FlexOrderResponse Result=Accepted
+        AGR <-- DSO: HTTP OK
+    else
+        AGR -> DSO: FlexOrderResponse Result=Rejected
+        AGR <-- DSO: HTTP OK
+    end
+end
+
+@enduml

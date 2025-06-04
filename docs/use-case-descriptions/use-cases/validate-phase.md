@@ -25,7 +25,7 @@ The use cases are explained in the following sections.
 ## Exchange D-Prognoses per Congestion Point
 
 <figure markdown>
-  ![Exchange of D-prognoses](../../assets/images/use-case-3-6-exchange-of-d-prognoses.svg.png){ width=1000px }
+  ![Exchange of D-prognoses](../../diagrams/use-case-3-6-exchange-of-d-prognoses.puml){ .no-lightbox }
   <figcaption>Exchange of D-prognoses</figcaption>
 </figure>
 
@@ -82,7 +82,7 @@ It is essential to use a sequence number that is incremented each time a new rev
 ## Exchange Flexibility Requests
 
 <figure markdown>
-  ![Exchange of FlexRequests](../../assets/images/use-case-3-7-exchange-of-flexrequests.svg.png){ width=1000px }
+  ![Exchange of FlexRequests](../../diagrams/use-case-3-7-exchange-of-flexrequests.puml){ .no-lightbox }
   <figcaption>Exchange of FlexRequests</figcaption>
 </figure>
 
@@ -140,7 +140,7 @@ Which variations (more/less requested power per ISP, time-shift of load) are cre
 ## Exchange Flexibility Offers
 
 <figure markdown>
-  ![Exchange of FlexOffers](../../assets/images/use-case-3-8-exchange-of-flexoffers.svg.png){ width=1000px }
+  ![Exchange of FlexOffers](../../diagrams/use-case-3-8-exchange-of-flexoffers.puml){ .no-lightbox }
   <figcaption>Exchange of FlexOffers</figcaption>
 </figure>
 
@@ -204,7 +204,7 @@ Note that acceptance of the FlexOffer message does not imply ordering of the fle
 ## Revocation Flexibility Offer
 
 <figure markdown>
-  ![Revocation of FlexOffer](../../assets/images/use-case-3-9-revocation-of-flexoffer.svg.png){ width=1000px }
+  ![Revocation of FlexOffer](../../diagrams/use-case-3-9-revocation-of-flexoffer.puml){ .no-lightbox }
   <figcaption>Revocation of FlexOffer</figcaption>
 </figure>
 
@@ -257,8 +257,10 @@ Where this is the case, priority should be given to the FlexOfferRevocation.
 
 ## Exchange Flexibility Orders
 
+### Accepting a FlexOffer
+
 <figure markdown>
-  ![Exchange of FlexOrder](../../assets/images/use-case-3-10-exchange-of-flexoffer.svg.png){ width=1000px }
+  ![Exchange of FlexOrder](../../diagrams/use-case-3-10-exchange-of-flexorder.puml){ .no-lightbox }
   <figcaption>Exchange of FlexOrder</figcaption>
 </figure>
 
@@ -299,6 +301,53 @@ Where this is the case, priority should be given to the FlexOfferRevocation.
   <tr>
     <td>Price mismatch</td>
     <td>Price in the order does not match the price given in the offer</td>
+  </tr>
+  <tr>
+    <td>[User defined]</td>
+    <td>Any other reasonable cause to reject the message</td>
+  </tr>
+</table>
+
+### FlexOrder without offer
+
+<figure markdown>
+  ![Exchange of FlexOrder without FlexOffer](../../diagrams/use-case-3-10-exchange-of-flexorder-direct.puml){ .no-lightbox }
+  <figcaption>Exchange of FlexOrder without FlexOffer</figcaption>
+</figure>
+
+<table>
+  <tr>
+    <th></th>
+    <th colspan="2">FlexOrder</th>
+  </tr>
+  <tr>
+    <th>Goal in context</th>
+    <td colspan="2">Process for the DSO to procure flexibility directly, without a FlexOffer, based on existing agreement, to solve Congestion based on the Prognosis.</td>
+  </tr>
+  <tr>
+    <th>Preconditions</th>
+    <td colspan="2">AGR-DSO market contract in place.<br/>One or more Congestion Points registered in the Common Reference, with at least one AGR with contracted Connections on that point.</br>DSO grid safety analysis performed.</td>
+  </tr>
+  <tr>
+    <th>Successful outcome</th>
+    <td colspan="2">Flexibility procured</td>
+  </tr>
+  <tr>
+    <th rowspan="6">Failure outcome</th>
+    <th>RejectionReason</th>
+    <th>Cause of rejection</th>
+  </tr>
+  <tr>
+    <td>&lt;See Message validation&gt;</td>
+    <td>FlexOrder failed to pass validation by the AGR</td>
+  </tr>
+  <tr>
+    <td>Requested Power discrepancy</td>
+    <td>One or more ISPs with a "requested" disposition has no direction: MinPower &lt; 0 and MaxPower &gt; 0.</td>
+  </tr>
+  <tr>
+    <td>Power discrepancy</td>
+    <td>One or more ISPs has a higher MinPower than MaxPower value.</td>
   </tr>
   <tr>
     <td>[User defined]</td>

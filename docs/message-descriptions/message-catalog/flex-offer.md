@@ -18,6 +18,7 @@ The AGR must make sure that it can actually provide the flexibility offered acro
   Period                = Period
   CongestionPoint       = EntityAddress
   ExpirationDateTime    = DateTime
+  Unsolicited           = Boolean
   FlexRequestMessageID  = UUID (mandatory if and only if solicited)
   ContractID            = Text (only if this offer refers to a bilateral contract)
   D-PrognosisMessageID  = UUID (mandatory if and only if unsolicited)
@@ -36,14 +37,14 @@ The AGR must make sure that it can actually provide the flexibility offered acro
 />
 ```
 
-
 |                       |                                                                                                                                                                                                                                                                                                                                              |
 |-----------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Metadata              | The metadata for this message. For details, see section [metadata attributes](metadata-attributes.md).                                                                                                                                                                                                                                       |
 | Period                | The Period the ISPs referenced in this FlexOffer message belong to.                                                                                                                                                                                                                                                                          |
 | CongestionPoint       | Entity Address of the Congestion Point this FlexOffer message applies to.                                                                                                                                                                                                                                                                    |
 | ExpirationDateTime    | Date and time, including the time zone (ISO 8601 formatted as per [http://www.w3.org/TR/NOTE-datetime](http://www.w3.org/TR/NOTE-datetime)) until when the FlexOffer message is valid.                                                                                                                                                       |
-| FlexRequestMessageID  | MessageID of the FlexRequest message this request is based on.                                                                                                                                                                                                                                                                               |
+| Unsolicited           | Indicates whether this FlexOffer is intended to be unsolicited  (i.e. without a preceding FlexRequest).                                                                                                                                                                                                                                                                             |
+| FlexRequestMessageID  | MessageID of the FlexRequest message this request is based on (mandatory if and only if solicited).                                                                                                                                                                                                                                          |
 | ContractID            | Reference to the concerning bilateral contract, if applicable.                                                                                                                                                                                                                                                                               |
 | D-PrognosisMessageID  | MessageID of the D-Prognosis this request is based on, if it has been agreed that the baseline is based on D-prognoses.                                                                                                                                                                                                                      |
 | BaselineReference     | Identification of the baseline prognosis, if another baseline methodology is used than based on D-prognoses.                                                                                                                                                                                                                                 |

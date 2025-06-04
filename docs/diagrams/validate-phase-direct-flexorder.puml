@@ -1,0 +1,13 @@
+@startuml
+!theme cerulean
+
+participant AGR
+participant DSO
+
+== Validate ==
+DSO -> DSO: Grid safety analysis -> NOK
+DSO -> DSO: Select flexibility agreement
+AGR <- DSO: FlexOrder
+DSO -> DSO: Grid safety analysis -> OK
+
+@enduml

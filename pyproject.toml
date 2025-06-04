@@ -9,15 +9,18 @@ description = ""
 authors = ["\"Shapeshifter contributors\""]
 license = "\"Apache-2.0\""
 readme = "README.md"
+package-mode = false
 packages = [{include = "shapeshifter_specification"}]
 
 [tool.poetry.dependencies]
 python = "^3.10"
-mkdocs-material = "^9.5.46"
+mkdocs-material = "^9.6.10"
 mike = "^1.1.2"
-mkdocs-glightbox = "^0.3.1"
-mkdocs-with-pdf = "^0.9.3"
-setuptools = "^69.1.1"
+mkdocs-glightbox = "^0.4.0"
+setuptools = "^70.3.0"
+weasyprint = "^65.1"
+plantuml = "^0.3.0"
+mkdocs-plantuml = "^0.1.1"
 
 [build-system]
 requires = ["poetry-core"]

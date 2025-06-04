@@ -9,7 +9,7 @@ SPDX-License-Identifier: Apache-2.0
 ## Overall description
 
 <figure markdown>
-  ![General information flow in Validate phase.](../assets/images/image10.emf.odg.svg.png){ width=1000px }
+  ![Validate phase](../diagrams/validate-phase.puml){ .no-lightbox }
   <figcaption>General information flow in Validate phase</figcaption>
 </figure>
 
@@ -36,7 +36,7 @@ This is because any flexibility offered will still help to reduce the impact of 
 USEF’s orange regime is outside the scope of UFTP, and, therefore, not further discussed in this document.
 
 <figure markdown>
-  ![AGR may send multiple FlexOffers on the same request, and open FlexOffers, which are not yet ordered may be revoked by the AGR.](../assets/images/image11.emf.odg.svg.png){ width=1000px }
+  ![Validate phase with multiple FlexOffers](../diagrams/validate-phase-multiple-flexoffers.puml){ .no-lightbox }
   <figcaption>AGR may send multiple FlexOffers on the same request, and open FlexOffers, which are not yet ordered may be revoked by the AGR.</figcaption>
 </figure>
 
@@ -44,8 +44,17 @@ AGRs may respond with one or more FlexOffers.
 Where an AGR responds with multiple FlexOffers, the DSO can freely choose the most appropriate offer(s).
 Provided the flexibility has not been ordered via a FlexOrder, a FlexOffer may be revoked by the AGR (FlexOfferRevocation).
 
+Alternatively, if there is an existing agreement between the DSO and AGR, the DSO can procure the flexibility by directly placing a _FlexOrder_, without sending a _FlexRequest_ first:
+
 <figure markdown>
-  ![Flexibility trading may go on until gate closure time. This includes iterations between plan phase and validate phase. The last accepted D-prognosis before gate closure time serves as a basis for the next phase. Any open FlexOffers, which are not expired, may be ordered after gate closure.](../assets/images/image12.emf.odg.svg.png){ width=1000px }
+  ![Direct FlexOrder without FlexRequest](../diagrams/../diagrams/validate-phase-direct-flexorder.puml){ .no-lightbox }
+  <figcaption>If there is an existing agreement, DSO can procure flexibility by sending a FlexOrder directly, without FlexRequest</figcaption>
+</figure>
+
+Flexibility trading may go on until gate closure time:
+
+<figure markdown>
+  ![Flexibility trading may go on until gate closure time](../diagrams/../diagrams/validate-phase-gate-closure-time.puml){ .no-lightbox }
   <figcaption>Flexibility trading may go on until gate closure time. This includes iterations between plan phase and validate phase. The last accepted D-prognosis before gate closure time serves as a basis for the next phase. Any open FlexOffers, which are not expired, may be ordered after gate closure.</figcaption>
 </figure>
 
@@ -115,6 +124,8 @@ If this is not the case, the system moves to the orange regime (see [^B4] for mo
 7. The AGRs receive the flexibility orders which result in the actual procurement of flexibility by the DSO.
 8. AGRs provide an (updated) D-prognosis, incorporating the ordered flexibility.
 This step only applies when D-prognoses are used as baseline methodology.
+
+
 
 [^B4]: USEF Foundation, "USEF: The Framework Explained," USEF Foundation, Arnhem, 2015.
 

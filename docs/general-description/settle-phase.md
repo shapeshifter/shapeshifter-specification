@@ -15,7 +15,7 @@ Except for metering data, USEF assumes that both AGR and DSO have all the inform
 The DSO sends its calculation to the AGR for verification.
 
 <figure markdown>
-  ![General information flow flex settlement between DSO and AGR](../assets/images/image17.emf.odg.svg.png){ width=1000px }
+  ![General information flow flex settlement between DSO and AGR](../diagrams/settle-phase.puml){ .no-lightbox }
   <figcaption>General information flow flex settlement between DSO and AGR</figcaption>
 </figure>
 

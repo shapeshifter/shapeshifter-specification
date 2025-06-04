@@ -1,0 +1,24 @@
+@startuml
+!theme cerulean
+
+participant AGR as AGR1
+participant AGR as AGR2
+participant DSO
+
+== Validate ==
+DSO -> DSO: non-aggregator forecast
+AGR1 -> DSO: [optional] D-prognosis
+AGR2 -> DSO: [optional] D-prognosis
+DSO -> DSO: Grid safety analysis -> NOK
+AGR2 <- DSO: FlexRequest
+AGR1 <- DSO: FlexRequest
+AGR1 <- AGR1: determine offers
+AGR2 <- AGR2: determine offers
+AGR2 -> DSO: FlexOffer
+DSO -> DSO: Evaluate offers
+AGR2 <- DSO: FlexOrder
+AGR2 -> DSO: [optional] (updated) D-prognosis
+DSO -> DSO: Grid safety analysis -> OK
+DSO -> DSO: Grid safety analysis -> OK
+
+@enduml

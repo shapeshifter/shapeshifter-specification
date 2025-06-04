@@ -2,6 +2,7 @@
 #
 # SPDX-License-Identifier: Apache-2.0
 
+.idea/
 site/
 
 # Created by https://www.toptal.com/developers/gitignore/api/windows,python,libreoffice,emacs,microsoftoffice

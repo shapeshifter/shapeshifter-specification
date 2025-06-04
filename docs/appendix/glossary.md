@@ -19,8 +19,8 @@ SPDX-License-Identifier: Apache-2.0
 | DNO              | Distribution Network Operator                                                                                                                          |
 | DSO              | Distribution System Operator                                                                                                                           |
 | E-program        | Energy Program – aggregated (daily) energy transactions of a BRP to be provided to the TSO                                                             |
-| FlexOffer        | Flexibility Offer, response to a Flexibility Request                                                                                                   |
-| FlexOrder        | Flexibility Order, a response to a Flexibility Offer                                                                                                   |
+| FlexOffer        | Flexibility Offer, response to a Flexibility Request or unsolicited                                                                                    |
+| FlexOrder        | Flexibility Order, a response to a Flexibility Offer or direct                                                                                         |
 | FlexRequest      | Flexibility Request                                                                                                                                    |
 | Grid             | Network for the transport and distribution of energy                                                                                                   |
 | ISP              | Imbalance Settlement Period                                                                                                                            |

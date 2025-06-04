@@ -18,7 +18,7 @@ Note that any contract negotiations for bilateral contracts also takes place in 
 [^B6]: USEF, "Recommended practices and key considerations for a regulatory framework and market design on explicit Demand Response," 2017. [Online]. Available: [https://www.usef.energy/app/uploads/2017/09/Recommended-practices-for-DR-market-design-2.pdf](https://www.usef.energy/app/uploads/2017/09/Recommended-practices-for-DR-market-design-2.pdf).
 
 <figure markdown>
-  ![General information flow in the Contract phase](../assets/images/image7.emf.odg.svg.png){ width=1000px }
+  ![General information flow in the Contract phase](../diagrams/contract-phase.puml){ .no-lightbox }
   <figcaption>General information flow in the Contract phase</figcaption>
 </figure>
 

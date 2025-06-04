@@ -1,0 +1,23 @@
+@startuml
+!theme cerulean
+
+participant DSO
+participant CRO
+
+DSO -> CRO: DSOPortfolioQuery
+DSO <-- CRO: HTTP OK
+
+alt if CRO is operating in open mode
+    DSO <- CRO: DSOPortfolioQueryResponse Result=Accepted
+    DSO --> CRO: HTTP OK
+else
+    alt if DSO is an authorized participant
+        DSO <- CRO: DSOPortfolioQueryResponse Result=Accepted
+        DSO --> CRO: HTTP OK
+    else
+        DSO <- CRO: DSOPortfolioQueryResponse Result=Rejected
+        DSO --> CRO: HTTP OK
+    end
+end
+
+@enduml
