@@ -27,8 +27,7 @@ This field can contain multiple reasons for rejections (separated by a semicolon
 | Unknown RecipientDomain | The RecipientDomain specified in the inner XML message is not known to the receiving implementation. | All message types |
 | Unknown SenderDomain (message) | SenderDomain specified in the message is unknown to the receiving implementation. | All message types except SM |
 | Barred Sender | This endpoint is explicitly blocking messages from this sender. | SM |
-| Duplicate Identifier | The MessageID attribute of the inner XML message is not unique, and has already been used for a message with different content. This message has been rejected. | All message types except SM |
-| Already Submitted | The MessageID attribute of the inner XML message is not unique, but since the message content is the same as that of a previously accepted message, this copy can be considered to be successfully submitted as well. | All message types except SM |
+| Duplicate Identifier | The MessageID attribute of the inner XML message is not unique. This message has been rejected. | All message types except SM |
 | ISP duration rejected | The message specifies a ISP duration that is not the agreed-upon common value for the market in which it is used. | All message types that contain ISP's: FRU, DP, FR, FO, FOR, M, FS, FS_R|
 | TimeZone rejected | The message specifies a TimeZone that has a different UTC offset than is the agreed-upon common value for the market. | All message types that contain Period: APQ, APQ_R, DPQ, DPQ_R, FRU, DP, FR, FO, FOR, M, FS, FS_R |
 | Invalid CongestionPoint | Unknown CongestionPoint or the recipient is not active at this CongestionPoint. | FRU, DP, FR, FO, FOR, FS |
