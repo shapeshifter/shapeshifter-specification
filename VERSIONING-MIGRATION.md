@@ -35,6 +35,21 @@ The specification has versioned artifacts and document milestones that predate t
 
 The case-sensitive `V3.0.0` and `V3.1.0` Git tags are the authorities for their XSD and release-document contents. The Markdown trees are historical snapshots from the commits listed above because the tags do not contain the converted documentation. Public documentation paths may use normalized lowercase version numbers. For earlier historical states, retain commit provenance even if they were not published as GitHub Releases.
 
+### Version Folder Source Commits
+
+The following references identify the source tree used for each version folder. Where the source commit predates the folder move, the files were copied from that commit without changing their specification content. The migration-added README files and shared `docs/versions.md` indexes are metadata, not part of the historical source snapshots.
+
+| Folder | Source commit or tag | Content taken from the reference |
+| --- | --- | --- |
+| `specifications/1.0.0/xsd/` | [Commit `e12a4f9`](https://github.com/shapeshifter/shapeshifter-specification/commit/e12a4f9293075ee369b62c7bb0e3cf08ea57b450) | Complete v1.0.0 XSD set. |
+| `specifications/2.0.0/xsd/` | [Commit `cc7a362`](https://github.com/shapeshifter/shapeshifter-specification/commit/cc7a362d86ac693e130091a5c9376bf2d848ee2c) | Complete v2.0.0 XSD set. |
+| `specifications/3.0.0/xsd/` and release artifacts | [`V3.0.0`, commit `2b2f8f3`](https://github.com/shapeshifter/shapeshifter-specification/tree/2b2f8f394eeab7a47f14e31593bd6634f37621bc) | Tagged XSD, PDF, and Word document. The v3.0.0 PDF and Word files were introduced in [commit `7068732`](https://github.com/shapeshifter/shapeshifter-specification/commit/7068732d31d059e13e8dafd1cc5d5e89866d9e8b). |
+| `specifications/3.0.0/docs/` | [Commit `24da5e2`](https://github.com/shapeshifter/shapeshifter-specification/commit/24da5e2d8443108a23aaceca8a8215330fb0c65b) | Reviewed Markdown and its image assets. |
+| `specifications/3.1.0/xsd/` and release artifacts | [`V3.1.0`, commit `3078c25`](https://github.com/shapeshifter/shapeshifter-specification/tree/3078c25a067c641dacd38ae8bde1ba4b4fe48413) | Tagged XSD, PDF, and Word document. |
+| `specifications/3.1.0/docs/` | [Commit `92ef001`](https://github.com/shapeshifter/shapeshifter-specification/commit/92ef001b79c6312403e4e463bcbc827c14f5a389) | Markdown and image assets immediately preceding the v3.1.0 release. |
+| `specifications/development/docs/` | [Commit `38b40f3`](https://github.com/shapeshifter/shapeshifter-specification/commit/38b40f36316395d169b446cd156a567dd117ae36) | Mutable Markdown and image tree immediately before it was moved under `specifications/development/`. |
+| `specifications/development/xsd/` | [Commit `f799cac`](https://github.com/shapeshifter/shapeshifter-specification/commit/f799cac9867c473fc4a4d18a0db046d577bada0c) | Mutable XSD tree immediately before it was moved under `specifications/development/`. |
+
 ## Branch Strategy
 
 Use `main` as the integration base for the versioning and publishing migration. It is the default branch and contains the current Markdown documentation, MkDocs configuration, and release workflow. The [branch comparison](https://github.com/shapeshifter/shapeshifter-specification/compare/main...V3.x) currently reports `main` as 171 commits ahead of `V3.x` and 7 commits behind it.
