@@ -1,0 +1,20 @@
+@startuml
+!theme cerulean
+
+participant AGR
+participant DSO
+
+loop for each Congestion Point with contracted Prosumers
+    AGR -> DSO: D-Prognosis
+    AGR <-- DSO: HTTP OK
+
+    alt if D-Prognosis is valid
+        AGR -> DSO: D-PrognosisResponse Result=Accepted
+        AGR <-- DSO: HTTP OK
+    else
+        AGR -> DSO: D-PrognosisResponse Result=Rejected
+        AGR <-- DSO: HTTP OK
+    end
+end
+
+@enduml

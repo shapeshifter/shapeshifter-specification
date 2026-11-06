@@ -1,0 +1,20 @@
+@startuml
+!theme cerulean
+
+participant AGR
+participant DSO
+
+loop for each contracted flex reservation in a certain period
+    AGR <- DSO: FlexReservationUpdate
+    AGR --> DSO: HTTP OK
+
+    alt if FlexReservationUpdate is valid
+        AGR -> DSO: FlexReservationUpdateResponse Result=Accepted
+        AGR <-- DSO: HTTP OK
+    else
+        AGR -> DSO: FlexReservationUpdateResponse Result=Rejected
+        AGR <-- DSO: HTTP OK
+    end
+end
+
+@enduml

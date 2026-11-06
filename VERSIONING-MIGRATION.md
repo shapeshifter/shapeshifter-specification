@@ -19,7 +19,7 @@ For this proposal, v3.0.0 and v3.1.0 are defined by their Git tags. Treat v3.1.0
 
 ## Historical Version Provenance
 
-The specification has versioned artifacts and document milestones that predate the current Markdown site. These should be considered when building the archive; the migration must not begin its history at v3.0.0.
+The specification has versioned artifacts and document milestones that predate the current Markdown site. These should be considered when building the archive; the migration must not begin its history at v3.0.0. The v3 Git tags predate or do not contain the Markdown conversion, so the v3 Markdown snapshots use the nearest reviewed documentation commits and record that provenance separately from the XSD tag provenance.
 
 | Milestone | Evidence | Migration implication |
 | --- | --- | --- |
@@ -28,10 +28,12 @@ The specification has versioned artifacts and document milestones that predate t
 | v3.0.0 XSDs | Defined by the `V3.0.0` Git tag | Preserve the tagged XSD state as its own snapshot. |
 | v3.1.0 XSDs | Defined by the `V3.1.0` Git tag | Preserve the tagged XSD state as its own snapshot and treat it as the latest numbered release. |
 | v3.0.0 PDF and Word document | [Commit 7068732](https://github.com/shapeshifter/shapeshifter-specification/commit/7068732d31d059e13e8dafd1cc5d5e89866d9e8b) | Keep these artifacts with the v3.0.0 snapshot, after confirming they correspond to the same XSD revision. |
+| v3.0.0 Markdown and images | [Commit 24da5e2](https://github.com/shapeshifter/shapeshifter-specification/commit/24da5e2d8443108a23aaceca8a8215330fb0c65b), 2023-02-20 | Preserve the first complete, reviewed Markdown conversion and its image assets as the v3.0.0 documentation snapshot. |
+| v3.1.0 Markdown and images | [Commit 92ef001](https://github.com/shapeshifter/shapeshifter-specification/commit/92ef001b79c6312403e4e463bcbc827c14f5a389), 2025-04-30 | Preserve the documentation state immediately preceding the `V3.1.0` tag as the v3.1.0 documentation snapshot. |
 | Development after v3.1.0 | Draft specification state following the v3.1.0 tag | Publish as `development`, clearly marked as a draft and not as a numbered release. |
 | Markdown specification and publishing | [PR #67](https://github.com/shapeshifter/shapeshifter-specification/pull/67), later refined | Preserve the Markdown source history. PR #67 records MkDocs, `mike`, and GitHub Actions publishing as existing infrastructure, not a future assumption. |
 
-The case-sensitive `V3.0.0` and `V3.1.0` Git tags are the authorities for those release contents. Public documentation paths may use normalized lowercase version numbers. For earlier historical states, retain commit provenance even if they were not published as GitHub Releases.
+The case-sensitive `V3.0.0` and `V3.1.0` Git tags are the authorities for their XSD and release-document contents. The Markdown trees are historical snapshots from the commits listed above because the tags do not contain the converted documentation. Public documentation paths may use normalized lowercase version numbers. For earlier historical states, retain commit provenance even if they were not published as GitHub Releases.
 
 ## Branch Strategy
 
@@ -50,7 +52,7 @@ Do not ignore the seven `V3.x`-only commits: they include XSD fixes and backport
 
 ## Proposed Repository Layout
 
-Store the specification artifacts together by version. Each release directory contains all XSD files required for that release, including common schemas referenced through relative `schemaLocation` includes, plus the corresponding published document.
+Store the specification artifacts together by version. Each v3 directory contains that version's complete Markdown and image tree, all XSD files required for the release, and the corresponding published document. Keep relative Markdown image references and XSD `schemaLocation` includes within the same version directory.
 
 ```text
 /
@@ -60,6 +62,11 @@ Store the specification artifacts together by version. Each release directory co
   specifications/
     <version>/
       README.md
+      docs/
+        index.md
+        assets/
+          images/
+        ...
       xsd/
         UFTP-common.xsd
         ...
@@ -67,6 +74,11 @@ Store the specification artifacts together by version. Each release directory co
       specification.docx      # when available for that version
     development/
       README.md
+      docs/
+        index.md
+        assets/
+          images/
+        ...
       xsd/
         UFTP-common.xsd
         ...
@@ -81,7 +93,7 @@ Use stable public paths such as `/1.0.0/`, `/2.0.0/`, `/3.0.0/`, `/3.1.0/`, and 
 
 The old broken `/development/` deployment does not need to be retained during the switch.
 
-The mutable draft XSDs live only in `specifications/development/xsd/`. Do not reintroduce a separately editable root `xsd/` copy; schema includes remain relative within each version directory.
+All specification Markdown and image files live only under their corresponding version's `docs/` directory. The current mutable source is `specifications/development/docs/`; do not recreate a separately editable root `docs/` copy. MkDocs defaults to this source through `DOCS_DIR`, while the release workflow selects `specifications/<tag-version>/docs/`. The mutable draft XSDs live only in `specifications/development/xsd/`; schema includes remain relative within each version directory.
 
 If translations or multiple official variants are introduced later, add a language or edition level, following the distinction used by OpenChain. Do not add that hierarchy before it represents real content.
 
@@ -114,15 +126,14 @@ Keep the canonical XSDs, release snapshots, and site source in this repository i
 
 ## Migration Plan
 
-1. **Reconstruct the history.** Create the v1.0.0 and v2.0.0 XSD snapshots from the cited commits, and identify the related README/document artifacts. Create v3.0.0 and v3.1.0 snapshots from their Git tags. Review the `V3.x`-only commits and decide where their changes belong without altering tagged snapshots. Preserve the development Markdown state after v3.1.0. Verify relative XSD includes for every snapshot.
+1. **Reconstruct the history.** Create the v1.0.0 and v2.0.0 XSD snapshots from the cited commits. Create v3.0.0 and v3.1.0 XSDs and release documents from their Git tags; use the documented Markdown/image commits for their respective docs snapshots. Review the `V3.x`-only commits and decide where their changes belong without altering tagged XSD snapshots. Preserve the current Markdown and image tree as `development`. Verify relative XSD includes and Markdown image references within every version.
 2. **Review current publishing.** Confirm the behavior of `.github/workflows/docs-release.yml` against the deployed site, including the version path and mutable `latest` alias. Diagnose why `.github/workflows/docs-latest.yml` does not currently produce a working development site. Record the desired new canonical paths; compatibility with the current broken URL is not required.
-3. **Create versioned snapshots.** Add each version directory with its complete XSD set and matching PDF or Word document when available. Add the development directory for the mutable draft. Avoid duplicating editable development copies.
-4. **Finish version publishing in the current stack.** Configure MkDocs/`mike` to publish numbered releases at stable paths and link release pages to their matching PDFs and XSDs. Clearly label the latest draft as `development`. Repair the existing main-push development workflow if needed. Existing URL compatibility is not required.
+3. **Create versioned snapshots.** Keep each v3 Markdown tree, all its images, its complete XSD set, and available PDF or Word artifacts together under `specifications/<version>/`. Keep one mutable working tree under `specifications/development/`; do not retain duplicate editable root `docs/` or `xsd/` directories.
+4. **Finish version publishing in the current stack.** Build development from the MkDocs `DOCS_DIR` default, `specifications/development/docs/`. On release, normalize the tag to the lowercase folder name, select `specifications/<version>/docs/`, and publish it with `mike` at a stable numbered path plus the mutable `latest` alias. Clearly label the draft as `development`. Repair the existing main-push workflow if needed; old URL compatibility is not required.
 5. **Keep the current PDF export.** Identify how `ENABLE_PDF_EXPORT` and WeasyPrint are used, then verify the release PDF is versioned correctly and matches the tagged content. Do not add Pandoc or a separate PDF toolchain unless the current exporter cannot meet the requirements.
-6. **Publish and verify.** Check browsable historical/release pages, development labeling, stable URLs, PDF/XSD downloads, and the version selector. Confirm that publishing a newer release leaves older numbered paths unchanged.
-7. **Publish in parallel for verification.** Build the proposed site without immediately removing the current one. Check historical pages, development labeling, PDF/Word downloads, XSD downloads, and version-selector links.
-8. **Switch to the new canonical paths.** Publish the site at its new canonical root and version paths. Existing URL compatibility is not required. Clearly label `/development/` as unreleased, and never redirect a numbered version path to a newer release.
-9. **Use the release process going forward.** For each release, freeze the full XSD/document snapshot, tag the source, publish that version through the existing workflow, and verify the site and PDF artifacts against the tag.
+6. **Build and verify each source tree.** Run MkDocs with `DOCS_DIR` set to development, 3.0.0, and 3.1.0. Verify navigation, image rendering, version labels, stable URLs, and PDF/XSD downloads.
+7. **Switch to the new canonical paths.** Publish the site at its new canonical root and version paths. Existing URL compatibility is not required. Clearly label `/development/` as unreleased, and never redirect a numbered version path to a newer release.
+8. **Use the release process going forward.** Before tagging a release, copy the approved development Markdown, image, and XSD sources into `specifications/<version>/`, add the release artifacts and provenance, and commit the snapshot. The release workflow then selects that version's docs directory from the tag and publishes it. Verify the site and PDF against the tag.
 
 ## Publication and Validation Requirements
 

@@ -1,0 +1,20 @@
+@startuml
+!theme cerulean
+
+participant AGR
+participant DSO
+
+loop for each open successfully transmitted FlexOffer to be revoked
+    AGR -> DSO: FlexOfferRevocation
+    AGR <-- DSO: HTTP OK
+
+    alt if FlexOfferRevocation is valid
+        AGR <- DSO: FlexOfferRevocationResponse Result=Accepted
+        AGR --> DSO: HTTP OK
+    else
+        AGR <- DSO: FlexOfferRevocationResponse Result=Rejected
+        AGR --> DSO: HTTP OK
+    end
+end
+
+@enduml

@@ -1,0 +1,20 @@
+@startuml
+!theme cerulean
+
+participant AGR
+participant DSO
+
+== Settle ==
+group par
+AGR -> AGR: calculate sold flexibility
+DSO -> DSO: calculate procured flexibility
+DSO -> DSO: collect meter data
+AGR -> AGR: validate if baselines are met
+AGR -> AGR: calculate flex fee (and penalty)
+DSO -> DSO: calculate flex fee (and penalty)
+end
+AGR <- DSO: FlexSettlement
+AGR -> AGR: validate with own calculations
+AGR -> DSO: Response: accepted OR disputed
+
+@enduml

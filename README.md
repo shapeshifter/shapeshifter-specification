@@ -33,3 +33,7 @@ XSDs are organized by specification version under `specifications/<version>/xsd/
 Numbered directories preserve released snapshots; the current draft is under
 [`specifications/development/xsd/`](specifications/development/xsd/). Relative
 schema includes resolve within each version's XSD directory.
+
+Browsable Markdown and its image assets are stored alongside each version under
+`specifications/<version>/docs/`. The version-specific README records the source
+tag or commit for each snapshot.

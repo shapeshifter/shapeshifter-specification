@@ -7,7 +7,7 @@ repo_url: https://github.com/shapeshifter/shapeshifter-specification
 site_url: http://localhost:8000/
 site_author: "Contributors to the Shapeshifter project"
 copyright: "Copyright 2020-2025 Contributors to the Shapeshifter project"
-docs_dir: docs/
+docs_dir: !ENV [DOCS_DIR, "specifications/development/docs/"]
 theme:
   name: material
   features:

@@ -32,10 +32,15 @@ jobs:
         run: |
           git config --global user.name Docs deploy
           git config --global user.email docs-action@shapshifter
-      - name: Push the versioned documentation with alias latest
+      - name: Select versioned documentation source
         run: |
           version="${GITHUB_REF_NAME#V}"
-          poetry run mike deploy --push --update-aliases "$version" latest
+          test -d "specifications/$version/docs"
+          echo "DOCS_DIR=specifications/$version/docs" >> "$GITHUB_ENV"
+          echo "DOCS_VERSION=$version" >> "$GITHUB_ENV"
+      - name: Push the versioned documentation with alias latest
+        run: |
+          poetry run mike deploy --push --update-aliases "$DOCS_VERSION" latest
         env:
           ENABLE_PDF_EXPORT: 1
       - name: Set latest as default (should only have te be run once)

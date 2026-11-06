@@ -1,0 +1,15 @@
+@startuml
+!theme cerulean
+
+== Validate ==
+AGR <- DSO: FlexRequest
+AGR <- AGR: determine offers
+AGR -> DSO: FlexOffer
+AGR -> DSO: FlexOffer
+AGR -> DSO: FlexOffer
+DSO -> DSO: Evaluate offers
+AGR -> AGR: reconsider offer
+AGR -> DSO: FlexOfferRevocation
+DSO -> DSO: Evaluate offers
+
+@enduml
