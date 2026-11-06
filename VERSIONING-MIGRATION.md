@@ -24,13 +24,13 @@ The specification has versioned artifacts and document milestones that predate t
 | --- | --- | --- |
 | v1.0.0 XSDs | [Commit e12a4f9](https://github.com/shapeshifter/shapeshifter-specification/commit/e12a4f9293075ee369b62c7bb0e3cf08ea57b450); README added in a subsequent commit | Preserve the XSD set and README as the v1.0.0 historical snapshot. |
 | v2.0.0 XSDs | [Commit cc7a362](https://github.com/shapeshifter/shapeshifter-specification/commit/cc7a362d86ac693e130091a5c9376bf2d848ee2c) | Preserve the XSD state from this commit as its own snapshot. |
-| v3.0.0 XSDs | Defined by the `v3.0.0` Git tag | Preserve the tagged XSD state as its own snapshot. |
-| v3.1.0 XSDs | Defined by the `v3.1.0` Git tag | Preserve the tagged XSD state as its own snapshot and treat it as the latest numbered release. |
+| v3.0.0 XSDs | Defined by the `V3.0.0` Git tag | Preserve the tagged XSD state as its own snapshot. |
+| v3.1.0 XSDs | Defined by the `V3.1.0` Git tag | Preserve the tagged XSD state as its own snapshot and treat it as the latest numbered release. |
 | v3.0.0 PDF and Word document | [Commit 7068732](https://github.com/shapeshifter/shapeshifter-specification/commit/7068732d31d059e13e8dafd1cc5d5e89866d9e8b) | Keep these artifacts with the v3.0.0 snapshot, after confirming they correspond to the same XSD revision. |
 | Development after v3.1.0 | Draft specification state following the v3.1.0 tag | Publish as `development`, clearly marked as a draft and not as a numbered release. |
 | Markdown specification and publishing | [PR #67](https://github.com/shapeshifter/shapeshifter-specification/pull/67), later refined | Preserve the Markdown source history. PR #67 records MkDocs, `mike`, and GitHub Actions publishing as existing infrastructure, not a future assumption. |
 
-The v3.0.0 and v3.1.0 Git tags are the authorities for those release contents. For earlier historical states, retain commit provenance even if they were not published as GitHub Releases.
+The case-sensitive `V3.0.0` and `V3.1.0` Git tags are the authorities for those release contents. Public documentation paths may use normalized lowercase version numbers. For earlier historical states, retain commit provenance even if they were not published as GitHub Releases.
 
 ## Branch Strategy
 
