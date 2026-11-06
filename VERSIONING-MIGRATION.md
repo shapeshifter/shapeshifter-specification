@@ -8,7 +8,7 @@ The migration concerns repository organization and publication of the specificat
 
 ## Current Situation
 
-- The repository contains a root `xsd/` directory, a 3.1.0 PDF, and a changelog whose latest recorded release is 3.0.0.
+- The repository contains versioned XSD snapshots through 3.1.0 and the 3.1.0 PDF; the changelog's latest recorded release is 3.0.0.
 - Issue #88 describes a browsable development site that displays 3.0.0, making its release status unclear.
 - [PR #67](https://github.com/shapeshifter/shapeshifter-specification/pull/67) introduced the Markdown specification, MkDocs, `mike` versioning, and a GitHub Actions publishing workflow. The main-branch [docs-release workflow](https://github.com/shapeshifter/shapeshifter-specification/blob/main/.github/workflows/docs-release.yml) runs when a GitHub Release is published, deploys the release tag with `mike`, updates the `latest` alias, sets `latest` as the default, and enables PDF export.
 - The [docs-latest workflow](https://github.com/shapeshifter/shapeshifter-specification/blob/main/.github/workflows/docs-latest.yml) runs on pushes to `main` and deploys that content as the `development` version. The current deployment is reported as broken; diagnose this existing workflow rather than adding a second development publisher.
@@ -81,7 +81,7 @@ Use stable public paths such as `/1.0.0/`, `/2.0.0/`, `/3.0.0/`, `/3.1.0/`, and 
 
 The old broken `/development/` deployment does not need to be retained during the switch.
 
-The current root `xsd/` should remain in place until the publishing and consumer links are understood. As part of the migration, it can either become the development schema source or be moved into `specifications/development/xsd/`; avoid maintaining two independently editable development copies.
+The mutable draft XSDs live only in `specifications/development/xsd/`. Do not reintroduce a separately editable root `xsd/` copy; schema includes remain relative within each version directory.
 
 If translations or multiple official variants are introduced later, add a language or edition level, following the distinction used by OpenChain. Do not add that hierarchy before it represents real content.
 
