@@ -117,3 +117,4 @@ nav:
       - Flex reservation mechanism: appendix/flex-reservation-mechanism.md
       - Message transport mechanism: appendix/message-transport-mechanism.md
       - Bibliography: appendix/bibliography.md
+  - Versioned specification files: versions.md
