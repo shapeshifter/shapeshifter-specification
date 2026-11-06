@@ -1,0 +1,20 @@
+@startuml
+!theme cerulean
+
+participant AGR
+participant DSO
+
+loop for each open flexibility request or unsolicited flexibility offer
+    AGR -> DSO: FlexOffer
+    AGR <-- DSO: HTTP OK
+
+    alt if FlexOffer is valid
+        AGR <- DSO: FlexOfferResponse Result=Accepted
+        AGR --> DSO: HTTP OK
+    else
+        AGR <- DSO: FlexOfferResponse Result=Rejected
+        AGR --> DSO: HTTP OK
+    end
+end
+
+@enduml

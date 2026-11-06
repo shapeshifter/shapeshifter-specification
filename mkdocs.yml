@@ -7,7 +7,7 @@ repo_url: https://github.com/shapeshifter/shapeshifter-specification
 site_url: http://localhost:8000/
 site_author: "Contributors to the Shapeshifter project"
 copyright: "Copyright 2020-2025 Contributors to the Shapeshifter project"
-docs_dir: docs/
+docs_dir: !ENV [DOCS_DIR, "specifications/development/docs/"]
 theme:
   name: material
   features:
@@ -17,8 +17,7 @@ theme:
     - navigation.top # back-to-top button when scrolling back up
   logo: assets/images/shapeshifter-icon-white.svg
   favicon: assets/images/shapeshifter-icon-color.svg
-  # TODO: enable this feature once versioned releases have been published
-  # custom_dir: overrides # to add the warning bar for the latest version
+  custom_dir: overrides
 extra:
   version:
     default: development
@@ -117,3 +116,4 @@ nav:
       - Flex reservation mechanism: appendix/flex-reservation-mechanism.md
       - Message transport mechanism: appendix/message-transport-mechanism.md
       - Bibliography: appendix/bibliography.md
+  - Versioned specification files: versions.md

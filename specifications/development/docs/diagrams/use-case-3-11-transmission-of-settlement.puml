@@ -1,0 +1,25 @@
+@startuml
+!theme cerulean
+
+participant AGR
+participant DSO
+
+AGR <- DSO: FlexSettlement
+AGR --> DSO: HTTP OK
+
+alt if FlexSettlement is valid
+  loop for each FlexOrderSettlement in FlexSettlement
+    alt if settlement details are accepted
+      AGR -> AGR: ...Disposition=Accepted
+    else
+      AGR -> AGR: ...Disposition=Rejected
+    end
+  end
+  AGR -> DSO: FlexSettlementResponse Result=Accepted
+  AGR <-- DSO: HTTP OK
+else
+    AGR -> DSO: FlexSettlementResponse Result=Rejected
+    AGR <-- DSO: HTTP OK
+end
+
+@enduml

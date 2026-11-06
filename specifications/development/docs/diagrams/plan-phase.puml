@@ -1,0 +1,15 @@
+@startuml
+!theme cerulean
+
+participant AGR
+participant CRO
+participant DSO
+
+== Plan ==
+AGR -> CRO: Retrieve list congestion points incl. associated connections
+CRO <- DSO: Retrieve 'active' Aggregators for each congestion point
+AGR -> AGR: optimize portfolio
+AGR <- DSO: [optional] FlexReservationUpdate
+AGR -> AGR: optimize portfolio
+
+@enduml
