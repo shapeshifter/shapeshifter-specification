@@ -1,0 +1,4 @@
+INHERIT: mkdocs.yml
+
+nav:
+  - Shapeshifter Specification: index.md

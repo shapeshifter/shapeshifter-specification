@@ -10,9 +10,9 @@ The migration concerns repository organization and publication of the specificat
 
 - The repository contains versioned XSD snapshots through 3.1.0 and the 3.1.0 PDF; the changelog's latest recorded release is 3.0.0.
 - Issue #88 describes a browsable development site that displays 3.0.0, making its release status unclear.
-- [PR #67](https://github.com/shapeshifter/shapeshifter-specification/pull/67) introduced the Markdown specification, MkDocs, `mike` versioning, and a GitHub Actions publishing workflow. The main-branch [docs-release workflow](https://github.com/shapeshifter/shapeshifter-specification/blob/main/.github/workflows/docs-release.yml) runs when a GitHub Release is published, deploys the release tag with `mike`, updates the `latest` alias, sets `latest` as the default, and enables PDF export.
-- The [docs-latest workflow](https://github.com/shapeshifter/shapeshifter-specification/blob/main/.github/workflows/docs-latest.yml) runs on pushes to `main` and deploys that content as the `development` version. The current deployment is reported as broken; diagnose this existing workflow rather than adding a second development publisher.
-- The existing `/development/` deployment is currently broken. There is no requirement to preserve that URL; the migration can establish a clean set of canonical paths.
+- [PR #67](https://github.com/shapeshifter/shapeshifter-specification/pull/67) introduced the Markdown specification, MkDocs, Mike, and GitHub Actions publishing. This migration replaces Mike's versioned branch management with a static build of the versioned documentation folders and publishes the complete site to `gh-pages`.
+- The `docs-publish` workflow runs on pushes to `main` and published releases. It builds `3.0.0`, `3.1.0`, and `development` under distinct directories and creates a root version chooser. The migration branch may also trigger a fork preview; remove that temporary trigger before merging upstream.
+- The previous `/development/` deployment was reported as broken. The new static build keeps that canonical path for the draft and adds stable numbered paths for released documentation.
 - The OpenChain License Compliance Specification is a useful organizational reference: it keeps specification releases in distinct versioned directories and separates official material from translations. This repository can adopt the versioned-release pattern without adding language directories until they are needed.
 
 For this proposal, v3.0.0 and v3.1.0 are defined by their Git tags. Treat v3.1.0 as the latest numbered release and the subsequent `development` state as the draft of the next release. The v1 schema set is version 1.0.0. These are working assumptions supplied by the maintainers and should drive the initial archive.
@@ -114,11 +114,11 @@ If translations or multiple official variants are introduced later, add a langua
 
 ## Publishing Tool
 
-### Near-term recommendation: Keep MkDocs Material with mike
+### Near-term recommendation: Keep MkDocs Material with static version folders
 
-Keep the current MkDocs Material, `mike`, and WeasyPrint setup while migrating the versioned content and XSDs. The release workflow already deploys published GitHub Release tags as `mike` versions, updates the movable `latest` alias, and enables PDF export. Changing the site framework and PDF generator at the same time would make it harder to isolate regressions in version history, rendering, and PDF output.
+Keep MkDocs Material and WeasyPrint, but publish each versioned documentation folder as a separate static directory. The shared build script creates `/3.0.0/`, `/3.1.0/`, and `/development/` in one site tree, adds a root version chooser, and publishes the result directly to the `gh-pages` branch. Folder snapshots provide the version history; Mike is not needed to manage a separate versioned branch or aliases.
 
-Focus first on establishing the canonical version snapshots and stable URLs, making the development and release statuses clear in the browsable site, and ensuring release PDFs match their tags. Keep the existing PDF path for this phase; identify its exact hook and verify the resulting PDF against the release tag. Diagnose and repair the existing `docs-latest.yml` deployment if needed; do not add a competing publisher.
+The `docs-publish` workflow deploys the complete static site on main pushes and published releases. A temporary fork-branch trigger may be used for previewing this migration and must be removed before merging upstream. Keep the existing PDF tooling and verify release artifacts against their tags.
 
 Manage dependency updates independently for now: keep the Poetry lock file and GitHub Actions tool versions reproducible, and review updates in manageable batches. Revisit the framework decision after the versioned publication is working and its maintenance burden can be assessed separately.
 
@@ -142,13 +142,13 @@ Keep the canonical XSDs, release snapshots, and site source in this repository i
 ## Migration Plan
 
 1. **Reconstruct the history.** Create the v1.0.0 and v2.0.0 XSD snapshots from the cited commits. Create v3.0.0 and v3.1.0 XSDs and release documents from their Git tags; use the documented Markdown/image commits for their respective docs snapshots. Review the `V3.x`-only commits and decide where their changes belong without altering tagged XSD snapshots. Preserve the current Markdown and image tree as `development`. Verify relative XSD includes and Markdown image references within every version.
-2. **Review current publishing.** Confirm the behavior of `.github/workflows/docs-release.yml` against the deployed site, including the version path and mutable `latest` alias. Diagnose why `.github/workflows/docs-latest.yml` does not currently produce a working development site. Record the desired new canonical paths; compatibility with the current broken URL is not required.
+2. **Review current publishing.** Replace the existing Mike-based workflows with one static multi-version build and GitHub Pages deployment. Use `/3.0.0/`, `/3.1.0/`, and `/development/` as canonical paths and a root version chooser; compatibility with the old deployment is not required.
 3. **Create versioned snapshots.** Keep each v3 Markdown tree, all its images, its complete XSD set, and available PDF or Word artifacts together under `specifications/<version>/`. Keep one mutable working tree under `specifications/development/`; do not retain duplicate editable root `docs/` or `xsd/` directories.
-4. **Finish version publishing in the current stack.** Build development from the MkDocs `DOCS_DIR` default, `specifications/development/docs/`. On release, normalize the tag to the lowercase folder name, select `specifications/<version>/docs/`, and publish it with `mike` at a stable numbered path plus the mutable `latest` alias. Clearly label the draft as `development`. Repair the existing main-push workflow if needed; old URL compatibility is not required.
+4. **Finish version publishing in the current stack.** Build each supported version by selecting its `specifications/<version>/docs/` source with `DOCS_DIR`, then place the output under the matching site directory. Publish the complete site to `gh-pages` on main pushes and published releases. Clearly label the draft as `development`; do not move or overwrite numbered version paths.
 5. **Keep the current PDF export.** Identify how `ENABLE_PDF_EXPORT` and WeasyPrint are used, then verify the release PDF is versioned correctly and matches the tagged content. Do not add Pandoc or a separate PDF toolchain unless the current exporter cannot meet the requirements.
-6. **Build and verify each source tree.** Run MkDocs with `DOCS_DIR` set to development, 3.0.0, and 3.1.0. Verify navigation, image rendering, version labels, stable URLs, and PDF/XSD downloads.
+6. **Build and verify each source tree.** Run `scripts/build-docs.sh` to build development, 3.0.0, and 3.1.0. Verify navigation, image rendering, version links, stable URLs, and PDF/XSD downloads.
 7. **Switch to the new canonical paths.** Publish the site at its new canonical root and version paths. Existing URL compatibility is not required. Clearly label `/development/` as unreleased, and never redirect a numbered version path to a newer release.
-8. **Use the release process going forward.** Before tagging a release, copy the approved development Markdown, image, and XSD sources into `specifications/<version>/`, add the release artifacts and provenance, and commit the snapshot. The release workflow then selects that version's docs directory from the tag and publishes it. Verify the site and PDF against the tag.
+8. **Use the release process going forward.** Before tagging a release, copy the approved development Markdown, image, and XSD sources into `specifications/<version>/`, add the release artifacts and provenance, and commit the snapshot. The release workflow rebuilds all version directories from that tagged tree and publishes them. Verify the site and PDF against the tag.
 
 ## Publication and Validation Requirements
 
@@ -164,6 +164,4 @@ Keep the canonical XSDs, release snapshots, and site source in this repository i
 
 ## Decisions to Make
 
-- What is causing the existing development deployment to fail?
 - After the version migration, does the current dependency maintenance still justify evaluating Docsy?
-- Should the site root lead to the latest stable release or to `/development/`?

@@ -4,7 +4,7 @@
 
 site_name: Shapeshifter specification
 repo_url: https://github.com/shapeshifter/shapeshifter-specification
-site_url: http://localhost:8000/
+site_url: !ENV [SITE_URL, "http://localhost:8000/"]
 site_author: "Contributors to the Shapeshifter project"
 copyright: "Copyright 2020-2025 Contributors to the Shapeshifter project"
 docs_dir: !ENV [DOCS_DIR, "specifications/development/docs/"]
@@ -42,7 +42,6 @@ plugins:
       width: 50vw
       skip_classes:
         - no-lightbox
-  - mike
   - plantuml-colocator
 markdown_extensions:
   - admonition # for Recommended Practice blocks
@@ -116,4 +115,4 @@ nav:
       - Flex reservation mechanism: appendix/flex-reservation-mechanism.md
       - Message transport mechanism: appendix/message-transport-mechanism.md
       - Bibliography: appendix/bibliography.md
-  - Versioned specification files: versions.md
+  - Versions: versions.md

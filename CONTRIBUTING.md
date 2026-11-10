@@ -17,7 +17,7 @@ For more information see the projects used to render and upload the documentatio
 - [MkDocs](https://www.mkdocs.org/) the rendering engine
 - [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/) the theme
 - [PlantUML for MkDocs](https://pypi.org/project/mkdocs-plantuml/) plugin to render PlantUML diagrams
-- [Mike](https://github.com/jimporter/mike) to publish multiple versions
+- A static build script to publish each versioned documentation folder under its own URL
 
 Besides the technical features, here are some brief recommendations on using Markdown:
 
@@ -50,4 +50,10 @@ Or build it once so you end up with the generated HTML in the `site/` folder:
 
 ```
 $ poetry run mkdocs build
+```
+
+To build all published versions and the root version chooser, run:
+
+```
+$ bash scripts/build-docs.sh
 ```
