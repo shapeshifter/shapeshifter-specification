@@ -35,7 +35,8 @@ for version in "${versions[@]}"; do
     cp -R "$docs_dir/." "$build_docs_dir/"
     cp -R "specifications/$version/xsd/." "$build_docs_dir/xsd/"
   fi
-  SITE_URL="${site_base_url}${version}/" \
+  SITE_BASE_URL="$site_base_url" \
+    SITE_URL="${site_base_url}${version}/" \
     SITE_VERSION="$version" \
     SITE_VERSIONS="$version_list" \
     DOCS_DIR="$build_docs_dir" \
