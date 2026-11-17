@@ -4,6 +4,7 @@
 
 .idea/
 site/
+*.code-workspace
 
 # Created by https://www.toptal.com/developers/gitignore/api/windows,python,libreoffice,emacs,microsoftoffice
 # Edit at https://www.toptal.com/developers/gitignore?templates=windows,python,libreoffice,emacs,microsoftoffice
