@@ -52,7 +52,7 @@ Or build it once so you end up with the generated HTML in the `site/` folder:
 $ poetry run mkdocs build
 ```
 
-To build all published versions and the root version chooser, run:
+To build all published versions and the root redirect to development, run:
 
 ```
 $ bash scripts/build-docs.sh

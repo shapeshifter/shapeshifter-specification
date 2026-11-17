@@ -66,24 +66,16 @@ cat <<'HTML'
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Shapeshifter specification</title>
+  <meta http-equiv="refresh" content="0; url=./development/">
+  <title>Redirecting to the development specification</title>
 </head>
 <body>
   <main>
     <h1>Shapeshifter specification</h1>
-    <nav aria-label="Specification versions">
-      <ul>
-HTML
-for version in "${versions[@]}"; do
-  label="$version"
-  if [[ "$version" == development ]]; then
-    label="Development (unreleased)"
-  fi
-  printf '        <li><a href="./%s/">%s</a></li>\n' "$version" "$label"
-done
-cat <<'HTML'
-      </ul>
-    </nav>
+    <p>Redirecting to the development specification.</p>
+    <p>If you are not redirected, continue to
+      <a href="./development/">Development (unreleased)</a>.
+    </p>
   </main>
 </body>
 </html>
