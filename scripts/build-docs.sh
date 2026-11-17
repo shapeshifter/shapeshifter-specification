@@ -27,7 +27,7 @@ for version in "${versions[@]}"; do
   test -d "$docs_dir"
   build_docs_dir="$docs_dir"
   config_file="mkdocs.yml"
-  if [[ "$version" == "1.0.0" || "$version" == "2.0.0" ]]; then
+  if [[ "$version" == "1.0.1" || "$version" == "2.0.0" ]]; then
     config_file="mkdocs-archive.yml"
     build_docs_dir="$tmp_dir/$version/docs"
     mkdir -p "$build_docs_dir/xsd"

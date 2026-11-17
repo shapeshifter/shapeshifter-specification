@@ -1,4 +1,4 @@
-# Shapeshifter Specification 1.0.0
+# Shapeshifter Specification 1.0.1
 
 This historical release is preserved as XML Schema Definition (XSD) files. The original filenames and schema references are retained.
 

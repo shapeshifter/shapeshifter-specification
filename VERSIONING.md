@@ -6,7 +6,7 @@ The versioned directory is the source of truth for each specification snapshot:
 
 ```text
 specifications/
-  1.0.0/
+  1.0.1/
   2.0.0/
   3.0.0/
   3.1.0/
@@ -15,7 +15,7 @@ specifications/
 
 Each directory contains its own documentation and XSDs, plus release artifacts when available. Numbered releases are immutable after publication. `development` is the mutable draft following the latest numbered release; its content must not be presented as a numbered release.
 
-The canonical documentation paths are `/1.0.0/`, `/2.0.0/`, `/3.0.0/`, `/3.1.0/`, and `/development/`. The site root redirects to `/development/`. The version selector links between versions.
+The canonical documentation paths are `/1.0.1/`, `/2.0.0/`, `/3.0.0/`, `/3.1.0/`, and `/development/`. The site root redirects to `/development/`. The version selector links between versions.
 
 All editable specification Markdown and images belong under `specifications/<version>/docs/`; the development source is `specifications/development/docs/`. Keep XSD includes and Markdown image references within their version directory. Do not maintain a duplicate root `docs/` or `xsd/` source.
 
@@ -29,11 +29,11 @@ For a release, copy the approved development documentation, images, and XSDs int
 
 ## Historical provenance
 
-The `V3.0.0` and `V3.1.0` tags are authoritative for their XSDs and release artifacts. Those tags predate or do not contain the Markdown conversion, so the Markdown snapshots use the nearest reviewed documentation commits. The v1.0.0 and v2.0.0 XSDs are reconstructed from their historical commits.
+The `V3.0.0` and `V3.1.0` tags are authoritative for their XSDs and release artifacts. Those tags predate or do not contain the Markdown conversion, so the Markdown snapshots use the nearest reviewed documentation commits. The v1.0.1 and v2.0.0 XSDs are reconstructed from their historical commits.
 
 | Version or artifact | Source | Preserved content |
 | --- | --- | --- |
-| v1.0.0 XSDs | [Commit `e12a4f9`](https://github.com/shapeshifter/shapeshifter-specification/commit/e12a4f9293075ee369b62c7bb0e3cf08ea57b450) | Complete v1.0.0 XSD set; the README was added later. |
+| v1.0.1 XSDs | [Commit `e12a4f9`](https://github.com/shapeshifter/shapeshifter-specification/commit/e12a4f9293075ee369b62c7bb0e3cf08ea57b450) | Complete v1.0.1 XSD set from the historical `V1.01/` directory; the README was added later. |
 | v2.0.0 XSDs | [Commit `cc7a362`](https://github.com/shapeshifter/shapeshifter-specification/commit/cc7a362d86ac693e130091a5c9376bf2d848ee2c) | Complete v2.0.0 XSD set. |
 | v3.0.0 XSDs and release artifacts | [`V3.0.0`, commit `2b2f8f3`](https://github.com/shapeshifter/shapeshifter-specification/tree/2b2f8f394eeab7a47f14e31593bd6634f37621bc) | Tagged XSDs and release documents. The PDF and Word files were introduced in [commit `7068732`](https://github.com/shapeshifter/shapeshifter-specification/commit/7068732d31d059e13e8dafd1cc5d5e89866d9e8b). |
 | v3.0.0 Markdown and images | [Commit `24da5e2`](https://github.com/shapeshifter/shapeshifter-specification/commit/24da5e2d8443108a23aaceca8a8215330fb0c65b) | First complete, reviewed Markdown conversion and image assets (2023-02-20). |
