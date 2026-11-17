@@ -20,7 +20,6 @@ while IFS= read -r version; do
   [[ -n "$version" ]] && versions+=("$version")
 done < <(printf '%s\n' "${versioned_dirs[@]}" | python3 -c 'import sys; versions = [line.strip() for line in sys.stdin if line.strip()]; versions.sort(key=lambda version: tuple(int(part) for part in version.split(".")), reverse=True); print("\n".join(versions))')
 
-version_list="$(IFS=,; printf '%s' "${versions[*]}")"
 mkdir -p "$site_dir"
 
 for version in "${versions[@]}"; do
@@ -35,10 +34,7 @@ for version in "${versions[@]}"; do
     cp -R "$docs_dir/." "$build_docs_dir/"
     cp -R "specifications/$version/xsd/." "$build_docs_dir/xsd/"
   fi
-  SITE_BASE_URL="$site_base_url" \
-    SITE_URL="${site_base_url}${version}/" \
-    SITE_VERSION="$version" \
-    SITE_VERSIONS="$version_list" \
+  SITE_URL="${site_base_url}${version}/" \
     DOCS_DIR="$build_docs_dir" \
     poetry run mkdocs build --strict --config-file "$config_file" --site-dir "$site_dir/$version"
 done

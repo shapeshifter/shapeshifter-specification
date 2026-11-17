@@ -19,9 +19,9 @@ theme:
   favicon: assets/images/shapeshifter-icon-color.svg
   custom_dir: overrides
 extra:
-  site_base_url: !ENV [SITE_BASE_URL, "http://localhost:8000/"]
-  site_version: !ENV [SITE_VERSION, "development"]
-  site_versions: !ENV [SITE_VERSIONS, "development"]
+  version:
+    default: development
+    provider: mike
   social:
     # available icons in https://github.com/squidfunk/mkdocs-material/tree/master/material/.icons/fontawesome
     - icon: fontawesome/brands/github
