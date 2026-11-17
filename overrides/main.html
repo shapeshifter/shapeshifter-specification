@@ -6,36 +6,6 @@ SPDX-License-Identifier: MIT
 
 {% extends "base.html" %}
 
-{% block extrahead %}
-{{ super() }}
-<style>
-  .md-header__version { position: relative; }
-  .md-header__version summary { cursor: pointer; list-style: none; }
-  .md-header__version summary::-webkit-details-marker { display: none; }
-  .md-header__version-menu {
-    position: absolute;
-    top: 100%;
-    right: 0;
-    z-index: 20;
-    min-width: 13rem;
-    margin: 0;
-    padding: .35rem 0;
-    list-style: none;
-    background: var(--md-default-bg-color);
-    box-shadow: 0 .2rem .5rem #0003;
-  }
-  .md-header__version-menu a {
-    display: block;
-    padding: .5rem .75rem;
-    color: var(--md-default-fg-color);
-  }
-  .md-header__version-menu a:hover,
-  .md-header__version-menu a[aria-current="page"] {
-    background: var(--md-accent-fg-color--transparent);
-  }
-</style>
-{% endblock %}
-
 {% block outdated %}
 You're not viewing the latest released version.
 <a href="{{ '../' ~ base_url }}">
