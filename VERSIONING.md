@@ -1,3 +1,9 @@
+<!--
+SPDX-FileCopyrightText: 2026 Contributors to the Shapeshifter project
+
+SPDX-License-Identifier: Apache-2.0
+-->
+
 # Specification Versioning and Publishing
 
 ## Version policy

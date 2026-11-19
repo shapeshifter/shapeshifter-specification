@@ -1,3 +1,9 @@
+<!--
+SPDX-FileCopyrightText: 2026 Contributors to the Shapeshifter project
+
+SPDX-License-Identifier: Apache-2.0
+-->
+
 # Shapeshifter Specification 1.0.1
 
 This directory preserves the v1.0.1 XSD snapshot from the historical `V1.01/` directory.

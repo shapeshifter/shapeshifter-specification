@@ -1,3 +1,9 @@
+<!--
+SPDX-FileCopyrightText: 2026 Contributors to the Shapeshifter project
+
+SPDX-License-Identifier: Apache-2.0
+-->
+
 # Shapeshifter Specification 1.0.1
 
 This historical release is preserved as XML Schema Definition (XSD) files. The original filenames and schema references are retained.
