@@ -1,3 +1,9 @@
+<!--
+SPDX-FileCopyrightText: 2026 Contributors to the Shapeshifter project
+
+SPDX-License-Identifier: Apache-2.0
+-->
+
 # Shapeshifter Specification Development
 
 This directory contains the mutable Markdown, image, and XSD sources for the draft following v3.1.0. The browsable draft is published by the `docs-latest` workflow.

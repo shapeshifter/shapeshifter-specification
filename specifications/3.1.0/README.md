@@ -1,3 +1,9 @@
+<!--
+SPDX-FileCopyrightText: 2026 Contributors to the Shapeshifter project
+
+SPDX-License-Identifier: Apache-2.0
+-->
+
 # Shapeshifter Specification 3.1.0
 
 This directory preserves the XSD snapshot defined by the `V3.1.0` Git tag.
