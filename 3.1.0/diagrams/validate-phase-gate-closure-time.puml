@@ -1,0 +1,23 @@
+@startuml
+!theme cerulean
+
+== Validate ==
+AGR <- DSO: FlexRequest
+AGR <- AGR: determine offers
+AGR -> DSO: FlexOffer
+DSO -> DSO: Evaluate offers
+DSO -> AGR: FlexOrder
+
+== Plan ==
+AGR -> AGR: re-optimize portfolio
+
+== Validate ==
+AGR -> DSO: (updated) D-prognosis
+DSO -> DSO: Grid safety analysis -> NOK
+AGR <- DSO: FlexRequest
+AGR <- AGR: determine offers
+AGR -> DSO: FlexOffer
+
+== Gate closure ==
+
+@enduml
