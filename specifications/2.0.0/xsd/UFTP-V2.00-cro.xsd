@@ -1,0 +1,1 @@
+<?xml version="1.0" encoding="UTF-8"?><xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">	<xs:include schemaLocation="UFTP-V2.00-common.xsd"/>	<xs:include schemaLocation="UFTP-V2.00-agr-cro.xsd"/>	<xs:include schemaLocation="UFTP-V2.00-cro-dso.xsd"/></xs:schema>

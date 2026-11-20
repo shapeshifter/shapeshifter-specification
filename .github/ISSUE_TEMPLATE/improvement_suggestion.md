@@ -7,6 +7,12 @@ assignees: ''
 
 ---
 
+<!--
+SPDX-FileCopyrightText: 2023 Contributors to the Shapeshifter project
+
+SPDX-License-Identifier: Apache-2.0
+-->
+
 ## **Describe the improvement**
 A clear and concise description of what the suggestion is.
 

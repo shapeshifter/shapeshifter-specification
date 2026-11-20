@@ -1,0 +1,16 @@
+@startuml
+!theme cerulean
+
+participant AGR
+participant CRO
+participant DSO
+
+== Contract ==
+AGR <-> DSO: Pre-qualification AGR
+AGR -> AGR: contract Prosumers
+CRO <- DSO: publish congestion points incl. connections
+AGR -> CRO: publish connections related to contracted Prosumers
+AGR <-> DSO: [optional] negotiate FlexOption
+DSO -> DSO: Pre-Q asset(s)
+
+@enduml
